@@ -1,0 +1,1393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Balloonatics Bouquet Builder ~ Create Custom Bouquets!</title>
+<meta name="description" content="Create a completely custom bouquet using hundreds of beautiful balloons from Qualatex, made by us at Balloonatics! Make your own helium-inflated creations and order right from our great new application.">
+<meta property="og:title" content="Balloonatics Bouquet Builder ~ Create Custom Bouquets!" />
+<meta property="og:description" content="Create a completely custom bouquet using hundreds of beautiful balloons from Qualatex, made by us at Balloonatics! Make your own helium-inflated creations and order right from our great new application.">
+<meta property="og:site_name" content="https://vancouverballoons.com" />
+<meta property="og:image" content="https://vancouverballoons.com/logo.png" />
+<meta property="og:image:type" content="image/jpg" />
+<link rel="shortcut icon" href="favicon_32x32.png" type="image/png">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.min.js"></script>
+<script type="text/javascript" src="js/jspdf.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/builder.css"/>
+
+
+<!-- begin email script -->
+<script type="text/javascript">
+
+	$(document).ready(function() 
+	{
+
+	var orderID = function() 
+	{
+	  var text = "";
+	  var possible = "abdegijklmopqrstuvwxyz0123456789";
+
+	  for (var i = 0; i < 5; i++)
+		text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	  return text;
+	}
+
+	$('.refresh').click(function() 
+	{
+		window.location.reload(true);
+	});
+
+		$('#proceed').click(function() 
+		{
+			$('.balloons .b1:visible, .balloons .b2:visible, .balloons .b3:visible, .balloons .b4:visible, .balloons .b5:visible').each(function() 
+			{
+				$(this).removeClass('active');
+				var getDesc = $(this).attr('class');
+				var useDesc = getDesc.split(' ');
+				$('.desc_row-1').append('<br/>| ' + getDesc);
+			});
+			if ($('#top').is(':visible')) 
+			{
+				var getTop = $('.balloons #top:visible').attr('class');
+				var useTop = getTop.split(' ');
+				$('.desc_top').append('<br/>| ' + getTop);
+			}
+			if ($('.build-extra').hasClass('3ft-tassel')) 
+			{
+				var getTas = $('#ribbonchange').attr('class');
+				$('.desc_acc').append('<br/>| ' + getTas);
+
+			}
+		$('.finaltitle').show();
+		$('#orderID').html(orderID);
+		});
+
+		$('#inputquantity').change(function() 
+		{
+			var costCalc = ($('#inputquantity').val()) * ($('.costCalc').text());
+			$('.finalCost').html("$" + costCalc.toFixed(2));
+		});
+
+		$('#finalize').click(function() 
+		{
+			var provide = document.querySelector('input[name="provide"]:checked').value;
+			$(this).fadeOut(1000);
+
+			var data = 
+			{
+				name: $("#name").val(),
+				orderID: $("#orderID").text(),
+				quantity: $("#inputquantity").val(),
+				cost: $("#totalvalue").text(),
+				costCalc: $(".finalCost").text(),
+				deliver: $('input[name="provide"]:checked').val(),
+				deliveryaddress: $("#deliveryaddress").val(),
+				deliverycity: $("#deliverycity").val(),
+				deliverypostal: $("#deliverypostal").val(),
+				date: $("#inputdate").val(),
+				time: $("#inputtime").val(),
+				email: $("#email").val(),
+				message: $("#message").val(),
+				temBal: $(".desc_template").text(),
+				topBal: $(".desc_top").text(),
+				bodBal: $(".desc_row-1").text(),
+				accessories: $(".desc_acc").text(),
+			};
+			$.ajax(
+				{
+				type: "POST",
+				url: "send.php",
+				data: data,
+				success: function()
+				{
+					$('#progress, #information').hide();
+					$('.success, #finished').show();
+				}
+			});
+		});
+	});
+</script>
+
+<!-- end email script -->
+
+</head>
+
+<body>
+<div class="success"></div>
+<div class="play"></div>
+<div id="tutorial-box">
+	<div id="bintro" class="tut-arrow"><div class="down"></div></div>
+</div>
+
+<!-- full screen overlay disabled <div id="ohmark" style="background-image:url('img/ohmark.png');position:fixed;top:0;left:0;z-index:100000;width:100%;height:100%;pointer-events:none;opacity:0.33;"></div> -->
+
+<div id="tutorial">
+	<div class="tut-box">
+		<img src="email-header.png" /><br />
+		<p class="large">Hi there. Ready to create a balloon bouquet?</p>
+		<div class="userlevel beginner">
+			<span>Beginner User</span><br />
+			<p>Show me how to use the Bouquet Builder!</p>
+		</div>
+		<div class="userlevel advanced">
+			<span>Advanced User</span><br />
+			<p>Show me less tips and more options.</p>
+		</div>
+
+		<h2>FAQs</h2>
+		<h3>What is the Bouquet Builder?</h3>
+		<p class="hidden">The Bouquet Builder is a Build-Your-Own balloon bouquet tool! Builder has 1000+ balloons<br />
+			for you to customize so you can pick out just the right colour and topper for your next<br />
+			celebration. It's brand new and causing quite the stir.<br /><br />
+			<strong>Created by Balloonatics Designs Inc.</strong>, Bouquet Builder is the heart of our process <br />
+			to lead our lovely balloon industry into the next generation.<br /><br />
+			If you haven't tried Builder before, follow our Beginner tutorial to get started!
+		</p>		
+		<h3>Where can I place orders from?</h3>
+		<p class="hidden">Bouquet Builder can be used from anywhere, but we currently fulfill delivery orders within Metro Vancouver (call for availability), or orders for pick-up in our store.</p>
+		<h3>When do I pay for my bouquet?</h3>
+		<p class="hidden">After you make your bouquet, your order is sent to our team along with a copy sent to your <br />
+			email. Your order has instructions and a unique ID to help pay via phone with a credit card.<br /><br />
+			<strong>If you wish to pick-up at your requested time,</strong> please pay ahead of time so we may confirm <br />
+			your order details. If you choose to pay in store, your order is added into our active queue and <br />
+			produced as soon as possible.</p>
+		<br /><br />
+		<p>Bouquet Builder © 2018-2019 BalloonAtics Designs Inc. </p>
+	</div>
+
+<!-- PAGE 2 of TUTORIAL for BEGINNER USER -->
+	<div class="tut-box2">
+
+		<div class="close-tut">Start a Bouquet!</div>
+		<br />
+		<p style="margin-bottom:150px;" class="large">Welcome! <strong>Bouquet Builder</strong> is a tool that lets you build your perfect balloon bouquet. It's <strong>free</strong> to use, and you can order the bouquet for pick-up or delivery* in just a few steps!<br /><br />The Beginner User is guided with <span class="tut-arrow">arrows like these (click to dismiss)<span class="up"></span></span> and short messages.</p>
+
+		<p class="large">The Builder works in 3 easy steps:</p>
+
+    	<div class="expl">
+    		<img src="img/tut-img1.png" style="margin-bottom:20px" />
+    		<h5>STEP 1: Choose a Template!</h5>
+    		<p>Pick the structure you want your bouquet to have. There's quite a few styles, and always more being added!</p>
+    	</div>
+    	<br /><br />
+    	<div class="expl">
+    		<img src="img/tut-img2.png" style="margin-bottom:20px" />
+    		<h5>STEP 2: Choose your Balloons!</h5>
+    		<p>Some Templates have more balloon styles than others, especially the top balloon!</p>
+    	</div>
+    	<br /><br />
+    	<div class="expl">
+    		<img src="img/tut-img3.png" style="margin-bottom:20px" />
+    		<h5>STEP 3: Send your Bouquet!</h5>
+    		<p>Our system sends all your build info to our team! Once payment is confirmed, we'll build your bouquet for your specified date!</p>
+    	</div>
+
+		<div class="close-tut tut-arrow">
+			Start a Bouquet!<div class="right"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="pagehead" style="text-align:center;padding:25px 0;width:100%;"><img src="email-header.png" style="display:inline-block;" /></div>
+<div class="app-container">
+
+<div class="help">
+	<div class="info1">
+		<h1>Welcome to the Balloonatics Bouquet Builder.</h1>
+  		<p>Using our selection of over <strong>500 balloons</strong>, you can create and order almost any bouquet!<br />First, select a starting arrangement below.</p>
+  		<img src="img/beta.png" class="beta" />
+	</div>
+	<div class="info2">
+		<h1>Now let's customize.</h1>
+  		<p>Start by tapping on a balloon below, then click the <strong>Palette button</strong> to choose your balloon colour and type.</p>
+  		<img src="img/beta.png" class="beta" />
+	</div>
+	<div class="info3">
+		<h1>Finalize your order.</h1>
+		<p>Please let us know when you want this bouquet made. we will begin processing your order after payment.</p>
+		<img src="img/beta.png" class="beta" />
+	</div>
+</div>
+
+<div id="progress">
+	<span class="progress-indicator" id="progress1">Step 1 of 3</span>
+	<span class="progress-indicator" id="progress2">Step 2 of 3</span>
+	<span class="progress-indicator" id="progress3">Step 3 of 3</span>
+	<div id="gobacktemplates"><- Return to Templates</div>
+	<div id="begin">Select a Template Below</div>
+	<div id="proceed">Proceed to Order -></div>
+	<div id="goback"><- Return to Customize</div>
+	<div id="finalize">Order Your Bouquet!</div>
+</div>
+
+<div class="cost">
+	<p>Your piece currently costs:</p>
+	<span id="totalvalue">$0.00</span>
+	<div class="finaltitle"> Total (w/ Tax):<div class="finalCost">Please input quantity.</div></div>
+	<div class="costCalc"></div>
+	<div class="counter"></div>
+</div>
+
+<div class="templates">
+	<div class="template-cascadingarrangement"><img src="img/templates/11in-simpleribbon.jpg" /><h2>Cascading</h2><br /><span>11-16 inch, 2-7 Balloons</span></div>
+	<!--<div class="template-16insimpleribbon"><img src="img/templates/16in-simpleribbon.jpg" /><h2>Simple Ribbon</h2><br /><span>16 inch, 2-6 Balloons</span></div> -->
+	<div class="template-11insimplestring"><img src="img/templates/11in-simplestring.jpg" /><h2>Single String</h2><br /><span>11-16 inch, 1-16 Balloons</span></div>
+	<!--<div class="template-16insimplestring"><img src="img/templates/16in-simplestring.jpg" /><h2>Simple String</h2><br /><span>16 inch, 2-6 Balloons</span></div> -->
+	<!-- <div class="template-11inclusterstring"><img src="img/templates/11in-cluster.jpg" /><h2>String Cluster</h2><br /><span>11 inch, 4-16 Balloons</span></div> -->
+	<div class="template-duoarrangement"><img src="img/templates/16in-duocluster.jpg" /><h2>Duo Arrangement</h2><br /><span>11-16 inch, 5-15 Balloons</span></div>
+	<div class="template-classicarrangement"><img src="img/templates/16in-cluster.jpg" /><h2>Classic Arrangement</h2><br /><span>11-16 inch, 7-16 Balloons</span></div>
+	<!-- <div class="template-11induoclusterstring"><img src="img/templates/11in-duocluster.jpg" /><h2>Duo String Cluster</h2><br /><span>11 inch, 3-11 Balloons</span></div> -->
+	<div class="template-umbrella"><img src="img/templates/11in-umbrella.jpg" /><h2>Singles</h2><br /><span>11 inch, 13-20 Balloons</span></div>
+	<div class="template-supershape-duo tut-arrow"><img src="img/templates/megaduo.jpg" /><h2>Supershape Duo</h2><br /><span>5-15 Balloons</span>
+		<div class="left"></div>
+		<div class="tip-right">Select to Continue<br /><br />
+		The <strong>Advanced User</strong> setting enables many more Templates!<br /><br />
+		(Reload page to select Advanced)<br /><br /> Please select <strong>Supershape Duo</strong> to continue the Builder guide.</div>
+	</div>
+	<div class="template-supershape-classic"><img src="img/templates/megaclassic.jpg" /><h2>Supershape Classic</h2><br /><span>7-16 Balloons</span></div>
+	<div class="template-megaloon-string"><img src="img/templates/megaloon-string.jpg" /><h2>Megaloon on String</h2><br /><span>Preset Style</span></div>
+	<div class="template-3ft-tassel"><img src="img/templates/3ft-tassel.jpg" /><h2>3ft + Tassels</h2><br /><span>Preset Style</span></div>
+	<div class="template-column-classic"><img src="img/templates/column-classic.jpg" /><h2>Classic Column</h2><br /><span>Up to 4 Colours</span><div class="sample-only"></div></div>
+	<div class="template-helium-arch" style="width:418px;"><img src="img/templates/helium-arch.jpg" style="display:inline-block;height:273px;width:364px" /><h2>Helium Arch</h2><br /><span>Up to 4 Colours</span>
+		<div class="sample-only"></div>
+	</div>
+	<!-- <div class="template-natural"><img src="img/templates/11in-natural.jpg" /><h2>Natural</h2><br /><span>11 inch, 3-6 Balloons</span></div>
+	<div class="template-happybirthday1"><img src="img/templates/11in-happybirthday1.jpg" /><h2>Happy Birthday</h2><br /><span>11 inch</span></div>
+	<div class="template-bubbleboy"><img src="img/templates/16in-babyboy.jpg" /><h2>IT'S A BOY</h2><br /><span>16 inch</span></div>
+	<div class="template-bubblegirl"><img src="img/templates/16in-babygirl.jpg" /><h2>IT'S A GIRL</h2><br /><span>16 inch</span></div> -->
+</div>
+
+<div class="content">
+  <div class="build">
+  	<div class="balloons-container" id="source-container">
+      <div class="balloons">
+        <div class="ctop">
+          <div class="top" id="top"><img class="check" src="img/check.png" /><div class="right"></div>
+          </div>
+        </div>
+      	<div class="r20">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r19 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r18">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r17 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r16">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r15 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r14">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r13 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r12">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r11 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r10">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r9 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r8">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r7 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r6">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r5 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r4">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r3 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r2">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+      	<div class="r1 alt">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /><div class="right"></div></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+        </div>
+
+        <!-- Specialty sizes -->
+        <div class="fx">
+          <div class="b1"><img class="check" src="img/check.png" /></div>
+          <div class="b2"><img class="check" src="img/check.png" /></div>
+          <div class="b3"><img class="check" src="img/check.png" /></div>
+          <div class="b4"><img class="check" src="img/check.png" /></div>
+          <div class="b5"><img class="check" src="img/check.png" /></div>
+          <div class="b6"><img class="check" src="img/check.png" /></div>
+          <div class="b7"><img class="check" src="img/check.png" /></div>
+          <div class="b8"><img class="check" src="img/check.png" /></div>
+          <div class="b9"><img class="check" src="img/check.png" /></div>
+          <div class="b10"><img class="check" src="img/check.png" /></div>
+          <div class="b11"><img class="check" src="img/check.png" /></div>
+          <div class="b12"><img class="check" src="img/check.png" /></div>
+          <div class="b13"><img class="check" src="img/check.png" /></div>
+          <div class="b14"><img class="check" src="img/check.png" /></div>
+          <div class="b15"><img class="check" src="img/check.png" /></div>
+          <div class="b16"><img class="check" src="img/check.png" /></div>
+          <div class="b17"><img class="check" src="img/check.png" /></div>
+          <div class="b18"><img class="check" src="img/check.png" /></div>
+          <div class="b19"><img class="check" src="img/check.png" /></div>
+          <div class="b20"><img class="check" src="img/check.png" /></div>
+        </div>
+
+     </div>
+
+      <div class="build-extra">
+      	<div class="ribbon"><img id="ribbonchange" src="img/string.png" /></div>
+      	<div class="weight"><img src="img/weight.png" /></div>
+      </div>
+    	</div>
+
+  <div class="options">
+
+  	<div id="pintro">
+		<strong>Here's your blank bouquet!</strong><br /><br />
+        Select a few balloons to get started. To select balloons, click or tap on the images to the left.<br /><br />
+        Please note that many balloons are only available in certain styles. Our Supershape category, shown in this tutorial, 
+        only works for the top balloon in some Templates!
+    </div>
+
+  	<div class="select">
+  		<span style="line-height:26px;"><strong>Tap to highlight balloons</strong> on the left.<br />
+			Use the <strong>palette</strong> to change highlighted balloons!
+		</span><br />
+  		<div class="opt-palette tool"><img src="img/icon-palette.png" /><br />PALETTE<div class="left"></div></div>
+  		<div class="opt-expand tool"><img src="img/icon-expand.png" id="expand1" /><img src="img/icon-expand2.png" id="expand2" /><br />EASY SELECT</div>
+  		<div class="opt-tassel tool"><img src="img/icon-tassel.png" /><br />TASSELS</div>
+      	<br />
+  		<div class="opt-select"><img src="img/icon-select.png" /><br />SELECT</div>
+  		<div class="opt-cancelselect"><img src="img/icon-deselect.png" /><br />DESELECT</div><br />
+		<!-- <div class="opt-default">RESET ALL</div> --> <!-- removed for ease of use -->
+  		<div class="opt-add"><img src="img/icon-add.png" /><br />ADD</div>
+  		<div class="opt-sub"><img src="img/icon-remove.png" /><br />REMOVE</div><br />
+  		<div class="opt-collar"><img src="img/opt-collar.png" style="width:32px;height:32px" /><br />COLLAR</div>
+<!--
+		<div class="opt-top">TOP BALLOON</div>
+		<div class="opt-r5">#5</div>
+		<div class="opt-r4">#4</div>
+		<div class="opt-r3">#3</div>
+		<div class="opt-r2">#2</div>
+		<div class="opt-r1">#1</div><br />
+		<div class="opt-tassels"><img src="img/icon-tassels.png" /><br />SELECT TASSELS</div>
+		<div class="opt-string"><img src="img/icon-string.png" /><br />SELECT RIBBON</div>
+		<div class="opt-weight"><img src="img/icon-weights.png" /><br />SELECT WEIGHT</div>
+-->
+		<section class="requests">
+			<p>Special Requests:</p>
+			<textarea></textarea>
+		</section>
+    </div>
+
+	<div class="tasseloptions">
+
+    	<div class="customize-close"><img src="img/opt-close.png" /></div>
+      	<p>Tassel Length:</p>
+        <div class="l-options">
+        <div class="length-single">Single</div>
+        <div class="length-mini">Mini</div>
+        <div class="length-half">Half</div>
+        <div class="length-full">Full</div>
+        </div>
+      	<p>Premium Tissue</p>
+        <div class="tassel-redapple"><div></div>Red Apple</div>
+        <div class="tassel-peach"><div></div>Peach</div>
+        <div class="tassel-blush"><div></div>Blush</div>
+        <div class="tassel-cottoncandy"><div></div>Cotton Candy</div>
+        <div class="tassel-wildberry"><div></div>Wild Berry</div>
+        <div class="tassel-lilacmist"><div></div>Lilac Mist</div>
+        <div class="tassel-lavender"><div></div>Lavender</div>
+        <div class="tassel-sugarplum"><div></div>Sugar Plum</div>
+        <div class="tassel-purplepixie"><div></div>Purple Pixie</div>
+        <div class="tassel-ivory"><div></div>Ivory</div>
+        <div class="tassel-lightmocha"><div></div>Light Mocha</div>
+        <div class="tassel-citrus"><div></div>Citrus</div>
+        <div class="tassel-lemonchiffon"><div></div>Lemon Chiffon</div>
+        <div class="tassel-pearsorbet"><div></div>Pear Sorbet</div>
+        <div class="tassel-seafoam"><div></div>Sea Foam</div>
+        <div class="tassel-emerald"><div></div>Emerald</div>
+        <div class="tassel-forest"><div></div>Forest</div>
+        <div class="tassel-tiffany"><div></div>Tiffany</div>
+        <div class="tassel-sky"><div></div>Sky</div>
+        <div class="tassel-feather"><div></div>Feather</div>
+        <div class="tassel-azure"><div></div>Azure</div>
+        <div class="tassel-midnight"><div></div>Midnight</div>
+        <div class="tassel-white"><div></div>White</div>
+        <div class="tassel-palesmoke"><div></div>Pale Smoke</div>
+        <div class="tassel-black"><div></div>Black</div>
+<!--
+        <p>Specialty Mylar</p>
+        <div class="tassel-stardust"><div></div>Stardust</div>
+        <div class="tassel-silver"><div></div>Silver</div>
+        <div class="tassel-gold"><div></div>Gold</div>
+        <div class="tassel-rosegold"><div></div>Rose Gold</div>
+        <div class="tassel-electricmagenta"><div></div>Electric Magenta</div>
+        <div class="tassel-starburst"><div></div>Starburst</div>
+        <div class="tassel-cosmic"><div></div>Cosmic</div>
+-->
+	</div>
+
+    <div class="customize-container">
+    <div class="customize">
+      <!-- <div class="opt-deselect"><img src="img/opt-deselect.png" /><span>DESELECT ALL BALLOONS</span></div> -->
+
+      <div class="palette">
+      <h4><img src="img/close-w.png" />BALLOON PALETTE</h4>
+    	<!-- <h1>Please select / deselect balloons to customize.</h1> -->
+<!--
+    	  <div class="r1">
+          <div class="b1">1</div>
+          <div class="b2">2</div>
+          <div class="b3">3</div>
+          <div class="b4">4</div>
+          <div class="b5">5</div>
+        </div>
+      	<div class="r2">
+          <div class="b1">1</div>
+          <div class="b2">2</div>
+          <div class="b3">3</div>
+          <div class="b4">4</div>
+          <div class="b5">5</div>
+        </div>
+      	<div class="r3">
+          <div class="b1">1</div>
+          <div class="b2">2</div>
+          <div class="b3">3</div>
+          <div class="b4">4</div>
+          <div class="b5">5</div>
+        </div>
+      	<div class="r4">
+          <div class="b1">1</div>
+          <div class="b2">2</div>
+          <div class="b3">3</div>
+          <div class="b4">4</div>
+          <div class="b5">5</div>
+        </div>
+      	<div class="r5">
+          <div class="b1">1</div>
+          <div class="b2">2</div>
+          <div class="b3">3</div>
+          <div class="b4">4</div>
+          <div class="b5">5</div>
+        </div>
+        <div class="top"></div>
+-->
+        <div id="#allstyles">
+        <div class="select11 prep">11-inch</div>
+        <div class="select16">16-inch</div>
+        <div class="tab11">
+        <div class="label-standard"><img src="img/image1.png" /><img src="img/indicator.png" />11-inch Standard<br />$2.95/ea</div>
+        <div class="folder">
+        	<div class="sample standard-darkblue 11in">Dark Blue</div>
+        	<div class="sample standard-paleblue 11in">Pale Blue</div>
+        	<div class="sample standard-green 11in">Green</div>
+        	<div class="sample standard-red 11in">Red</div>
+        	<div class="sample standard-pink 11in">Pink</div>
+        	<div class="sample standard-orange 11in">Orange</div>
+        	<div class="sample standard-yellow 11in">Yellow</div>
+        	<div class="sample standard-white 11in">White</div>
+        </div>
+        <div class="label-fashion"><img src="img/image20.png" /><img src="img/indicator.png" />11-inch Fashion<br />$2.95/ea<div class="up"></div></div>
+        <div class="folder">
+			<div class="sample fashion-goldenrod 11in">Goldenrod</div>
+			<div class="sample fashion-ivorysilk 11in">Ivory Silk</div>
+			<div class="sample fashion-blush 11in">Blush</div>
+			<div class="sample fashion-coral 11in">Coral</div>
+			<div class="sample fashion-rose 11in">Rose</div>
+			<div class="sample fashion-wildberry 11in">Wildberry</div>
+			<div class="sample fashion-maroon 11in">Maroon</div>
+			<div class="sample fashion-springlilac 11in">Spring Lilac</div>
+			<div class="sample fashion-purpleviolet 11in">Purple Violet</div>
+			<div class="sample fashion-navy 11in">Navy</div>
+			<div class="sample fashion-periwinkle 11in">Periwinkle</div>
+			<div class="sample fashion-robinseggblue 11in">Robin's Egg Blue</div>
+			<div class="sample fashion-tropicalteal 11in">Tropical Teal</div>
+			<div class="sample fashion-caribbeanblue 11in">Caribbean Blue</div>
+			<div class="sample fashion-wintergreen 11in">Winter Green</div>
+			<div class="sample fashion-springgreen 11in">Spring Green</div>
+			<div class="sample fashion-limegreen 11in">Lime Green</div>
+			<div class="sample fashion-mochabrown 11in">Mocha Brown</div>
+			<div class="sample fashion-chocolatebrown 11in">Chocolate Brown</div>
+			<div class="sample fashion-gray 11in">Gray</div>
+			<div class="sample fashion-onyxblack 11in">Onyx Black</div>
+			<div class="sample fashion-diamondclear 11in">Diamond Clear</div>
+        </div>
+        <div class="label-pearlradiant"><img src="img/image36.png" /><img src="img/indicator.png" />11-inch Pearl Radiant<br />$2.95/ea</div>
+        <div class="folder">
+			<div class="sample pearl-onyxblack 11in">Onyx Black</div>
+			<div class="sample pearl-white 11in">Pearl White</div>
+			<div class="sample pearl-gold 11in">Gold</div>
+			<div class="sample pearl-silver 11in">Silver</div>
+			<div class="sample pearl-rosegold 11in">Rose Gold</div>
+			<div class="sample pearl-citrineyellow 11in">Pearl Citrine Yellow</div>
+			<div class="sample pearl-mandarinorange 11in">Pearl Mandarin Orange</div>
+			<div class="sample pearl-rubyred 11in">Pearl Ruby Red</div>
+			<div class="sample pearl-burgundy 11in">Pearl Burgundy</div>
+			<div class="sample pearl-magenta 11in">Pearl Mangenta</div>
+			<div class="sample pearl-sapphireblue 11in">Pearl Sapphire Blue</div>
+			<div class="sample pearl-midnightblue 11in">Pearl Midnight Blue</div>
+			<div class="sample pearl-teal 11in">Pearl Teal</div>
+			<div class="sample pearl-emeraldgreen 11in">Pearl Emerald Green</div>
+			<div class="sample pearl-forestgreen 11in">Pearl Forest Green</div>
+			<div class="sample pearl-limegreen 11in">Pearl Lime Green</div>
+			<div class="sample pearl-quartzpurple 11in">Pearl Quartz Purple</div>
+        </div>
+        <div class="label-pearlpastel"><img src="img/image45.png" /><img src="img/indicator.png" />11-inch Pearl Pastel<br />$2.95/ea</div>
+        <div class="folder">
+			<div class="sample pearl-ivory 11in">Pearl Ivory</div>
+			<div class="sample pearl-lemon 11in">Pearl Lemon</div>
+			<div class="sample pearl-peach 11in">Pearl Peach</div>
+			<div class="sample pearl-pink 11in">Pearl Pink</div>
+			<div class="sample pearl-lavender 11in">Pearl Lavender</div>
+			<div class="sample pearl-azure 11in">Pearl Azure</div>
+			<div class="sample pearl-lightblue 11in">Pearl Light Blue</div>
+			<div class="sample pearl-mint 11in">Pearl Mint</div>
+        </div>
+        <div class="label-superagates"><img src="img/image58.png" /><img src="img/indicator.png" />11-inch Superagates<br />$3.50/ea</div>
+        <div class="folder">
+			<div class="sample sa-blackwhite 11sa">Black & White</div>
+			<div class="sample sa-redwhite 11sa">Red & White</div>
+			<div class="sample sa-traditional 11sa">Traditional</div>
+			<div class="sample sa-fashion 11sa">Fashion</div>
+			<div class="sample sa-yellow 11sa">Yellow</div>
+			<div class="sample sa-pinkviolet 11sa">Pink & Violet</div>
+			<div class="sample sa-bluerainbow 11sa">Blue Rainbow</div>
+			<div class="sample sa-redorangerainbow 11sa">Red Orange Rainbow</div>
+			<div class="sample sa-greenrainbow 11sa">Green Rainbow</div>
+        </div>
+        <div class="label-chrome"><img src="img/11in-chromesilver.png" /><img src="img/indicator.png" />11-inch Chrome<br />$3.50/ea</div>
+        <div class="folder">
+			<div class="sample 11in-chromesilver 11cr">Chrome Silver</div>
+			<div class="sample 11in-chromegold 11cr">Chrome Gold</div>
+			<div class="sample 11in-chromeblue 11cr">Chrome Blue</div>
+			<div class="sample 11in-chromepurple 11cr">Chrome Purple</div>
+			<div class="sample 11in-chromegreen 11cr">Chrome Green</div>
+			<div class="sample 11in-chromemauve 11cr">Chrome Mauve</div>
+        </div>
+
+        </div>
+
+        <div class="tab16">
+
+        <div class="label-standard"><img src="img/image1.png" /><img src="img/indicator.png" />16-inch Standard<br />$7.00/ea</div>
+        <div class="folder">
+			<div class="sample standard-darkblue 16in">Dark Blue</div>
+			<div class="sample standard-paleblue 16in">Pale Blue</div>
+			<div class="sample standard-green 16in">Green</div>
+			<div class="sample standard-red 16in">Red</div>
+			<div class="sample standard-pink 16in">Pink</div>
+			<div class="sample standard-orange 16in">Orange</div>
+			<div class="sample standard-yellow 16in">Yellow</div>
+			<div class="sample standard-white 16in">White</div>
+        </div>
+        <div class="label-fashion"><img src="img/image20.png" /><img src="img/indicator.png" />16-inch Fashion<br />$7.00/ea</div>
+        <div class="folder">
+        	<div class="sample fashion-goldenrod 16in">Goldenrod</div>
+        	<div class="sample fashion-ivorysilk 16in">Ivory Silk</div>
+        	<div class="sample fashion-blush 16in">Blush</div>
+        	<div class="sample fashion-rose 16in">Rose</div>
+        	<div class="sample fashion-wildberry 16in">Wildberry</div>
+        	<div class="sample fashion-maroon 16in">Maroon</div>
+        	<div class="sample fashion-springlilac 16in">Spring Lilac</div>
+        	<div class="sample fashion-purpleviolet 16in">Purple Violet</div>
+        	<div class="sample fashion-navy 16in">Navy</div>
+        	<div class="sample fashion-periwinkle 16in">Periwinkle</div>
+        	<div class="sample fashion-robinseggblue 16in">Robin's Egg Blue</div>
+        	<div class="sample fashion-tropicalteal 16in">Tropical Teal</div>
+        	<div class="sample fashion-caribbeanblue 16in">Caribbean Blue</div>
+        	<div class="sample fashion-wintergreen 16in">Winter Green</div>
+        	<div class="sample fashion-springgreen 16in">Spring Green</div>
+        	<div class="sample fashion-limegreen 16in">Lime Green</div>
+        	<div class="sample fashion-mochabrown 16in">Mocha Brown</div>
+        	<div class="sample fashion-chocolatebrown 16in">Chocolate Brown</div>
+        	<div class="sample fashion-onyxblack 16in">Onyx Black</div>
+        	<div class="sample fashion-diamondclear 16in">Diamond Clear</div>
+        </div>
+        <div class="label-pearlradiant"><img src="img/image36.png" /><img src="img/indicator.png" />16-inch Pearl Radiant<br />$7.00/ea</div>
+        <div class="folder">
+        	<div class="sample pearl-white 16in">Pearl White</div>
+        	<div class="sample pearl-gold 16in">Gold</div>
+        	<div class="sample pearl-silver 16in">Silver</div>
+        	<div class="sample pearl-rosegold 16in">Rose Gold</div>
+        	<div class="sample pearl-rubyred 16in">Pearl Ruby Red</div>
+        	<div class="sample pearl-sapphireblue 16in">Pearl Sapphire Blue</div>
+        	<div class="sample pearl-emeraldgreen 16in">Pearl Emerald Green</div>
+        	<div class="sample pearl-quartzpurple 16in">Pearl Quartz Purple</div>
+        </div>
+        <div class="label-pearlpastel"><img src="img/image45.png" /><img src="img/indicator.png" />16-inch Pearl Pastel<br />$7.00/ea</div>
+        <div class="folder">
+        	<div class="sample pearl-ivory 16in">Pearl Ivory</div>
+        	<div class="sample pearl-lemon 16in">Pearl Lemon</div>
+        	<div class="sample pearl-pink 16in">Pearl Pink</div>
+        	<div class="sample pearl-lavender 16in">Pearl Lavender</div>
+        	<div class="sample pearl-lightblue 16in">Pearl Light Blue</div>
+        	<div class="sample pearl-mint 16in">Pearl Mint</div>
+        </div>
+        </div>
+
+        <div class="label-3ft"><img src="img/3ft-caribbeanblue.png" /><img src="img/indicator.png" />3-foot Balloons<br />$27.50/ea</div>
+        <div class="folder" id="folder-3ft">
+        	<div class="sample 3ft-blush 3ft">Blush</div>
+        	<div class="sample 3ft-caribbeanblue 3ft">Caribbean Blue</div>
+        	<div class="sample 3ft-chocolatebrown 3ft">Chocolate Brown</div>
+        	<div class="sample 3ft-coral 3ft">Coral</div>
+        	<div class="sample 3ft-darkblue 3ft">Dark Blue</div>
+        	<div class="sample 3ft-diamondclear 3ft">Diamond Clear</div>
+        	<div class="sample 3ft-gold 3ft">Gold</div>
+        	<div class="sample 3ft-goldenrod 3ft">Goldenrod</div>
+        	<div class="sample 3ft-green 3ft">Green</div>
+        	<div class="sample 3ft-ivorysilk 3ft">Ivory Silk</div>
+        	<div class="sample 3ft-limegreen 3ft">Lime Green</div>
+        	<div class="sample 3ft-mochabrown 3ft">Mocha Brown</div>
+        	<div class="sample 3ft-maroon 3ft">Maroon</div>
+        	<div class="sample 3ft-navy 3ft">Navy</div>
+        	<div class="sample 3ft-onyxblack 3ft">Onyx Black</div>
+        	<div class="sample 3ft-orange 3ft">Orange</div>
+        	<div class="sample 3ft-paleblue 3ft">Pale Blue</div>
+        	<div class="sample 3ft-pink 3ft">Pink</div>
+        	<div class="sample 3ft-purpleviolet 3ft">Purple Violet</div>
+        	<div class="sample 3ft-red 3ft">Red</div>
+        	<div class="sample 3ft-robinseggblue 3ft">Robin's Egg Blue</div>
+        	<div class="sample 3ft-rose 3ft">Rose</div>
+        	<div class="sample 3ft-rosegold 3ft">Rose Gold</div>
+        	<div class="sample 3ft-silver 3ft">Silver</div>
+        	<div class="sample 3ft-springgreen 3ft">Spring Green</div>
+        	<div class="sample 3ft-springlilac 3ft">Spring Lilac</div>
+        	<div class="sample 3ft-tropicalteal 3ft">Tropical Teal</div>
+        	<div class="sample 3ft-white 3ft">White</div>
+        	<div class="sample 3ft-wildberry 3ft">Wildberry</div>
+        	<div class="sample 3ft-wintergreen 3ft">Wintergreen</div>
+        	<div class="sample 3ft-yellow 3ft">Yellow</div>
+        	<div class="sample 3ft-pearlwhite 3ft">Pearl White</div>
+            <div class="sample 3ft-pearlivory 3ft">Pearl Ivory</div>
+        	<div class="sample 3ft-pearllemonchiffon 3ft">Pearl Lemon Chiffon</div>
+        	<div class="sample 3ft-pearlpink 3ft">Pearl Pink</div>
+        	<div class="sample 3ft-pearllightblue 3ft">Pearl Light Blue</div>
+        	<div class="sample 3ft-confetti-redapple 3ft">Clear Confetti (Red Apple)</div>
+        	<div class="sample 3ft-confetti-peach 3ft">Clear Confetti (Peach)</div>
+        	<div class="sample 3ft-confetti-lemonchiffon 3ft">Clear Confetti (Lemon Chiffon)</div>
+        	<div class="sample 3ft-confetti-emerald 3ft">Clear Confetti (Emerald)</div>
+        	<div class="sample 3ft-confetti-azure 3ft">Clear Confetti (Azure)</div>
+        	<div class="sample 3ft-confetti-purplepixie 3ft">Clear Confetti (Purple Pixie)</div>
+        	<div class="sample 3ft-confetti-wildberry 3ft">Clear Confetti (Wildberry)</div>
+        	<div class="sample 3ft-confetti-black 3ft">Clear Confetti (Black)</div>
+        	<div class="sample 3ft-confetti-white 3ft">Clear Confetti (White)</div>
+
+        	<div class="sample 3ft-jewelcitrineyellow 3ft">Jewel Citrine Yellow</div>
+        	<div class="sample 3ft-jewelemeraldgreen 3ft">Jewel Emerald Green</div>
+        	<div class="sample 3ft-jewelmangenta 3ft">Jewel Magenta</div>
+        	<div class="sample 3ft-jewelmandarinorange 3ft">Jewel Mandarin Orange</div>
+        	<div class="sample 3ft-jewelquartzpurple 3ft">Jewel Quartz Purple</div>
+        	<div class="sample 3ft-jewelrubyred 3ft">Jewel Ruby Red</div>
+        	<div class="sample 3ft-jewelsapphireblue 3ft">Jewel Sapphire Blue</div>
+        	<div class="sample 3ft-jewelsparklingburgundy 3ft">Jewel Sparkling Burgundy</div>
+        	<div class="sample 3ft-jewelteal 3ft">Jewel Teal</div>
+        </div>
+        <div class="label-3ft-sa"><img src="img/3ft-sa-bluerainbow.png" /><img src="img/indicator.png" />3-foot Superagates<br />$37.50/ea</div>
+        <div class="folder" id="folder-3ft-sa">
+        	<div class="sample 3ft-sa-blackwhite 3ft">Black & White</div>
+        	<div class="sample 3ft-sa-bluerainbow 3ft">Blue Rainbow</div>
+        	<div class="sample 3ft-sa-greenrainbow 3ft">Green Rainbow</div>
+        	<div class="sample 3ft-sa-pinkviolet 3ft">Pink Violet</div>
+        	<div class="sample 3ft-sa-redorangerainbow 3ft">Red Orange Rainbow</div>
+        	<div class="sample 3ft-sa-yelloworange 3ft">Yellow Orange</div>
+        	<div class="sample 3ft-sa-fashion 3ft">Fashion</div>
+        	<div class="sample 3ft-sa-traditional 3ft">Traditional</div>
+        	<div class="sample 3ft-sa-redwhite 3ft">Red & White</div>
+		</div>
+
+        <!--hidden 5in class for specialty pieces -->
+        <div class="label-5in" style="display:none"><img src="img/image1.png" /><img src="img/indicator.png" />5-inch Standard<br />For Collars</div>
+        <div class="folder" id="folder-5in">
+        	<div class="sample fashion-onyxblack 5in">Onyx Black</div>
+        	<div class="sample fashion-diamondclear 5in">Diamond Clear</div>
+        	<div class="sample pearl-onyxblack 5in">Onyx Black</div>
+        	<div class="sample pearl-white 5in">Pearl White</div>
+        	<div class="sample pearl-gold 5in">Gold</div>
+        	<div class="sample pearl-silver 5in">Silver</div>
+        	<div class="sample standard-darkblue 5in">Dark Blue</div>
+        	<div class="sample standard-paleblue 5in">Pale Blue</div>
+        	<div class="sample standard-green 5in">Green</div>
+        	<div class="sample standard-red 5in">Red</div>
+        	<div class="sample standard-pink 5in">Pink</div>
+        	<div class="sample standard-orange 5in">Orange</div>
+        	<div class="sample standard-yellow 5in">Yellow</div>
+        	<div class="sample standard-white 5in">White</div>
+        	<div class="sample fashion-goldenrod 5in">Goldenrod</div>
+        	<div class="sample fashion-ivorysilk 5in">Ivory Silk</div>
+        	<div class="sample fashion-blush 5in">Blush</div>
+        	<div class="sample fashion-coral 5in">Coral</div>
+        	<div class="sample fashion-rose 5in">Rose</div>
+        	<div class="sample fashion-wildberry 5in">Wildberry</div>
+        	<div class="sample fashion-maroon 5in">Maroon</div>
+        	<div class="sample fashion-springlilac 5in">Spring Lilac</div>
+        	<div class="sample fashion-purpleviolet 5in">Purple Violet</div>
+        	<div class="sample fashion-navy 5in">Navy</div>
+        	<div class="sample fashion-periwinkle 5in">Periwinkle</div>
+        	<div class="sample fashion-robinseggblue 5in">Robin's Egg Blue</div>
+        	<div class="sample fashion-tropicalteal 5in">Tropical Teal</div>
+        	<div class="sample fashion-caribbeanblue 5in">Caribbean Blue</div>
+        	<div class="sample fashion-wintergreen 5in">Winter Green</div>
+        	<div class="sample fashion-springgreen 5in">Spring Green</div>
+        	<div class="sample fashion-limegreen 5in">Lime Green</div>
+        	<div class="sample fashion-mochabrown 5in">Mocha Brown</div>
+        	<div class="sample fashion-chocolatebrown 5in">Chocolate Brown</div>
+        	<div class="sample fashion-gray 5in">Gray</div>
+        	<div class="sample pearl-rosegold 5in">Rose Gold</div>
+        	<div class="sample pearl-citrineyellow 5in">Pearl Citrine Yellow</div>
+        	<div class="sample pearl-mandarinorange 5in">Pearl Mandarin Orange</div>
+        	<div class="sample pearl-rubyred 5in">Pearl Ruby Red</div>
+        	<div class="sample pearl-burgundy 5in">Pearl Burgundy</div>
+        	<div class="sample pearl-magenta 5in">Pearl Mangenta</div>
+        	<div class="sample pearl-sapphireblue 5in">Pearl Sapphire Blue</div>
+        	<div class="sample pearl-midnightblue 5in">Pearl Midnight Blue</div>
+        	<div class="sample pearl-teal 5in">Pearl Teal</div>
+        	<div class="sample pearl-emeraldgreen 5in">Pearl Emerald Green</div>
+        	<div class="sample pearl-forestgreen 5in">Pearl Forest Green</div>
+        	<div class="sample pearl-limegreen 5in">Pearl Lime Green</div>
+        	<div class="sample pearl-quartzpurple 5in">Pearl Quartz Purple</div>
+        	<div class="sample pearl-ivory 5in">Pearl Ivory</div>
+        	<div class="sample pearl-lemon 5in">Pearl Lemon</div>
+        	<div class="sample pearl-peach 5in">Pearl Peach</div>
+        	<div class="sample pearl-pink 5in">Pearl Pink</div>
+        	<div class="sample pearl-lavender 5in">Pearl Lavender</div>
+        	<div class="sample pearl-azure 5in">Pearl Azure</div>
+        	<div class="sample pearl-light 5in">Pearl Light</div>
+        	<div class="sample pearl-mint 5in">Pearl Mint</div>
+        </div>
+        <div class="label-supershape"><img src="img/supershape-funnyflower.png" /><img src="img/indicator.png" />Supershape<br />$23.00/ea</div>
+        <div class="folder">
+            <div class="sample supershape-diamondring supershape"></div>
+            <div class="sample supershape-funcake supershape"></div>
+            <div class="sample supershape-glittercake supershape"></div>
+            <div class="sample supershape-twohearts supershape"></div>
+            <div class="sample supershape-filigreered supershape"></div>
+            <div class="sample supershape-weddingring supershape"></div>
+            <div class="sample supershape-bdaycakecandles supershape"></div>
+            <div class="sample supershape-bdaystripedcupcake supershape"></div>
+            <div class="sample supershape-bdaycupcakestar supershape"></div>
+            <div class="sample supershape-dazzlingcupcake supershape"></div>
+            <div class="sample supershape-frostedcupcake supershape"></div>
+            <div class="sample supershape-funkycake supershape"></div>
+            <div class="sample supershape-zebrastripe supershape"></div>
+            <div class="sample supershape-icecreamtruck supershape"></div>
+            <div class="sample supershape-bdayhotair supershape"></div>
+            <div class="sample supershape-itsmyspecialday supershape"></div>
+            <div class="sample supershape-bdaymarquee supershape"></div>
+            <div class="sample supershape-festivebday"></div>
+            <div class="sample supershape-happybdaystars supershape"></div>
+            <div class="sample supershape-holograpurplebday supershape"></div>
+            <div class="sample supershape-bdayablazeblue supershape"></div>
+            <div class="sample supershape-blackbday supershape"></div>
+            <div class="sample supershape-sparklybluebday supershape"></div>
+            <div class="sample supershape-boybabystroller supershape"></div>
+            <div class="sample supershape-girlbabystroller supershape"></div>
+            <div class="sample supershape-babybuggyboy supershape"></div>
+            <div class="sample supershape-babybuggygirl supershape"></div>
+            <div class="sample supershape-boybodysuit supershape"></div>
+            <div class="sample supershape-girlbodysuit supershape"></div>
+            <div class="sample supershape-boybabybottle supershape"></div>
+            <div class="sample supershape-girlbabybottle supershape"></div>
+            <div class="sample supershape-boybubblebottle supershape"></div>
+            <div class="sample supershape-girlbubblebottle supershape"></div>
+            <div class="sample supershape-babyboyfoot supershape"></div>
+            <div class="sample supershape-girlbabyfoot supershape"></div>
+            <div class="sample supershape-babyboygiraffe supershape"></div>
+            <div class="sample supershape-babygirlgiraffe supershape"></div>
+            <div class="sample supershape-welcomebaby supershape"></div>
+            <div class="sample supershape-rockinghorse supershape"></div>
+            <div class="sample supershape-beermug supershape"></div>
+            <div class="sample supershape-champagneglass supershape"></div>
+            <div class="sample supershape-bubblywineglass supershape"></div>
+            <div class="sample supershape-bubblychampagne supershape"></div>
+            <div class="sample supershape-bubblywinebottle supershape"></div>
+            <div class="sample supershape-darthvaderhelmet supershape"></div>
+            <div class="sample supershape-starwarsR2D2 supershape"></div>
+            <div class="sample supershape-disneyfrozenolaf supershape"></div>
+            <div class="sample supershape-princessbelle supershape"></div>
+            <div class="sample supershape-princessSnowwhite supershape"></div>
+            <div class="sample supershape-minionSupershape supershape"></div>
+            <div class="sample supershape-pawpatrolgirls supershape"></div>
+            <div class="sample supershape-poohultrashape supershape"></div>
+            <div class="sample supershape-mickeyultrashape supershape"></div>
+            <div class="sample supershape-mickeymouse supershape"></div>
+            <div class="sample supershape-minniemouse supershape"></div>
+            <div class="sample supershape-thomasandfriends supershape"></div>
+            <div class="sample supershape-lightningmcqueen supershape"></div>
+            <div class="sample supershape-farmtractor supershape"></div>
+            <div class="sample supershape-pirateship supershape"></div>
+            <div class="sample supershape-redfiretruck supershape"></div>
+            <div class="sample supershape-beamingbee supershape"></div>
+            <div class="sample supershape-sunshinesmileface supershape"></div>
+            <div class="sample supershape-contentedcow supershape"></div>
+            <div class="sample supershape-playfulpig supershape"></div>
+            <div class="sample supershape-jollygiraffe supershape"></div>
+            <div class="sample supershape-zanyzebra supershape"></div>
+            <div class="sample supershape-foilmonkey supershape"></div>
+            <div class="sample supershape-ellieelephant supershape"></div>
+            <div class="sample supershape-foilfish supershape"></div>
+            <div class="sample supershape-seastar supershape"></div>
+            <div class="sample supershape-foiloctopus supershape"></div>
+            <div class="sample supershape-funnyflower supershape"></div>
+            <div class="sample supershape-teddybearlove supershape"></div>
+            <div class="sample supershape-pinkribbon supershape"></div>
+            <div class="sample supershape-kissfrogprince supershape"></div>
+            <div class="sample supershape-doublepopsicle supershape"></div>
+            <div class="sample supershape-girlbabyduck supershape"></div>
+            <div class="sample supershape-boybabyduck supershape"></div>
+            <div class="sample supershape-3dhats supershape"></div>
+            <div class="sample supershape-gradstarts supershape"></div>
+		</div>
+
+		<div class="label-ultrashape"><img src="img/supershape-peppapigOrbz.png" /><img src="img/indicator.png" />Ultrashape<br />$20.50/ea</div>
+        	<div class="folder" id="folder-supershape">
+			<div class="sample supershape-diamondMrMrs supershape"></div>
+			<div class="sample supershape-weddingwishes supershape"></div>
+        	<div class="sample supershape-linesbday supershape"></div>
+			<div class="sample supershape-bdayburstsorbz supershape"></div>
+          	<div class="sample supershape-bdaysplashysparkle supershape"></div>
+          	<div class="sample supershape-bdaybrightstripe supershape"></div>
+          	<div class="sample supershape-fabulouscelebration supershape"></div>
+          	<div class="sample supershape-floralbday supershape"></div>
+          	<div class="sample supershape-bdaycakecube supershape"></div>
+          	<div class="sample supershape-brighthappybday supershape"></div>
+          	<div class="sample supershape-woohoo supershape"></div>
+          	<div class="sample supershape-brilliantbday supershape"></div>
+          	<div class="sample supershape-bdaygolddots supershape"></div>
+          	<div class="sample supershape-partytimediamond supershape"></div>
+          	<div class="sample supershape-geometricbday supershape"></div>
+          	<div class="sample supershape-bdaysmileyfaces supershape"></div>
+          	<div class="sample supershape-brightboldbday supershape"></div>
+          	<div class="sample supershape-bdaymodgeo supershape"></div>
+          	<div class="sample supershape-bdayfancyflags supershape"></div>
+          	<div class="sample supershape-newbaby supershape"></div>
+          	<div class="sample supershape-sweetbabyboy supershape"></div>
+          	<div class="sample supershape-sweetbabygirl supershape"></div>
+          	<div class="sample supershape-babybrights supershape"></div>
+          	<div class="sample supershape-babyboytrain supershape"></div>
+          	<div class="sample supershape-babygirlbutterfly supershape"></div>
+          	<div class="sample supershape-babygirlcube supershape"></div>
+          	<div class="sample supershape-babyboycube supershape"></div>
+          	<div class="sample supershape-woodlandanimals supershape"></div>
+          	<div class="sample supershape-babyfeet supershape"></div>
+          	<div class="sample supershape-itsagirldiamond supershape"></div>
+          	<div class="sample supershape-waytogo supershape"></div>
+          	<div class="sample supershape-brightdots supershape"></div>
+          	<div class="sample supershape-dottygeometric supershape"></div>
+          	<div class="sample supershape-elsaAnaOrbz supershape"></div>
+          	<div class="sample supershape-frozenOrbz supershape"></div>
+          	<div class="sample supershape-peppapigOrbz supershape"></div>
+          	<div class="sample supershape-hellokittyOrbz supershape"></div>
+          	<div class="sample supershape-minionOrbz supershape"></div>
+          	<div class="sample supershape-starwarsorbz supershape"></div>
+          	<div class="sample supershape-moanaorbz supershape"></div>
+          	<div class="sample supershape-minnieorbz supershape"></div>
+          	<div class="sample supershape-mickeycube supershape"></div>
+          	<div class="sample supershape-mariobroscubez supershape"></div>
+          	<div class="sample supershape-pawpatrolcubez supershape"></div>
+          	<div class="sample supershape-transformercube supershape"></div>
+          	<div class="sample supershape-peanutssnoopy supershape"></div>
+          	<div class="sample supershape-findingdorycube supershape"></div>
+          	<div class="sample supershape-starwarscubez supershape"></div>
+          	<div class="sample supershape-batmancube supershape"></div>
+          	<div class="sample supershape-starwarsdiamond supershape"></div>
+          	<div class="sample supershape-multiprincessDiamond supershape"></div>
+          	<div class="sample supershape-getwellcube supershape"></div>
+          	<div class="sample supershape-getwellgarden supershape"></div>
+          	<div class="sample supershape-thankyouorbz supershape"></div>
+          	<div class="sample supershape-goldorbz supershape"></div>
+          	<div class="sample supershape-silverorbz supershape"></div>
+          	<div class="sample supershape-rosegoldorbz supershape"></div>
+          	<div class="sample supershape-snowflakesOrbz supershape"></div>
+		</div>
+
+        <div class="label-bubble"><img src="img/bubble-birthdayfunkyflowers.png" /><img src="img/indicator.png" />Bubble Prints<br />$12.50/ea</div>
+        <div class="folder">
+ 	       	<div class="sample bubble-16birthday bubble"></div>
+ 	      	<div class="sample bubble-18birthday bubble"></div>
+  	      	<div class="sample bubble-21birthday bubble"></div>
+   	     	<div class="sample bubble-30birthday bubble"></div>
+   	     	<div class="sample bubble-40birthday bubble"></div>
+  	      	<div class="sample bubble-50birthday bubble"></div>
+   	     	<div class="sample bubble-60birthday bubble"></div>
+  	      	<div class="sample bubble-anniversaryclassic bubble"></div>
+   	     	<div class="sample bubble-anniversarycolourfulbands bubble"></div>
+   	     	<div class="sample bubble-babyboyairplanes bubble"></div>
+   	     	<div class="sample bubble-babyboymoonstars bubble"></div>
+   	     	<div class="sample bubble-babygirlbutterflies bubble"></div>
+   	     	<div class="sample bubble-babygirlmoonstars bubble"></div>
+   	     	<div class="sample bubble-birthdayboypartyhat bubble"></div>
+			<div class="sample bubble-birthdaycupcakesdots bubble"></div>
+   	     	<div class="sample bubble-birthdayfunfunkygifts bubble"></div>
+   	     	<div class="sample bubble-birthdayfunkyflowers bubble"></div>
+			<div class="sample bubble-birthdaygirlpartyhat bubble"></div>
+			<div class="sample bubble-birthdaylitcandles bubble"></div>
+			<div class="sample bubble-birthdaymusicnotes bubble"></div>
+   	     	<div class="sample bubble-birthdaypartyblast bubble"></div>
+   	     	<div class="sample bubble-birthdaypartypatterns bubble"></div>
+			<div class="sample bubble-birthdaysorbetstarblast bubble"></div>
+			<div class="sample bubble-birthdaysurprise bubble"></div>
+ 	       	<div class="sample bubble-brightsmileface bubble"></div>
+  	      	<div class="sample bubble-colourfulbutterflies bubble"></div>
+  	      	<div class="sample bubble-colourfulcupcakes bubble"></div>
+  	      	<div class="sample bubble-congratulationsballoonsribbons bubble"></div>
+  	      	<div class="sample bubble-birthdaycandlesfrosting bubble"></div>
+  	      	<div class="sample bubble-birthdaygirlfloralzebra bubble"></div>
+  	      	<div class="sample bubble-disneybabymickeymouse bubble"></div>
+   	     	<div class="sample bubble-disneybabyminniemouse bubble"></div>
+   	     	<div class="sample bubble-disneymickeymouse1stbirthday bubble"></div>
+			<div class="sample bubble-disneyminniemouse1stbirthday bubble"></div>
+   	     	<div class="sample bubble-disneyfrozen bubble"></div>
+			<div class="sample bubble-disneycinderellaroyaldebut bubble"></div>
+			<div class="sample bubble-disneyprincesses bubble"></div>
+      	  	<div class="sample bubble-disneypixarmonstersuniversity bubble"></div>
+      	  	<div class="sample bubble-disneypixartoystory bubble"></div>
+      	  	<div class="sample bubble-getwellsoonkites bubble"></div>
+      	  	<div class="sample bubble-hellokitty bubble"></div>
+       	 	<div class="sample bubble-marvelspiderman bubble"></div>
+       	 	<div class="sample bubble-partyanimals bubble"></div>
+       	 	<div class="sample bubble-starwars bubble"></div>
+       	 	<div class="sample bubble-welcomebabyanimals bubble"></div>
+			<div class="sample bubble-happybirthdayflowers bubble"></div>
+			<div class="sample bubble-birthdayfrozentreats bubble"></div>
+          	<div class="sample bubble-birthdayfunbands bubble"></div>
+          	<div class="sample bubble-hotairballoonride bubble"></div>
+          	<div class="sample bubble-graduationaccolades bubble"></div>
+          	<div class="sample bubble-getwellsoonmonkey bubble"></div>
+          	<div class="sample bubble-getwellsoonsunny bubble"></div>
+          	<div class="sample bubble-valentinekisseshearts bubble"></div>
+          	<div class="sample bubble-halloweenmessages bubble"></div>
+          	<div class="sample bubble-birthdaycolorfulcupcakes bubble"></div>
+          	<div class="sample bubble-soccerball bubble"></div>
+		</div>
+	</div>
+		<div class="label-doublebubble"><img src="img/doublebubble-disneymickeymouse.png" /><img src="img/indicator.png" />Double Bubble<br />$17.50/ea</div>
+		<div class="folder">
+   	     	<div class="sample doublebubble-babyblueteddybear doublebubble"></div>
+     	   	<div class="sample doublebubble-babypinkteddybear doublebubble"></div>
+     	   	<div class="sample doublebubble-birthdayflower doublebubble"></div>
+     	   	<div class="sample doublebubble-bubblywine doublebubble"></div>
+     	   	<div class="sample doublebubble-disneymickeymouse doublebubble"></div>
+     	   	<div class="sample doublebubble-disneyminniemouse doublebubble"></div>
+     	   	<div class="sample doublebubble-flowerleaves doublebubble"></div>
+     	   	<div class="sample doublebubble-lovelyfloatinghearts doublebubble"></div>
+			<div class="sample doublebubble-multicolouredstars doublebubble"></div>
+     	   	<div class="sample doublebubble-whiteivoryfloatinghearts doublebubble"></div>
+		</div>
+
+        <div class="label-mylar"><img src="img/mylar-18silverheart.png" /><img src="img/indicator.png" />Mylar Balloons<br />$6.50/ea</div>
+        <div class="folder">
+    		    	<div class="sample mylar-18blackcircle 18mylar">18-inch Black Circle</div>
+  	      	<div class="sample mylar-18whitecircle 18mylar">18-inch White Circle</div>
+  	      	<div class="sample mylar-18goldcircle 18mylar">18-inch Gold Circle</div>
+   	     	<div class="sample mylar-18goldheart 18mylar">18-inch Gold Heart</div>
+  	      	<div class="sample mylar-18silvercircle 18mylar">18-inch Silver Circle</div>
+   	     	<div class="sample mylar-18silverheart 18mylar">18-inch Silver Heart</div>
+  	      	<div class="sample mylar-18redcircle 18mylar">18-inch Red Circle</div>
+   	     	<div class="sample mylar-18redheart 18mylar">18-inch Red Heart</div>
+   	     	<div class="sample mylar-18pinkcircle 18mylar">18-inch Pink Circle</div>
+   	     	<div class="sample mylar-18pinkheart 18mylar">18-inch Pink Heart</div>
+   	     	<div class="sample mylar-18bluecircle 18mylar">18-inch Blue Circle</div>
+   	     	<div class="sample mylar-18greencircle 18mylar">18-inch Green Circle</div>
+   	     	<div class="sample mylar-18orangecircle 18mylar">18-inch Orange Circle</div>
+   	     	<div class="sample mylar-18purplecircle 18mylar">18-inch Purple Circle</div>
+   	     	<div class="sample mylar-18yellowcircle 18mylar">18-inch Yellow Circle</div>
+			<div class="sample mylar-18magentaheart 18mylar">18-inch Magenta Heart</div>
+   	     	<div class="sample mylar-18magentacircle 18mylar">18-inch Magenta Circle</div>
+   	     	<div class="sample mylar-18lightblueheart 18mylar">18-inch Light Blue Heart</div>
+   	     	<div class="sample mylar-18lightbluecircle 18mylar">18-inch Light Blue Circle</div>
+			<div class="sample mylar-18sapphireblueheart 18mylar">18-inch Sapphire Blue Heart</div>
+   	     	<div class="sample mylar-18rosegoldcircle 18mylar">18-inch Rose Gold Circle</div>
+          	<div class="sample mylar-18limegreencircle 18mylar">18-inch Lime Green Circle</div>
+          	<div class="sample mylar-18lilaccircle 18mylar">18-inch Lilac Circle</div>
+          	<div class="sample mylar-18blueheart 18mylar">18-inch Blue Heart</div>
+          	<div class="sample mylar-18rosegoldheart 18mylar">18-inch Rose Gold Heart</div>
+          	<div class="sample mylar-18purpleheart 18mylar">18-inch Purple Heart</div>
+          	<div class="sample mylar-18pearlpinkheart 18mylar">18-inch Pearl Pink Heart</div>
+          	<div class="sample mylar-18ivoryheart 18mylar">18-inch Ivory Heart</div>
+		</div>
+
+		<div class="label-letters"><img src="img/letter-Asilver.png" /><img src="img/indicator.png" />Megaloon Letters<br />$21.75/ea</div>
+		<div class="folder">
+ 	       	<div class="sample letter-Asilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Agold ABC123mylar"></div>
+  	      	<div class="sample letter-Arosegold ABC123mylar"></div>
+   	     	<div class="sample letter-Bsilver ABC123mylar"></div>
+			<div class="sample letter-Bgold ABC123mylar"></div>
+   	     	<div class="sample letter-Brosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Csilver ABC123mylar"></div>
+  	      	<div class="sample letter-Cgold ABC123mylar"></div>
+  	      	<div class="sample letter-Crosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Dsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Dgold ABC123mylar"></div>
+   	     	<div class="sample letter-Drosegold ABC123mylar"></div>
+   	     	<div class="sample letter-Esilver ABC123mylar"></div>
+   	     	<div class="sample letter-Egold ABC123mylar"></div>
+   	     	<div class="sample letter-Erosegold ABC123mylar"></div>
+			<div class="sample letter-Fsilver ABC123mylar"></div>
+   	     	<div class="sample letter-Fgold ABC123mylar"></div>
+   	     	<div class="sample letter-Frosegold ABC123mylar"></div>
+			<div class="sample letter-Gsilver ABC123mylar"></div>
+   	     	<div class="sample letter-Ggold ABC123mylar"></div>
+   	     	<div class="sample letter-Grosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Hsilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Hgold ABC123mylar"></div>
+  	      	<div class="sample letter-Hrosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Isilver ABC123mylar"></div>
+  	      	<div class="sample letter-Igold ABC123mylar"></div>
+ 	       	<div class="sample letter-Irosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Jsilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Jgold ABC123mylar"></div>
+  	      	<div class="sample letter-Jrosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Ksilver ABC123mylar"></div>
+  	      	<div class="sample letter-Kgold ABC123mylar"></div>
+  	      	<div class="sample letter-Krosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Lsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Lgold ABC123mylar"></div>
+  	      	<div class="sample letter-Lrosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Msilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Mgold ABC123mylar"></div>
+ 	       	<div class="sample letter-Mrosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Nsilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Ngold ABC123mylar"></div>
+ 	       	<div class="sample letter-Nrosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Osilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Ogold ABC123mylar"></div>
+  	      	<div class="sample letter-Orosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Psilver ABC123mylar"></div>
+  	      	<div class="sample letter-Pgold ABC123mylar"></div>
+  	      	<div class="sample letter-Prosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Qsilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Qgold ABC123mylar"></div>
+ 	       	<div class="sample letter-Qrosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Rsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Rgold ABC123mylar"></div>
+  	      	<div class="sample letter-Rrosegold ABC123mylar"></div>
+   	     	<div class="sample letter-Ssilver ABC123mylar"></div>
+   	     	<div class="sample letter-Sgold ABC123mylar"></div>
+  	      	<div class="sample letter-Srosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Tsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Tgold ABC123mylar"></div>
+  	      	<div class="sample letter-Trosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Usilver ABC123mylar"></div>
+ 	       	<div class="sample letter-Ugold ABC123mylar"></div>
+  	      	<div class="sample letter-Urosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Vsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Vgold ABC123mylar"></div>
+ 	       	<div class="sample letter-Vrosegold ABC123mylar"></div>
+ 	       	<div class="sample letter-Wsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Wgold ABC123mylar"></div>
+  	      	<div class="sample letter-Wrosegold ABC123mylar"></div>
+   	     	<div class="sample letter-Xsilver ABC123mylar"></div>
+   	     	<div class="sample letter-Xgold ABC123mylar"></div>
+   	     	<div class="sample letter-Xrosegold ABC123mylar"></div>
+   	     	<div class="sample letter-Ysilver ABC123mylar"></div>
+   	     	<div class="sample letter-Ygold ABC123mylar"></div>
+  	      	<div class="sample letter-Yrosegold ABC123mylar"></div>
+  	      	<div class="sample letter-Zsilver ABC123mylar"></div>
+  	      	<div class="sample letter-Zgold ABC123mylar"></div>
+   	     	<div class="sample letter-Zrosegold ABC123mylar"></div>
+		</div>
+
+		<div class="label-numbers"><img src="img/number-4silver.png" /><img src="img/indicator.png" />Megaloon Numbers<br />$21.75/ea</div>
+		<div class="folder">
+  	      	<div class="sample number-0silver ABC123mylar"></div>
+  	      	<div class="sample number-0black ABC123mylar"></div>
+  	      	<div class="sample number-0gold ABC123mylar"></div>
+  	      	<div class="sample number-0rosegold ABC123mylar"></div>
+  	      	<div class="sample number-0holo ABC123mylar"></div>
+  	      	<div class="sample number-0blue ABC123mylar"></div>
+  	      	<div class="sample number-0pink ABC123mylar"></div>
+ 	       	<div class="sample number-0partyanimal ABC123mylar"></div>
+  	      	<div class="sample number-0partytime ABC123mylar"></div>
+  	      	<div class="sample number-1silver ABC123mylar"></div>
+  	      	<div class="sample number-1black ABC123mylar"></div>
+  	      	<div class="sample number-1gold ABC123mylar"></div>
+  	     	<div class="sample number-1rosegold ABC123mylar"></div>
+ 	       	<div class="sample number-1holo ABC123mylar"></div>
+ 	       	<div class="sample number-1blue ABC123mylar"></div>
+  	      	<div class="sample number-1pink ABC123mylar"></div>
+  	     	<div class="sample number-1partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-1partytime ABC123mylar"></div>
+  	      	<div class="sample number-2silver ABC123mylar"></div>
+  	      	<div class="sample number-2black ABC123mylar"></div>
+  	      	<div class="sample number-2gold ABC123mylar"></div>
+ 	       	<div class="sample number-2rosegold ABC123mylar"></div>
+ 	       	<div class="sample number-2holo ABC123mylar"></div>
+  	      	<div class="sample number-2blue ABC123mylar"></div>
+  	      	<div class="sample number-2pink ABC123mylar"></div>
+  	      	<div class="sample number-2partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-2partytime ABC123mylar"></div>
+  	      	<div class="sample number-3silver ABC123mylar"></div>
+  	      	<div class="sample number-3black ABC123mylar"></div>
+   	     	<div class="sample number-3gold ABC123mylar"></div>
+  	      	<div class="sample number-3rosegold ABC123mylar"></div>
+   	     	<div class="sample number-3holo ABC123mylar"></div>
+   	     	<div class="sample number-3blue ABC123mylar"></div>
+   	     	<div class="sample number-3pink ABC123mylar"></div>
+   	     	<div class="sample number-3partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-3partytime ABC123mylar"></div>
+   	     	<div class="sample number-4silver ABC123mylar"></div>
+   	     	<div class="sample number-4black ABC123mylar"></div>
+   	     	<div class="sample number-4gold ABC123mylar"></div>
+   	     	<div class="sample number-4rosegold ABC123mylar"></div>
+   	     	<div class="sample number-4holo ABC123mylar"></div>
+   	     	<div class="sample number-4blue ABC123mylar"></div>
+   	     	<div class="sample number-4pink ABC123mylar"></div>
+   	     	<div class="sample number-4partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-4partytime ABC123mylar"></div>
+   	     	<div class="sample number-5silver ABC123mylar"></div>
+   	     	<div class="sample number-5black ABC123mylar"></div>
+   	     	<div class="sample number-5gold ABC123mylar"></div>
+   	     	<div class="sample number-5rosegold ABC123mylar"></div>
+  	      	<div class="sample number-5holo ABC123mylar"></div>
+   	     	<div class="sample number-5blue ABC123mylar"></div>
+   	     	<div class="sample number-5pink ABC123mylar"></div>
+   	     	<div class="sample number-5partyanimal ABC123mylar"></div>
+			<div class="sample number-5partytime ABC123mylar"></div>
+			<div class="sample number-6silver ABC123mylar"></div>
+  	      	<div class="sample number-6black ABC123mylar"></div>
+   	     	<div class="sample number-6gold ABC123mylar"></div>
+  	      	<div class="sample number-6rosegold ABC123mylar"></div>
+  	      	<div class="sample number-6holo ABC123mylar"></div>
+ 	       	<div class="sample number-6blue ABC123mylar"></div>
+ 	       	<div class="sample number-6pink ABC123mylar"></div>
+   	     	<div class="sample number-6partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-6partytime ABC123mylar"></div>
+   	     	<div class="sample number-7silver ABC123mylar"></div>
+			<div class="sample number-7black ABC123mylar"></div>
+			<div class="sample number-7gold ABC123mylar"></div>
+   	     	<div class="sample number-7rosegold ABC123mylar"></div>
+   	     	<div class="sample number-7holo ABC123mylar"></div>
+   	     	<div class="sample number-7blue ABC123mylar"></div>
+   	     	<div class="sample number-7pink ABC123mylar"></div>
+   	     	<div class="sample number-7partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-7partytime ABC123mylar"></div>
+			<div class="sample number-8silver ABC123mylar"></div>
+   	     	<div class="sample number-8black ABC123mylar"></div>
+  	      	<div class="sample number-8gold ABC123mylar"></div>
+  	      	<div class="sample number-8rosegold ABC123mylar"></div>
+   	     	<div class="sample number-8holo ABC123mylar"></div>
+   	     	<div class="sample number-8blue ABC123mylar"></div>
+   	     	<div class="sample number-8pink ABC123mylar"></div>
+   	     	<div class="sample number-8partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-8partytime ABC123mylar"></div>
+			<div class="sample number-9silver ABC123mylar"></div>
+   	     	<div class="sample number-9black ABC123mylar"></div>
+     	   	<div class="sample number-9gold ABC123mylar"></div>
+			<div class="sample number-9rosegold ABC123mylar"></div>
+   	     	<div class="sample number-9holo ABC123mylar"></div>
+   	     	<div class="sample number-9blue ABC123mylar"></div>
+   	     	<div class="sample number-9pink ABC123mylar"></div>
+   	     	<div class="sample number-9partyanimal ABC123mylar"></div>
+   	     	<div class="sample number-9partytime ABC123mylar"></div>
+		</div>
+	</div>
+</div>
+
+      <div class="weights">
+		<span>Select your bouquet's weight.</span><br /><br />
+      	<img src="img/weight.png" class="weight1" />
+        <img src="img/weight2.png" class="weight2" />
+      </div>
+      <div class="tassels">
+		<span>Select a tassel to add to your active balloons.<br /><strong><- Tap the left blue bar to close.</strong></span><br /><br />
+      	<div class="tassel-sample tassel-red"></div>
+      	<div class="tassel-sample tassel-green"></div>
+      	<div class="tassel-sample tassel-blue"></div>
+      	<div class="tassel-sample" id="none"><strong>NONE</strong></div>
+      </div>
+      <div class="ribbons">
+		<span>Select string or ribbon for your bouquet. Colour selector to be added.</span><br /><br />
+      	<img src="img/sample-string.jpg" class="string2" />
+        <img src="img/sample-ribbon.jpg" class="string1" />
+      </div>
+
+    </div>
+
+<!--
+    </div>
+-->
+    <div id="information" >
+    <div class="beta-warn" style="border:3px solid #c54300;border-radius:15px;width:100%;display:block;width:70%;margin:25px auto;padding:30px;line-height:24px;position:relative;">
+		<span style="font-size:22px;font-weight:bold">Thank you for using the Bouquet Builder!</span><br /><br />
+		This brand new tool is being tested daily, but we're still fulfilling orders! 
+		You may receive a call regarding your bouquet after payment, especially if it displays inaccurate prices or build options. 
+		We reserve the right to cancel any Bouquet Builder order, but we will first try to correct the issue preventing your build!<br /><br />
+		Click to close.
+		<img src="img/beta-warn.png" style="position:absolute;left:50%;width:40px;height:40px;top:0;transform:translate(-50%,-50%);" />
+    </div>
+	<form method="POST" id="complete" name="sender">
+		<label for="quantity">Bouquet Quantity:<br /> <input type="text" name="inputquantity" id="inputquantity" style="max-width:30%"></label><br>
+		<label for="name">Name:<br /> <input type="text" name="name" id="name"></label><br>
+		<label for="email">Email Address:<br /><input type="email" name="email" id="email"></label><br>
+          
+		<!-- DELIVERY vs PICKUP SELECTION -->
+		<input type="radio" name="provide" value="delivery" id="delivery">
+			Delivery <em>(Charges are calculated separately - See <a href="https://vancouverballoons.com/we-deliver/" target= "_blank" >Rates</a> page for details)</em><br>
+
+		<input type="radio" name="provide" value="pickup" id="pickup" style="margin-top:0">Pickup<br>
+
+
+		<!-- Delivery Information-->
+		<div id="deliversettings" style="display:none">
+			<label for="deliveryaddress">Delivery Address:<br /> <input type="text" name="deliveryaddress" id="deliveryaddress"></label><br>
+			<label for="deliverycity">City:<br /> <input type="text" name="deliverycity" id="deliverycity"></label><br>
+			<label for="deliverypostal">Postal Code:<br /> <input type="text" name="deliverypostal" id="deliverypostal"></label><br>
+			<p>Province: British Columbia<br/>Country: Canada</p>
+		</div> 
+
+		<!-- Pickup Information-->
+		<label for="inputdate">Date Requested:<br /><input type="date" name="inputdate" id="inputdate" value="2020-02-12" required="required"></label><br>
+		<label for="inputtime">Pick-Up Time:<br /><input type="time" name="inputtime" id="inputtime" value="10:00" required="required"></label><br>
+		<label for="message">Special Requests:<br /><textarea name="message" id="message" rows="8" cols="20"></textarea></label><br>
+		
+		<input type="submit" id="finish" value="Send">
+	</form>
+      
+	<div class="description">
+		<h3>Bouquet Order ID: <span id="orderID"></span></h3>
+      	<h3>Bouquet Template: </h3><div class="desc_template"></div>
+      	<h3>Bouquet Top: </h3><div class="desc_top"></div>
+      	<h3>Bouquet Body: </h3><div class="desc_row-1"></div>
+      	<h3>Bouquet Accessories: </h3><div class="desc_acc"></div>
+	</div>
+      
+    </div>
+    <div id="finished">
+    	<h3 style="margin-bottom:20px;font-weight:bold;color:#2C8BEB">Your Balloon Bouquet Builder Order has been sent!</h3>
+        <p>Please check your email to complete your order.</p>
+
+        <div class="refresh" style="width:250px;height:50px;background:#2C8BEB;padding:16px;color:#FFF;font-weight:bold;margin-top:25px;border-radius:10px;border-bottom:3px solid #3361a3;display:inline-block">Start a New Bouquet</div>
+		<br><br>
+		<p style="text-align: center;">
+			<a href = "https://vancouverballoons.com">Return to Vancouver Balloons</a>
+		</p>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+</div>
+<div class="copyrights" style="width:100%;display:block;text-align:center">
+	<div style="width:100%;height:60px;padding-top:22px;font-size:18px;color:#000;background:#daa968">Balloon Bouquet Builder | ©2018-2019  BalloonAtics Designs Inc. | All Rights Reserved </div>
+	<div style="width:100%;height:60px;padding-top:22px;font-size:9px;color:#FFF;background:#666">Developed by Akizuki Designs</div>
+</div>
+
+<!--
+<div class="opt-cart">
+	quantity<br />add to cart<br />view items in cart
+</div>
+<div class="order">
+	Complete Your Order (1/2)
+</div> 
+-->
+
+</body>
+<script type="text/javascript" src="bouquetbuilder.js"></script>
+
+</html>
