@@ -257,7 +257,7 @@ img.rotated { transform:rotate(90deg) }
 
  /*end fx*/
 
-.b1 { background-image:url('../img/image1.png');height:130px;width:90px;z-index:10;transform:rotate(-12deg) }
+.b1 { height:130px;width:90px;z-index:10;transform:rotate(-12deg) }
 .b2 { background-image:url('../img/image1.png');margin-left:-45px;height:130px;width:95px;z-index:50; }
 .b3 { background-image:url('../img/image1.png');margin-left:-45px;height:130px;width:90px;z-index:10;transform:rotate(12deg) }
 .b4 { display:none; background-image:url('../img/image1.png');margin-left:-45px;margin-left:-45px;height:130px;width:90px;z-index:10;transform:rotate(12deg) }
