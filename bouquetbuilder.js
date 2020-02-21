@@ -61,742 +61,708 @@ var titleFinished = "Thank YOU! Order placed.";
 var listFinished = "Please pay in advance to pick up your bouquet on time. Currently accepted payment methods: e-Transfer, over the phone, in-store*.<br />• * = Please allow a 30 minute - 1 hour build time when paying in store.";
 
 
+$(document).ready(function () {
 
 
+    $('.templates div').click(function () {
 
-$(document).ready(function() {
+        $('.balloons, .customize').removeClass(customizeclasses);
 
+        $('.templates div').removeClass('selected');
 
+        $(this).addClass('selected');
 
-	$('.templates div').click(function() {
+        $('.templates').hide();
 
-		$('.balloons, .customize').removeClass(customizeclasses);
+        $('.content, .cost').show();
 
-		$('.templates div').removeClass('selected');
+        $('#begin, #progress1, .info1').css('display', 'none');
 
-		$(this).addClass('selected');
+        $('#progress2, .info2').css('display', 'block');
 
-		$('.templates').hide();
+        $('#proceed, #gobacktemplates').css('display', 'inline-block');
 
-		$('.content, .cost').show();
+        //$('#begin').addClass('ready');
 
-		$('#begin, #progress1, .info1').css('display', 'none');
+        //$('#begin').text("Begin Customizing ->");
 
-		$('#progress2, .info2').css('display', 'block');
+    });
 
-		$('#proceed, #gobacktemplates').css('display', 'inline-block');
+    $('.template-11inclusterstring').click(function () {
 
-		//$('#begin').addClass('ready');
+        $('.r1, .r2, .r3, .b1, .b2, .b3').show();
 
-		//$('#begin').text("Begin Customizing ->");
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	});
+        $('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
 
-	$('.template-11inclusterstring').click(function() {
+        document.getElementById("ribbonchange").src = "img/string-cluster-11.png";
 
-		$('.r1, .r2, .r3, .b1, .b2, .b3').show();
+        $('.balloons, .customize').addClass('11inclusterstring');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+    $('.template-classicarrangement').click(function () {
 
-		document.getElementById("ribbonchange").src="img/string-cluster-11.png";
+        $('.r1, .r2, .r3').show();
 
-		$('.balloons, .customize').addClass('11inclusterstring');
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	});
+        $('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
 
-	$('.template-classicarrangement').click(function() {
+        document.getElementById("ribbonchange").src = "img/string-cluster.png";
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('classicarrangement');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.info2 h1').html(titleClassic);
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+        $('.info2 p').html(listClassic);
 
-		document.getElementById("ribbonchange").src="img/string-cluster.png";
+        $('.desc_template').html('Classic Arrangement');
 
-		$('.balloons, .customize').addClass('classicarrangement');
+    });
 
-		$('.info2 h1').html(titleClassic);
+    $('.template-11induoclusterstring').click(function () {
 
-		$('.info2 p').html(listClassic);
+        $('.r1, .r2, .r3').show();
 
-		$('.desc_template').html('Classic Arrangement');
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	});
+        document.getElementById("ribbonchange").src = "img/string.png";
 
-	$('.template-11induoclusterstring').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('11induoclusterstring');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    });
 
-		document.getElementById("ribbonchange").src="img/string.png";
+    $('.template-duoarrangement').click(function () {
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+        $('.r1, .r2, .r3').show();
 
-		$('.balloons, .customize').addClass('11induoclusterstring');
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	});
+        document.getElementById("ribbonchange").src = "img/string.png";
 
-	$('.template-duoarrangement').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('duoarrangement');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.info2 h1').html(titleDuostring);
 
-		document.getElementById("ribbonchange").src="img/string.png";
+        $('.info2 p').html(listDuostring);
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+        $('.desc_template').html('Duo Arrangement');
 
-		$('.balloons, .customize').addClass('duoarrangement');
+    });
 
-		$('.info2 h1').html(titleDuostring);
+    $('.template-cascadingarrangement').click(function () {
 
-		$('.info2 p').html(listDuostring);
+        $('.r1, .r2, .r3').show();
 
-		$('.desc_template').html('Duo Arrangement');
+        $('.ctop').hide();
 
-	});
+        document.getElementById("ribbonchange").src = "img/string-simpleribbon.png";
 
-	$('.template-cascadingarrangement').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		$('.r1, .r2, .r3').show();
+        $('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-		$('.ctop').hide();
+        $('.info2 h1').html(titleCascading);
 
-		document.getElementById("ribbonchange").src="img/string-simpleribbon.png";
+        $('.info2 p').html(listCascading);
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.balloons, .customize').addClass('cascadingarrangement');
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+        $('.desc_template').html('Cascading');
 
-		$('.info2 h1').html(titleCascading);
+    });
 
-		$('.info2 p').html(listCascading);
+    $('.template-16insimpleribbon').click(function () {
 
-		$('.balloons, .customize').addClass('cascadingarrangement');
+        $('.r1, .r2, .r3').show();
 
-		$('.desc_template').html('Cascading');
+        document.getElementById("ribbonchange").src = "img/string-simpleribbon.png";
 
-	});
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	$('.template-16insimpleribbon').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5').addClass('16in');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('16insimpleribbon');
 
-		document.getElementById("ribbonchange").src="img/string-simpleribbon.png";
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    $('.template-11insimplestring').click(function () {
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('16in');
+        $('.r1, .r2, .r3').show();
 
-		$('.balloons, .customize').addClass('16insimpleribbon');
+        document.getElementById("ribbonchange").src = "img/string.png";
 
-	});
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	$('.template-11insimplestring').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('11insimplestring');
 
-		document.getElementById("ribbonchange").src="img/string.png";
+        $('.info2 h1').html(titleSinglestring);
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.info2 p').html(listSinglestring);
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+        $('.desc_template').html('Single String');
 
-		$('.balloons, .customize').addClass('11insimplestring');
+    });
 
-		$('.info2 h1').html(titleSinglestring);
+    $('.template-16insimplestring').click(function () {
 
-		$('.info2 p').html(listSinglestring);
+        $('.r1, .r2, .r3').show();
 
-		$('.desc_template').html('Single String');
+        document.getElementById("ribbonchange").src = "img/string.png";
 
-	});
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	$('.template-16insimplestring').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5').addClass('16in');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('16insimplestring');
 
-		document.getElementById("ribbonchange").src="img/string.png";
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    $('.template-umbrella').click(function () {
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('16in');
+        $('.balloons, .customize').addClass('umbrella');
 
-		$('.balloons, .customize').addClass('16insimplestring');
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	});
+        document.getElementById("ribbonchange").src = "img/string-umbrella2.png";
 
-	$('.template-umbrella').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-		$('.balloons, .customize').addClass('umbrella');
+        $('.ribbon').addClass('wide');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.r4, .r5, .ctop').hide();
 
-		document.getElementById("ribbonchange").src="img/string-umbrella2.png";
+        $('.b1, .b2, .b3, .b4, .b5').css('display', 'inline-block');
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+        $('.info2 h1').html(titleSingles);
 
-		$('.ribbon').addClass('wide');
+        $('.info2 p').html(listSingles);
 
-		$('.r4, .r5, .ctop').hide();
+        $('.desc_template').html('Singles');
 
-		$('.b1, .b2, .b3, .b4, .b5').css('display', 'inline-block');
+    });
 
-		$('.info2 h1').html(titleSingles);
 
-		$('.info2 p').html(listSingles);
+    $('.template-supershape-duo').click(function () {
 
-		$('.desc_template').html('Singles');
+        $('.r1, .r2, .r3').show();
 
-	});
+        $('.b1, .b2').css('display', 'inline-block');
 
+        $('.r4, .r5').hide();
 
+        document.getElementById("ribbonchange").src = "img/string.png";
 
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
+        $('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-	$('.template-supershape-duo').click(function() {
+        $('.top').addClass('supershape-funnyflower supershape');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('supershape-duo');
 
-		$('.b1, .b2').css('display', 'inline-block');
+        $('.info2 h1').html(titleMegaduo);
 
-		$('.r4, .r5').hide();
+        $('.info2 p').html(listMegaduo);
 
-		document.getElementById("ribbonchange").src="img/string.png";
+        $('.desc_template').html('Supershape Duo');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        if ($('.app-container').hasClass('beginner')) {
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+            $('.r1 .b2').addClass('tut-arrow introa');
 
-		$('.top').addClass('supershape-funnyflower supershape');
+            $('.top').addClass('tut-arrow');
 
-		$('.balloons, .customize').addClass('supershape-duo');
+            $('.label-fashion').addClass('tut-arrow');
 
-		$('.info2 h1').html(titleMegaduo);
+        }
+        ;
 
-		$('.info2 p').html(listMegaduo);
+    });
 
-		$('.desc_template').html('Supershape Duo');
+    $('.template-supershape-classic').click(function () {
 
-		if ($('.app-container').hasClass('beginner')) {
+        $('.r1, .r2, .r3').show();
 
-			$('.r1 .b2').addClass('tut-arrow introa');
+        $('.b1, .b2, .b3').css('display', 'inline-block');
 
-			$('.top').addClass('tut-arrow');
+        $('.r4, .r5').hide();
 
-			$('.label-fashion').addClass('tut-arrow');
+        document.getElementById("ribbonchange").src = "img/string-cluster.png";
 
-		};
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	});
+        $('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-	$('.template-supershape-classic').click(function() {
+        $('.top').addClass('supershape-sparklybluebday supershape');
 
-		$('.r1, .r2, .r3').show();
+        $('.balloons, .customize').addClass('supershape-classic');
 
-		$('.b1, .b2, .b3').css('display', 'inline-block');
+        $('.info2 h1').html(titleMegaclassic);
 
-		$('.r4, .r5').hide();
+        $('.info2 p').html(listMegaclassic);
 
-		document.getElementById("ribbonchange").src="img/string-cluster.png";
+        $('.desc_template').html('Supershape Classic');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+    $('.template-megaloon-string').click(function () {
 
-		$('.top').addClass('supershape-sparklybluebday supershape');
+        $('.top').show();
 
-		$('.balloons, .customize').addClass('supershape-classic');
+        $('.r4, .r5, .r2, .r3, .r1, .r6, .r7, .r8, .r9, .r10').hide();
 
-		$('.info2 h1').html(titleMegaclassic);
+        document.getElementById("ribbonchange").src = "img/string.png";
 
-		$('.info2 p').html(listMegaclassic);
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		$('.desc_template').html('Supershape Classic');
+        $('.b1, .b2, .b3, .b4, .b5').addClass('5in');
 
-	});
+        $('.top').addClass('letter-Bgold ABC123mylar');
 
-	$('.template-megaloon-string').click(function() {
+        $('.balloons, .customize, .options, .build-extra').addClass('megaloon-string');
 
-		$('.top').show();
+        $('.info2 h1').html(titlemegaloontassel);
 
-		$('.r4, .r5, .r2, .r3, .r1, .r6, .r7, .r8, .r9, .r10').hide();
+        $('.info2 p').html(listmegaloontassel);
 
-		document.getElementById("ribbonchange").src="img/string.png";
+        $('.desc_template').html('Megaloon');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('5in');
+    $('.template-3ft-tassel').click(function () {
 
-		$('.top').addClass('letter-Bgold ABC123mylar');
+        $('.r1, .r1 .b1, .r1 .b2, .r1 .b3, .r1 .b4').show();
 
-		$('.balloons, .customize, .options, .build-extra').addClass('megaloon-string');
+        $('.r4, .r5, .r2, .r3, .b4, .b5').hide();
 
-		$('.info2 h1').html(titlemegaloontassel);
+        document.getElementById("ribbonchange").src = "img/tassel-long.png";
 
-		$('.info2 p').html(listmegaloontassel);
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		$('.desc_template').html('Megaloon');
+        $('.b1, .b2, .b3, .b4, .b5').addClass('5in');
 
-	});
+        $('.top').addClass('3ft-darkblue 3ft');
 
-	$('.template-3ft-tassel').click(function() {
+        $('.balloons, .customize, .options, .build-extra').addClass('3ft-tassel');
 
-		$('.r1, .r1 .b1, .r1 .b2, .r1 .b3, .r1 .b4').show();
+        $('#ribbonchange').addClass('tassel-azure');
 
-		$('.r4, .r5, .r2, .r3, .b4, .b5').hide();
+        $('.info2 h1').html(title3fttassel);
 
-		document.getElementById("ribbonchange").src="img/tassel-long.png";
+        $('.info2 p').html(list3fttassel);
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.desc_template').html('3ft w/ Tassels');
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('5in');
+    });
 
-		$('.top').addClass('3ft-darkblue 3ft');
+    $('.template-column-classic').click(function () {
 
-		$('.balloons, .customize, .options, .build-extra').addClass('3ft-tassel');
+        $('.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .b1, .b2, .b3, .b4').show();
 
-		$('#ribbonchange').addClass('tassel-azure');
+        $('.b5, .r9, .r10').hide();
 
-		$('.info2 h1').html(title3fttassel);
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		$('.info2 p').html(list3fttassel);
+        $('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-		$('.desc_template').html('3ft w/ Tassels');
+        $('#top').addClass('3ft-darkblue 3ft');
 
-	});
+        $('.balloons, .customize, .options, .build-extra').addClass('column-classic');
 
-	$('.template-column-classic').click(function() {
+        $('.info2 h1').html(titlecolumnclassic);
 
-		$('.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .b1, .b2, .b3, .b4').show();
+        $('.info2 p').html(listcolumnclassic);
 
-		$('.b5, .r9, .r10').hide();
+        $('.desc_template').html('Column Classic');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-		$('#top').addClass('3ft-darkblue 3ft');
+    var spiral1 = '.r1 .b1, .r2 .b2, .r3 .b3, .r4 .b4, .r5 .b4, .r6 .b3, .r7 .b2, .r8 .b1, .r9 .b1, .r10 .b2, .r11 .b3, .r12 .b4, .r13 .b4, .r14 .b3, .r15 .b2';
 
-		$('.balloons, .customize, .options, .build-extra').addClass('column-classic');
+    var spiral2 = '.r1 .b3, .r2 .b4, .r3 .b4, .r4 .b3, .r5 .b2, .r6 .b1, .r7 .b1, .r8 .b2, .r9 .b3, .r10 .b4, .r11 .b4, .r12 .b3, .r13 .b2, .r14 .b1, .r15 .b1';
 
-		$('.info2 h1').html(titlecolumnclassic);
+    var spiral3 = '.r1 .b4, .r2 .b3, .r3 .b2, .r4 .b1, .r5 .b1, .r6 .b2, .r7 .b3, .r8 .b4, .r9 .b4, .r10 .b3, .r11 .b2, .r12 .b1, .r13 .b1, .r14 .b2, .r15 .b3';
 
-		$('.info2 p').html(listcolumnclassic);
+    var spiral4 = '.r1 .b2, .r2 .b1, .r3 .b1, .r4 .b2, .r5 .b3, .r6 .b4, .r7 .b4, .r8 .b3, .r9 .b2, .r10 .b1, .r11 .b1, .r12 .b2, .r13 .b3, .r14 .b4, .r15 .b4';
 
-		$('.desc_template').html('Column Classic');
 
-	});
+    $(spiral1).click(function () {
 
+        if ($('.balloons').hasClass('column-classic')) {
 
+            $(spiral1).toggleClass('active');
 
-	var spiral1 = '.r1 .b1, .r2 .b2, .r3 .b3, .r4 .b4, .r5 .b4, .r6 .b3, .r7 .b2, .r8 .b1, .r9 .b1, .r10 .b2, .r11 .b3, .r12 .b4, .r13 .b4, .r14 .b3, .r15 .b2';
+            $(this).toggleClass('active');
 
-	var spiral2 = '.r1 .b3, .r2 .b4, .r3 .b4, .r4 .b3, .r5 .b2, .r6 .b1, .r7 .b1, .r8 .b2, .r9 .b3, .r10 .b4, .r11 .b4, .r12 .b3, .r13 .b2, .r14 .b1, .r15 .b1';
+        }
 
-	var spiral3 = '.r1 .b4, .r2 .b3, .r3 .b2, .r4 .b1, .r5 .b1, .r6 .b2, .r7 .b3, .r8 .b4, .r9 .b4, .r10 .b3, .r11 .b2, .r12 .b1, .r13 .b1, .r14 .b2, .r15 .b3';
+    });
 
-	var spiral4 = '.r1 .b2, .r2 .b1, .r3 .b1, .r4 .b2, .r5 .b3, .r6 .b4, .r7 .b4, .r8 .b3, .r9 .b2, .r10 .b1, .r11 .b1, .r12 .b2, .r13 .b3, .r14 .b4, .r15 .b4';
+    $(spiral2).click(function () {
 
+        if ($('.balloons').hasClass('column-classic')) {
 
+            $(spiral2).toggleClass('active');
 
+            $(this).toggleClass('active');
 
+        }
 
-	$(spiral1).click(function() {
+    });
 
-		if ($('.balloons').hasClass('column-classic')) {
+    $(spiral3).click(function () {
 
-		$(spiral1).toggleClass('active');
 
-		$(this).toggleClass('active');
+        if ($('.balloons').hasClass('column-classic')) {
 
-		}
+            $(spiral3).toggleClass('active');
 
-	});
+            $(this).toggleClass('active');
 
-	$(spiral2).click(function() {
+        }
 
-		if ($('.balloons').hasClass('column-classic')) {
+    });
 
-		$(spiral2).toggleClass('active');
+    $(spiral4).click(function () {
 
-		$(this).toggleClass('active');
+        if ($('.balloons').hasClass('column-classic')) {
 
-		}
+            $(spiral4).toggleClass('active');
 
-	});
+            $(this).toggleClass('active');
 
-	$(spiral3).click(function() {
+        }
 
+    });
 
 
-		if ($('.balloons').hasClass('column-classic')) {
+    $('.template-helium-arch').click(function () {
 
-		$(spiral3).toggleClass('active');
+        $('.fx, .fx > div').show();
 
-		$(this).toggleClass('active');
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		}
+        $('.balloons, .customize, .options, .build-extra, .balloons-container').addClass('helium-arch');
 
-	});
+        $('.info2 h1').html(titleheliumarch);
 
-	$(spiral4).click(function() {
+        $('.info2 p').html(listheliumarch);
 
-		if ($('.balloons').hasClass('column-classic')) {
+        $('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').addClass('11in');
 
-		$(spiral4).toggleClass('active');
+        $('.desc_template').html('Helium Arch');
 
-		$(this).toggleClass('active');
+    });
 
-		}
 
-	});
+    $('.r1 div').click(function () {
 
+        if ($('.balloons').hasClass('3ft-tassel')) {
 
+            $('.b1, .b2, .b3, .b4').toggleClass('active');
 
-	$('.template-helium-arch').click(function() {
+            $(this).toggleClass('active');
 
-		$('.fx, .fx > div').show();
+        }
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    });
 
-		$('.balloons, .customize, .options, .build-extra, .balloons-container').addClass('helium-arch');
 
-		$('.info2 h1').html(titleheliumarch);
+    $('.balloons.3ft-tassel .r1').click(function () {
 
-		$('.info2 p').html(listheliumarch);
+        $('.r1 .b1, .r1 .b2, .r1 .b3, .r1 .b4').toggleClass('active');
 
-		$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').addClass('11in');
+    });
 
-		$('.desc_template').html('Helium Arch');
 
-	});
+    $('#folder-5in .sample').click(function () {
 
+        var getColor = $(this).attr('class');
 
+        var useColor = getColor.split(' ');
 
 
+        $('.b1, .b2, .b3, .b4, .b5').removeClassExcept("b1 b2 b3 b4 b5 top active");
 
-	$('.r1 div').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5').addClass([useColor[1], useColor[2]].join(" "));
 
-		if ($('.balloons').hasClass('3ft-tassel')) {
+    });
 
-		$('.b1, .b2, .b3, .b4').toggleClass('active');
 
-		$(this).toggleClass('active');
+    //$('.template-natural').click(function() {
 
-		}
+    //	$('.r1, .r2, .r3').show();
 
-	});
+    //	$('.ctop, .b3, .b4, .b5').hide();
 
+    //	document.getElementById("ribbonchange").src="/img/string-simpleribbon.png";
 
+    //	$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	$('.balloons.3ft-tassel .r1').click(function() {
+    //	$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
-		$('.r1 .b1, .r1 .b2, .r1 .b3, .r1 .b4').toggleClass('active');
+    //	$('.balloons, .customize').addClass('11in-natural');
 
-	});
+    //});
 
 
+    //$('.template-happybirthday1').click(function() {
 
-	$('#folder-5in .sample').click(function() {
+    //	$('.balloons, .customize').addClass('happybirthday1');
 
-		var getColor = $(this).attr('class');
+    //$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		var useColor = getColor.split(' ');
+    //	document.getElementById("ribbonchange").src="/img/string-cluster-11.png";
 
+    //	$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
 
+    //	$('.b1, .b2, .b3').css('display', 'inline-block');
 
-		$('.b1, .b2, .b3, .b4, .b5').removeClassExcept("b1 b2 b3 b4 b5 top active");
+    //	$('.r2, .r3, .r4, .r5').hide();
 
-		$('.b1, .b2, .b3, .b4, .b5').addClass([useColor[1], useColor[2]].join(" ") );
+    //	$('.top').addClass('foil1');
 
-	});
+    //});
 
+    //$('.template-bubbleboy').click(function() {
 
+    //	$('.balloons, .customize').addClass('bubbleboy');
 
-	//$('.template-natural').click(function() {
+    //	$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-	//	$('.r1, .r2, .r3').show();
+    //	document.getElementById("ribbonchange").src="/img/string-cluster.png";
 
-	//	$('.ctop, .b3, .b4, .b5').hide();
+    //	$('.b1, .b2, .b3, .b4, .b5').addClass('16in');
 
-	//	document.getElementById("ribbonchange").src="/img/string-simpleribbon.png";
+    //	$('.r1 .b1, .r1 .b3, .r2 .b2').addClass('fashion-robinseggblue');
 
-	//	$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    //	$('.r1 .b2, .r2 .b1, .r2 .b3').addClass('pearl-light');
 
-	//	$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+    //	$('.r1, .r2, .b1, .b2, .b3').css('display', 'inline-block');
 
-	//	$('.balloons, .customize').addClass('11in-natural');
+    //	$('.r3, .r4, .r5').hide();
 
-	//});
+    //	$('.top').addClass('bubble-babyboymoonstars bubble');
 
+    //});
 
+    //$('.template-bubblegirl').click(function() {
 
-	//$('.template-happybirthday1').click(function() {
+    //	$('.balloons, .customize').addClass('bubblegirl');
 
-	//	$('.balloons, .customize').addClass('happybirthday1');
+    //	$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
 
-		//$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    //	document.getElementById("ribbonchange").src="/img/string-cluster.png";
 
-	//	document.getElementById("ribbonchange").src="/img/string-cluster-11.png";
+    //	$('.b1, .b2, .b3, .b4, .b5').addClass('16in');
 
-	//	$('.b1, .b2, .b3, .b4, .b5').addClass('11in');
+    //	$('.r1 .b1, .r1 .b3, .r2 .b2').addClass('fashion-rose');
 
-	//	$('.b1, .b2, .b3').css('display', 'inline-block');
+    //	$('.r1 .b2, .r2 .b1, .r2 .b3').addClass('standard-pink');
 
-	//	$('.r2, .r3, .r4, .r5').hide();
+    //	$('.r1, .r2, .b1, .b2, .b3').css('display', 'inline-block');
 
-	//	$('.top').addClass('foil1');
+    //	$('.r3, .r4, .r5').hide();
 
-	//});
+    //	$('.top').addClass('bubble-babygirlmoonstars bubble');
 
-	//$('.template-bubbleboy').click(function() {
+    //});
 
-	//	$('.balloons, .customize').addClass('bubbleboy');
 
-	//	$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+    $('.opt-tassel').click(function () {
 
-	//	document.getElementById("ribbonchange").src="/img/string-cluster.png";
+        $('.tasseloptions').show();
 
-	//	$('.b1, .b2, .b3, .b4, .b5').addClass('16in');
+        $('.customize-close').css('opacity', '1.0');
 
-	//	$('.r1 .b1, .r1 .b3, .r2 .b2').addClass('fashion-robinseggblue');
+    });
 
-	//	$('.r1 .b2, .r2 .b1, .r2 .b3').addClass('pearl-light');
 
-	//	$('.r1, .r2, .b1, .b2, .b3').css('display', 'inline-block');
+    $('.opt-palette').click(function () {
 
-	//	$('.r3, .r4, .r5').hide();
+        $('.customize-container').show();
 
-	//	$('.top').addClass('bubble-babyboymoonstars bubble');
+        $(customizelist1).hide();
 
-	//});
+        $('.palette').show();
 
-	//$('.template-bubblegirl').click(function() {
+        $('.rotated').removeClass('rotated');
 
-	//	$('.balloons, .customize').addClass('bubblegirl');
+        $('.folder').hide();
 
-	//	$('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top");
+        $('.customize-close').css('opacity', '1.0');
 
-	//	document.getElementById("ribbonchange").src="/img/string-cluster.png";
+        $('.palette').css('opacity', '1.0');
 
-	//	$('.b1, .b2, .b3, .b4, .b5').addClass('16in');
+    });
 
-	//	$('.r1 .b1, .r1 .b3, .r2 .b2').addClass('fashion-rose');
 
-	//	$('.r1 .b2, .r2 .b1, .r2 .b3').addClass('standard-pink');
-
-	//	$('.r1, .r2, .b1, .b2, .b3').css('display', 'inline-block');
-
-	//	$('.r3, .r4, .r5').hide();
-
-	//	$('.top').addClass('bubble-babygirlmoonstars bubble');
-
-	//});
-
-
-
-	$('.opt-tassel').click(function() {
-
-		$('.tasseloptions').show();
-
-		$('.customize-close').css('opacity', '1.0');
-
-	});
-
-
-
-	$('.opt-palette').click(function() {
-
-		$('.customize-container').show();
-
-		$(customizelist1).hide();
-
-		$('.palette').show();
-
-		$('.rotated').removeClass('rotated');
-
-		$('.folder').hide();
-
-		$('.customize-close').css('opacity', '1.0');
-
-		$('.palette').css('opacity', '1.0');
-
-	});
-
-
-
-		jQuery.fn.removeClassExcept = function (val) {
+    jQuery.fn.removeClassExcept = function (val) {
 
         return this.each(function (index, el) {
 
             var keep = val.split(" "),  // list we'd like to keep
 
-            reAdd = [],          // ones that should be re-added if found
+                reAdd = [],          // ones that should be re-added if found
 
-            $el = $(el);       // element we're working on
+                $el = $(el);       // element we're working on
 
             // look for which we re-add (based on them already existing)
 
-            for (var c = 0; c < keep.length; c++){
+            for (var c = 0; c < keep.length; c++) {
 
-              if ($el.hasClass(keep[c])) reAdd.push(keep[c]);
+                if ($el.hasClass(keep[c])) reAdd.push(keep[c]);
 
             }
-
 
 
             // drop all, and only add those confirmed as existing
 
             $el
 
-              .removeClass()               // remove existing classes
+                .removeClass()               // remove existing classes
 
-              .addClass(reAdd.join(' '));  // re-add the confirmed ones
+                .addClass(reAdd.join(' '));  // re-add the confirmed ones
 
         });
 
     };
 
 
+    $('.select11').click(function () {
 
-	$('.select11').click(function() {
+        $('.tab11').show();
 
-		$('.tab11').show();
+        $('.select11').addClass('prep');
 
-		$('.select11').addClass('prep');
+        $('.select16').removeClass('prep');
 
-		$('.select16').removeClass('prep');
+        $('.tab16').hide();
 
-		$('.tab16').hide();
+    });
 
-	});
+    $('.select16').click(function () {
 
-	$('.select16').click(function() {
+        $('.tab16').show();
 
-		$('.tab16').show();
+        $('.select16').addClass('prep');
 
-		$('.select16').addClass('prep');
+        $('.select11').removeClass('prep');
 
-		$('.select11').removeClass('prep');
+        $('.tab11').hide();
 
-		$('.tab11').hide();
+    });
 
-	});
 
+    $('.sample').click(function () {
 
+        var getColor = $(this).attr('class');
 
-	$('.sample').click(function() {
+        var useColor = getColor.split(' ');
 
-		var getColor = $(this).attr('class');
 
-		var useColor = getColor.split(' ');
+        $('.active').removeClassExcept("b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13 b14 b15 b16 b17 b18 b19 b20 top active");
 
+        $('.active').addClass([useColor[1], useColor[2]].join(" "));
 
+    });
 
-		$('.active').removeClassExcept("b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13 b14 b15 b16 b17 b18 b19 b20 top active");
+    $('.tassel-sample').click(function () {
 
-		$('.active').addClass([useColor[1], useColor[2]].join(" ") );
+        var getColor = $(this).attr('class');
 
-	});
+        var useColor = getColor.split(' ');
 
-	$('.tassel-sample').click(function() {
 
-		var getColor = $(this).attr('class');
+        $('.active').children('.tassel').css('display', 'block').removeClassExcept("tassel single mini half long");
 
-		var useColor = getColor.split(' ');
+        $('.active').children('.tassel').addClass([useColor[1], useColor[2]].join(" "));
 
+    });
 
+    $('[class*="tassel-"]').not('.customize-close').click(function () {
 
-		$('.active').children('.tassel').css('display', 'block').removeClassExcept("tassel single mini half long");
+        var getColor = $(this).attr('class');
 
-		$('.active').children('.tassel').addClass([useColor[1], useColor[2]].join(" ") );
 
-	});
+        $('#ribbonchange').removeClassExcept("ribbonchange, [class*='length-']");
 
-	$('[class*="tassel-"]').not('.customize-close').click(function() {
+        $('#ribbonchange').addClass(getColor);
 
-		var getColor = $(this).attr('class');
+    });
 
+    $('.length-single').click(function () {
 
+        document.getElementById("ribbonchange").src = "img/tassel-single.png";
 
-		$('#ribbonchange').removeClassExcept("ribbonchange, [class*='length-']");
+        $('#ribbonchange').removeClass('single mini half long');
 
-		$('#ribbonchange').addClass(getColor);
+        $('#ribbonchange').addClass('single');
 
-	});
+    });
 
-	$('.length-single').click(function() {
+    $('.length-mini').click(function () {
 
-		document.getElementById("ribbonchange").src="img/tassel-single.png";
+        document.getElementById("ribbonchange").src = "img/tassel-mini.png";
 
-		$('#ribbonchange').removeClass('single mini half long');
+        $('#ribbonchange').removeClass('single mini half long');
 
-		$('#ribbonchange').addClass('single');
+        $('#ribbonchange').addClass('mini');
 
-	});
+    });
 
-	$('.length-mini').click(function() {
+    $('.length-half').click(function () {
 
-		document.getElementById("ribbonchange").src="img/tassel-mini.png";
+        document.getElementById("ribbonchange").src = "img/tassel-half.png";
 
-		$('#ribbonchange').removeClass('single mini half long');
+        $('#ribbonchange').removeClass('single mini half long');
 
-		$('#ribbonchange').addClass('mini');
+        $('#ribbonchange').addClass('half');
 
-	});
+    });
 
-	$('.length-half').click(function() {
+    $('.length-full').click(function () {
 
-		document.getElementById("ribbonchange").src="img/tassel-half.png";
+        document.getElementById("ribbonchange").src = "img/tassel-long.png";
 
-		$('#ribbonchange').removeClass('single mini half long');
+        $('#ribbonchange').removeClass('single mini half long');
 
-		$('#ribbonchange').addClass('half');
+        $('#ribbonchange').addClass('long');
 
-	});
+    });
 
-	$('.length-full').click(function() {
 
-		document.getElementById("ribbonchange").src="img/tassel-long.png";
+    $('.palette div').click(function () {
 
-		$('#ribbonchange').removeClass('single mini half long');
+        $(this).children('img:nth-of-type(2)').toggleClass('rotated');
 
-		$('#ribbonchange').addClass('long');
+        $(this).next('.folder').toggle();
 
-	});
+    });
 
 
+    $('.opt-expand').click(function () {
 
+        $('.balloons').toggleClass('expanded');
 
+        $('#expand1').toggle();
 
-	$('.palette div').click(function() {
+        $('#expand2').toggle();
 
-			$(this).children('img:nth-of-type(2)').toggleClass('rotated');
+    });
 
-			$(this).next('.folder').toggle();
 
-	});
-
-
-
-	$('.opt-expand').click(function() {
-
-		$('.balloons').toggleClass('expanded');
-
-		$('#expand1').toggle();
-
-		$('#expand2').toggle();
-
-	});
-
-
-
-	  // OLD FUNCTIONALITY FOR OPENING CUSTOMIZER PALETTES
+    // OLD FUNCTIONALITY FOR OPENING CUSTOMIZER PALETTES
 
 //	$('.opt-top').click(function() {
 
@@ -846,12 +812,11 @@ $(document).ready(function() {
 
 //	});
 
-	$('.opt-default').click(function() {
+    $('.opt-default').click(function () {
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClass(changelist);
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClass(changelist);
 
-	});
-
+    });
 
 
 //  OLD FUNCTIONALITY FOR CONFIRMING TEMPLATE WITH BUTTON CLICK BEFORE OPENING STEP 2
@@ -870,694 +835,637 @@ $(document).ready(function() {
 
 //	});
 
-	$('#gobacktemplates').click(function() {
+    $('#gobacktemplates').click(function () {
 
-		$('.ctop').show();
+        $('.ctop').show();
 
-		$('.templates, .b3').show();
+        $('.templates, .b3').show();
 
-		$('.b4, .b5, .customize-container, .tasseloptions, .cost, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r15, .fx').hide();
+        $('.b4, .b5, .customize-container, .tasseloptions, .cost, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12, .r13, .r14, .r15, .fx').hide();
 
-		$('.balloons, .customize, .balloons-container').removeClass(customizeclasses);
+        $('.balloons, .customize, .balloons-container').removeClass(customizeclasses);
 
-		$('.ribbon').removeClass('wide');
+        $('.ribbon').removeClass('wide');
 
-		$('#begin').removeClass('ready');
+        $('#begin').removeClass('ready');
 
-		$('.content, #gobacktemplates').hide();
+        $('.content, #gobacktemplates').hide();
 
-		$('#begin').css('display', 'inline-block');
+        $('#begin').css('display', 'inline-block');
 
-		$('#progress1, .info1').css('display', 'block');
+        $('#progress1, .info1').css('display', 'block');
 
-		$('#proceed, #gobacktemplates, #progress2, .info2').css('display', 'none');
+        $('#proceed, #gobacktemplates, #progress2, .info2').css('display', 'none');
 
-		$('.options').removeClassExcept("options");
+        $('.options').removeClassExcept("options");
 
-		$('.build-extra').removeClassExcept("build-extra");
+        $('.build-extra').removeClassExcept("build-extra");
 
-		$('.desc_template').html(' ');
+        $('.desc_template').html(' ');
 
-	});
+    });
 
-	$('#proceed').click(function() {
+    $('#proceed').click(function () {
 
-		var requests = $('section.requests textarea').val();
+        var requests = $('section.requests textarea').val();
 
-		$('textarea#message').val(requests);
+        $('textarea#message').val(requests);
 
-		$('.select').hide();
+        $('.select').hide();
 
-		$('#proceed, #gobacktemplates, #progress2, .info2').css('display', 'none');
+        $('#proceed, #gobacktemplates, #progress2, .info2').css('display', 'none');
 
-		$('.expanded').removeClass('expanded');
+        $('.expanded').removeClass('expanded');
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').removeClass('active');
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClass('active');
 
-		$('.customize-container').hide();
+        $('.customize-container').hide();
 
-		$('#information').show();
+        $('#information').show();
 
-		$('#goback, #finalize').css('display', 'inline-block');
+        $('#goback, #finalize').css('display', 'inline-block');
 
-		$('#progress3, .info3').css('display', 'block');
+        $('#progress3, .info3').css('display', 'block');
 
-	});
+    });
 
-	$('#goback').click(function() {
+    $('#goback').click(function () {
 
-		var requestsback = $('textarea#message').val();
+        var requestsback = $('textarea#message').val();
 
-		$('section.requests textarea').val(requestsback);
+        $('section.requests textarea').val(requestsback);
 
-		$('.desc_row-1').html('');
+        $('.desc_row-1').html('');
 
-		$('.desc_top').html('');
+        $('.desc_top').html('');
 
-		$('.desc_acc').html('');
+        $('.desc_acc').html('');
 
-		$('.select').show();
+        $('.select').show();
 
-		$('#progress2, .info2').css('display', 'block');
+        $('#progress2, .info2').css('display', 'block');
 
-		$('#proceed, #gobacktemplates').css('display', 'inline-block');
+        $('#proceed, #gobacktemplates').css('display', 'inline-block');
 
-		$('#information').hide();
+        $('#information').hide();
 
-		$('#finalcost').html('Please input quantity.');
+        $('#finalcost').html('Please input quantity.');
 
-		$('#goback, #finalize, #progress3, .info3').css('display', 'none');
+        $('#goback, #finalize, #progress3, .info3').css('display', 'none');
 
-	});
+    });
 
-	$('#finalize').click(function() {
+    $('#finalize').click(function () {
 
-		$('#send').show();
+        $('#send').show();
 
-		$('.info2 h1').html(titleFinished);
+        $('.info2 h1').html(titleFinished);
 
-		$('.info2 p').html(listFinished);
+        $('.info2 p').html(listFinished);
 
-	});
+    });
 
 
+    $('.weight1').click(function () {
 
-	$('.weight1').click(function() {
+        $('.weight img').attr('src', 'img/weight.png');
 
-		$('.weight img').attr('src', 'img/weight.png');
+    });
 
-	});
+    $('.weight2').click(function () {
 
-	$('.weight2').click(function() {
+        $('.weight img').attr('src', 'img/weight2.png');
 
-		$('.weight img').attr('src', 'img/weight2.png');
+    });
 
-	});
 
+    $('.string1').click(function () {
 
+        $('.ribbon img').attr('src', 'img/string.png');
 
-	$('.string1').click(function() {
+    });
 
-		$('.ribbon img').attr('src', 'img/string.png');
+    $('.string2').click(function () {
 
-	});
+        $('.ribbon img').attr('src', 'img/string2.png');
 
-	$('.string2').click(function() {
+    });
 
-		$('.ribbon img').attr('src', 'img/string2.png');
 
-	});
+    $('.customize-close, .palette h4').click(function () {
 
+        $('.palette').css('opacity', '0');
 
+        $('.tasseloptions').hide();
 
+        $('.customize-container').fadeOut(300);
 
+        $('.customize-close').css('opacity', '0');
 
-	$('.customize-close, .palette h4').click(function() {
+    });
 
-		$('.palette').css('opacity', '0');
+    $('.opt-select').click(function () {
 
-		$('.tasseloptions').hide();
+        $('.b1, .b2, .b3, .b4, .b5, .top').addClass('active');
 
-		$('.customize-container').fadeOut(300);
+    });
 
-		$('.customize-close').css('opacity', '0');
+    $('.opt-cancelselect').click(function () {
 
-	});
+        $('.active').removeClass('active');
 
-	$('.opt-select').click(function() {
+    });
 
-		$('.b1, .b2, .b3, .b4, .b5, .top').addClass('active');
+    $('.opt-sub').click(function () {
 
-	});
+        $(".balloons > [class*='r']:visible:first").hide();
 
-	$('.opt-cancelselect').click(function() {
+        $(".select > [class*='opt-r']:visible:first").hide(100);
 
-		$('.active').removeClass('active');
+    });
 
-	});
+    $('.opt-add').click(function () {
 
-	$('.opt-sub').click(function() {
+        $(".balloons > [class*='r']:hidden:last").show();
 
-		$(".balloons > [class*='r']:visible:first").hide();
+        $(".select > [class*='opt-r']:hidden:last").show(100);
 
-		$(".select > [class*='opt-r']:visible:first").hide(100);
+    });
 
-	});
 
-	$('.opt-add').click(function() {
+    $('.opt-weight').hover(function () {
 
-		$(".balloons > [class*='r']:hidden:last").show();
+        $('.weight').toggleClass('indicator');
 
-		$(".select > [class*='opt-r']:hidden:last").show(100);
+    });
 
-	});
+    $('.opt-string').hover(function () {
 
+        $('.ribbon').toggleClass('indicator-nosize');
 
+    });
 
-	$('.opt-weight').hover(function() {
 
-		$('.weight').toggleClass('indicator');
+    $('.opt-collar').click(function () {
 
-	});
+        $('.balloons .r1').toggle();
 
-	$('.opt-string').hover(function() {
+        $('.balloons .r1').toggleClass('super');
 
-		$('.ribbon').toggleClass('indicator-nosize');
+    });
 
-	});
+    /*
 
+$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .top').click(function() {
 
 
-	$('.opt-collar').click(function() {
 
-		$('.balloons .r1').toggle();
+    if ($('.b1.active, .b2.active, .b3.active, .b4.active, .b5.active').length) {
 
-		$('.balloons .r1').toggleClass('super');
+            $('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers, label-5in').next('.folder').hide();
 
-	});
+            $('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers, label-5in').removeClass('available');
 
-		/*
+            $('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers, label-5in').addClass('unavailable');
 
-	$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .top').click(function() {
+    }
 
+    if ($('.top.active').length) {
 
+            $('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers').removeClass('unavailable');
 
-		if ($('.b1.active, .b2.active, .b3.active, .b4.active, .b5.active').length) {
+            $('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers').addClass('available');
 
-				$('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers, label-5in').next('.folder').hide();
+    }
 
-				$('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers, label-5in').removeClass('available');
 
-				$('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers, label-5in').addClass('unavailable');
 
-		}
 
-		if ($('.top.active').length) {
 
-				$('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers').removeClass('unavailable');
+    if ($('.5in.active').length) {
 
-				$('.label-3ft, .label-3ft-sa, .label-bubble, .label-doublebubble, .label-mylar, .label-megaloon, .label-letters, .label-numbers').addClass('available');
+            $('.label-5in').removeClass('.unavailable');
 
-		}
+            $('.label-5in').addClass('.available');
 
+    }
 
+}); */
 
 
+    $('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').click(function () {
 
-		if ($('.5in.active').length) {
+        $(this).toggleClass('active');
 
-				$('.label-5in').removeClass('.unavailable');
+        if ($('.top').hasClass('active')) {
 
-				$('.label-5in').addClass('.available');
+            $('.top').removeClass('active');
 
-		}
+            $('.folder').hide();
 
-	}); */
+        }
 
+    });
 
 
+    $('.top').click(function () {
 
+        $(this).toggleClass('active');
 
-	$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').removeClass('active');
 
-		$(this).toggleClass('active');
+        $('.folder').hide();
 
-		if ($('.top').hasClass('active')) {
+    });
 
-			$('.top').removeClass('active');
 
-			$('.folder').hide();
+    $('html').click(function () {
 
-		}
+        // recalculate per item change (on page click)
 
-	});
+        total = 0;
 
 
+        // PRICING PER CLASS
 
-	$('.top').click(function() {
+        $('.balloons .11in:visible').each(function () {
 
-		$(this).toggleClass('active');
+            total += 295;
 
-		$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').removeClass('active');
+        });
 
-			$('.folder').hide();
+        $(".balloons .11cr:visible").each(function () {
 
-	});
+            total += 350;
 
+        });
 
+        $('.balloons .11sa:visible').each(function () {
 
+            total += 350;
 
+        });
 
+        $('.balloons .16in:visible').each(function () {
 
+            total += 700;
 
-	$('html').click(function() {
+        });
 
-		// recalculate per item change (on page click)
+        $('.balloons .ABC123mylar:visible').each(function () {
 
-		total = 0;
+            total += 1775;
 
+        });
 
+        $('.balloons .bubble:visible').each(function () {
 
-		// PRICING PER CLASS
+            total += 1250;
 
-		$('.balloons .11in:visible').each(function() {
+        });
 
-			total+=295;
+        $('.balloons .doublebubble:visible').each(function () {
 
-		});
+            total += 1750;
 
-		$(".balloons .11cr:visible").each(function() {
+        });
 
-			total+=350;
+        $('.balloons .3ft:visible').each(function () {
 
-		});
+            total += 2750;
 
-		$('.balloons .11sa:visible').each(function() {
+        });
 
-			total+=350;
+        $('.balloons .megaloon:visible').each(function () {
 
-		});
+            total += 2175;
 
-		$('.balloons .16in:visible').each(function() {
+        });
 
-			total+=700;
+        $('.balloons .supershape:visible').each(function () {
 
-		});
+            total += 2300;
 
-		$('.balloons .ABC123mylar:visible').each(function() {
+        });
 
-			total+=1775;
+        $('.balloons .ultrashape:visible').each(function () {
 
-		});
+            total += 2050;
 
-		$('.balloons .bubble:visible').each(function() {
+        });
 
-			total+=1250;
+        $('.balloons .18mylar:visible').each(function () {
 
-		});
+            total += 650;
 
-		$('.balloons .doublebubble:visible').each(function() {
+        });
 
-			total+=1750;
 
-		});
+        // ADAPTIVE PRICING FOR BOUQUET SIZES
 
-		$('.balloons .3ft:visible').each(function() {
 
-			total+=2750;
+        // Pricing per weight
 
-		});
+        var bouquetSize = $('.balloons .b1:visible, .balloons .b2:visible, .balloons .b3:visible, .balloons .b4:visible, .balloons .b5:visible').length;
 
-		$('.balloons .megaloon:visible').each(function() {
+        // 1-10 balloons
 
-			total+=2175;
+        if (bouquetSize < 11) {
 
-		});
+            total += 200;
 
-		$('.balloons .supershape:visible').each(function() {
+            // 11-16 balloons
 
-			total+=2300;
+        } else if (bouquetSize < 17) {
 
-		});
+            total += 400;
 
-		$('.balloons .ultrashape:visible').each(function() {
+            // 17+
 
-			total+=2050;
+        } else {
+            total += 600;
+        } // ADD $6.00 FOR EXTRA LARGE BOUQUETS
 
-		});
 
-		$('.balloons .18mylar:visible').each(function() {
+        // UNIQUE PRICING FOR SPECIALTY BALLOONS
 
-			total+=650;
+        // PLEASE NOTE:
 
-		});
+        // IFF (if and only if) the balloon also has a standard Price Class (supershape, megaloon, 11in, bubble, etc), only add the DIFFERENCE IN PRICE here.
 
+        // ex. supershape-girlbabyduck has "supershape" price class, adding $22.50 to the total already. Its retail price is $35.00, so add only ($35-22.50=$12.50) to the total below.
 
 
-		// ADAPTIVE PRICING FOR BOUQUET SIZES
+        $('.balloons .supershape-girlbabyduck:visible').each(function () {
 
+            total += 1250;
 
+        });
 
-		// Pricing per weight
+        $('.balloons .supershape-boybabyduck:visible').each(function () {
 
-		var bouquetSize = $('.balloons .b1:visible, .balloons .b2:visible, .balloons .b3:visible, .balloons .b4:visible, .balloons .b5:visible').length;
+            total += 1250;
 
-		// 1-10 balloons
+        });
 
-		if (bouquetSize < 11) {
+        $('.balloons .supershape-3dhats:visible').each(function () {
 
-			total+=200;
+            total += 250;
 
-	 	 // 11-16 balloons
+        });
 
-		} else if (bouquetSize < 17) {
+        $('.balloons .supershape-gradstarts:visible').each(function () {
 
-			total+=400;
+            total += 2250;
 
-	 	 // 17+
+        });
 
-		} else { total+=600; } // ADD $6.00 FOR EXTRA LARGE BOUQUETS
 
+        // PRICING FOR TASSEL LENGTHS
 
+        // PLEASE NOTE: This function does not account for specialty tassel colours.
 
 
+        $('#ribbonchange.long:visible').each(function () {
 
-		// UNIQUE PRICING FOR SPECIALTY BALLOONS
+            total += 7500;
 
-		// PLEASE NOTE:
+        });
 
-		// IFF (if and only if) the balloon also has a standard Price Class (supershape, megaloon, 11in, bubble, etc), only add the DIFFERENCE IN PRICE here.
+        $('#ribbonchange.half:visible').each(function () {
 
-		// ex. supershape-girlbabyduck has "supershape" price class, adding $22.50 to the total already. Its retail price is $35.00, so add only ($35-22.50=$12.50) to the total below.
+            total += 5500;
 
+        });
 
+        $('#ribbonchange.mini:visible').each(function () {
 
-		$('.balloons .supershape-girlbabyduck:visible').each(function() {
+            total += 4500;
 
-			total+=1250;
+        });
 
-		});
+        $('#ribbonchange.single:visible').each(function () {
 
-		$('.balloons .supershape-boybabyduck:visible').each(function() {
+            total += 225;
 
-			total+=1250;
+        });
 
-		});
 
-		$('.balloons .supershape-3dhats:visible').each(function() {
+        //if(document.getElementById('delivery').checked) {
 
-			total+=250;
+        //	total+=1200;
 
-		});
+        //}else if(document.getElementById('pickup').checked) {
 
-		$('.balloons .supershape-gradstarts:visible').each(function() {
+        //	total+=0;
 
-			total+=2250;
+        //}
 
-		});
 
+        // removed for simplified pricing Dec 2018
 
+        // Pricing for assembly / labour. This function is identical to the previous weight function with adjusted values.
 
+        //var bouquetSize = $('.balloons .b1:visible, .balloons .b2:visible, .balloons .b3:visible, .balloons .b4:visible, .balloons .b5:visible').length;
 
+        // 1-9 balloons
 
-		// PRICING FOR TASSEL LENGTHS
+        //if (bouquetSize < 10) {
 
-		// PLEASE NOTE: This function does not account for specialty tassel colours.
+        //	total+=150;
 
+        // 10-16 balloons
 
+        //} else if (bouquetSize < 17) {
 
-		$('#ribbonchange.long:visible').each(function() {
+        //	total+=300;
 
-			total+=7500;
+        // 17+
 
-		});
+        //} else { total+=300; } // ADD $3.00 FOR EXTRA LARGE BOUQUETS / PRICING FOR ARCHES?
 
-		$('#ribbonchange.half:visible').each(function() {
 
-			total+=5500;
+        // Pricing for bouquets with jumbo / 3ft classes
 
-		});
+        // Checks for ANY of the classes below and changes price if valid
 
-		$('#ribbonchange.mini:visible').each(function() {
+        //var bouquetTopper = $('.balloons .3ft:visible, .balloons .megaloon:visible, .balloons .bubble:visible, .balloons .doublebubble:visible').each;
 
-			total+=4500;
+        //if (bouquetSize < 10 && bouquetTopper > 0) {
 
-		});
+        //	total+=200;
 
-		$('#ribbonchange.single:visible').each(function() {
+        //} else if (bouquetSize < 17 && bouquetTopper > 0) {
 
-			total+=225;
+        //	total+=400;
 
-		});
+        //} else { total+=400; }
 
 
+        var total = total / 100;
 
-		//if(document.getElementById('delivery').checked) {
+        $('.cost span').html('$' + total.toFixed(2) + "/piece");
 
-  		//	total+=1200;
+        $('.cost .costCalc').html(total.toFixed(2));
 
-		//}else if(document.getElementById('pickup').checked) {
 
-  		//	total+=0;
+        var balloonCount = $('.b1:visible, .b2:visible, .b3:visible, .b4:visible, .b5:visible, .b6:visible, .b7:visible, .b8:visible, .b9:visible, .b10:visible, .b11:visible, .b12:visible, .b13:visible, .b14:visible, .b15:visible, .b16:visible, .b17:visible, .b18:visible, .b19:visible, .b20:visible, .top:visible').length;
 
-		//}
+        $('.counter').html(balloonCount + ' balloons');
 
 
+        if ($('.top').hasClass("active")) {
 
+            $('.palette').addClass("supercheck");
 
+        } else {
 
-		// removed for simplified pricing Dec 2018
+            $('.palette').removeClass("supercheck");
 
-		// Pricing for assembly / labour. This function is identical to the previous weight function with adjusted values.
+        }
+        ;
 
-		//var bouquetSize = $('.balloons .b1:visible, .balloons .b2:visible, .balloons .b3:visible, .balloons .b4:visible, .balloons .b5:visible').length;
 
-		// 1-9 balloons
+        if ($('.active').length == 0 && $('.app-container').hasClass("beginner")) {
 
-		//if (bouquetSize < 10) {
+            $('.opt-palette').toggleClass("tut-arrow");
 
-		//	total+=150;
+        } else if ($('.active').length == 0) {
 
-	  // 10-16 balloons
+            $('#allstyles').hide();
 
-		//} else if (bouquetSize < 17) {
+            $('#pickfirst').show();
 
-		//	total+=300;
+        } else {
 
-	  // 17+
+            $('#allstyles').show();
 
-		//} else { total+=300; } // ADD $3.00 FOR EXTRA LARGE BOUQUETS / PRICING FOR ARCHES?
+            $('#pickfirst').hide();
 
+        }
+        ;
 
 
-		// Pricing for bouquets with jumbo / 3ft classes
+    }); /* END OF ON-CLICK DETECTION */
 
-		// Checks for ANY of the classes below and changes price if valid
 
-		//var bouquetTopper = $('.balloons .3ft:visible, .balloons .megaloon:visible, .balloons .bubble:visible, .balloons .doublebubble:visible').each;
+    $('.palette [class*="label-"]').click(function () {
 
-		//if (bouquetSize < 10 && bouquetTopper > 0) {
+        var chosen = $(this);
 
-		//	total+=200;
+        $('.palette').animate({
 
-		//} else if (bouquetSize < 17 && bouquetTopper > 0) {
+                scrollTop: $(chosen).position().top
+            },
 
-		//	total+=400;
+            'slow');
 
-		//} else { total+=400; }
+    });
 
 
+    $('#tutorial h3').click(function () {
 
+        $(this).next('p').removeClass('hidden');
 
+    });
 
+    $('#tutorial .userlevel.beginner').click(function () {
 
+        $('#tutorial, .app-container').addClass('beginner');
 
-		var total = total/100;
+        $('.label-fashion').addClass("tut-arrow");
 
-		$('.cost span').html('$' + total.toFixed(2) + "/piece");
+        $('.tut-box').hide();
 
-		$('.cost .costCalc').html(total.toFixed(2));
+        $('.tut-box2').show();
 
+    });
 
+    $('#tutorial .userlevel.advanced').click(function () {
 
+        $('#tutorial, .app-container').addClass('advanced');
 
+        $('#tutorial').hide();
 
-		var balloonCount = $('.b1:visible, .b2:visible, .b3:visible, .b4:visible, .b5:visible, .b6:visible, .b7:visible, .b8:visible, .b9:visible, .b10:visible, .b11:visible, .b12:visible, .b13:visible, .b14:visible, .b15:visible, .b16:visible, .b17:visible, .b18:visible, .b19:visible, .b20:visible, .top:visible').length;
+    });
 
-		$('.counter').html(balloonCount + ' balloons');
+    $('.close-tut').click(function () {
 
+        $('#tutorial').hide();
 
+    });
 
+    $('.beta-warn').click(function () {
 
+        $('.beta-warn').fadeOut('slow', function () {
 
-	if ($('.top').hasClass("active")) {
+            $(this).remove();
 
-		$('.palette').addClass("supercheck");
+        });
 
-	} else {
+    });
 
-		$('.palette').removeClass("supercheck");
 
-	};
+    $(document).on("click", ".introa", function () {
 
+        $('#pintro').hide();
 
+        $('.select').css('opacity', '1.0');
 
-	if ($('.active').length == 0 && $('.app-container').hasClass("beginner")) {
+        $(this).removeClass('tut-arrow introa');
 
-		$('.opt-palette').toggleClass("tut-arrow");
+    });
 
-	} else if ($('.active').length == 0) {
+    $(document).on("click", ".tut-arrow", function () {
 
-		$('#allstyles').hide();
+        $(this).removeClass('tut-arrow');
 
-		$('#pickfirst').show();
+    });
 
-	} else {
+    $('#pintro').click(function () {
 
-		$('#allstyles').show();
+        $('#pintro').hide();
 
-		$('#pickfirst').hide();
+        $('.select').css('opacity', '1.0');
 
-	};
+    });
 
 
+    $('.opt-palette').click(function () {
 
+        if ($('.app-container').hasClass('beginner')) {
 
+            $('#tutorial-box').fadeIn(1000);
 
+            $('#bintro').html(tutorial1);
 
+        } else {
 
+        }
 
+    });
 
-	}); /* END OF ON-CLICK DETECTION */
 
+    $('#tutorial-box').click(function () {
 
+        $(this).fadeOut(1000);
 
-	$('.palette [class*="label-"]').click(function() {
+    });
 
-		var chosen = $(this);
 
-    $('.palette').animate({
+    $('input').click(function () {
 
-        scrollTop: $(chosen).position().top},
+        if (document.getElementById('delivery').checked) {
 
-        'slow');
+            $('#deliversettings').show();
 
-	});
+        } else if (document.getElementById('pickup').checked) {
 
+            $('#deliversettings').hide();
 
+        }
 
-
-
-	$('#tutorial h3').click(function() {
-
-		$(this).next('p').removeClass('hidden');
-
-	});
-
-	$('#tutorial .userlevel.beginner').click(function() {
-
-		$('#tutorial, .app-container').addClass('beginner');
-
-		$('.label-fashion').addClass("tut-arrow");
-
-		$('.tut-box').hide();
-
-		$('.tut-box2').show();
-
-	});
-
-	$('#tutorial .userlevel.advanced').click(function() {
-
-		$('#tutorial, .app-container').addClass('advanced');
-
-		$('#tutorial').hide();
-
-	});
-
-	$('.close-tut').click(function() {
-
-		$('#tutorial').hide();
-
-	});
-
-	$('.beta-warn').click(function() {
-
-		$('.beta-warn').fadeOut('slow', function() {
-
-			$(this).remove();
-
-		});
-
-	});
-
-
-
-	$(document).on("click", ".introa", function() {
-
-		$('#pintro').hide();
-
-		$('.select').css('opacity', '1.0');
-
-		$(this).removeClass('tut-arrow introa');
-
-	});
-
-	$(document).on("click", ".tut-arrow", function() {
-
-		$(this).removeClass('tut-arrow');
-
-	});
-
-	$('#pintro').click(function() {
-
-		$('#pintro').hide();
-
-		$('.select').css('opacity', '1.0');
-
-	});
-
-
-
-	$('.opt-palette').click(function() {
-
-		if ($('.app-container').hasClass('beginner')) {
-
-		$('#tutorial-box').fadeIn(1000);
-
-		$('#bintro').html(tutorial1);
-
-		} else {
-
-		}
-
-	});
-
-
-
-	$('#tutorial-box').click(function() {
-
-		$(this).fadeOut(1000);
-
-	});
-
-
-
-	$('input').click(function() {
-
-	if(document.getElementById('delivery').checked) {
-
-  		$('#deliversettings').show();
-
-	}else if(document.getElementById('pickup').checked) {
-
-  		$('#deliversettings').hide();
-
-	}
-
-	});
-
-
-
+    });
 
 
 });
