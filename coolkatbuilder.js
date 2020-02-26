@@ -1,7 +1,7 @@
 var customizeclasses = "11inclusterstring classicarrangement 11induoclusterstring duoarrangement cascadingarrangement 16insimpleribbon 11insimplestring 16insimplestring umbrella 3ft-tassel megaloon-string supershape-duo supershape-classic column-classic helium-arch";
-var titleCascading = "Cascading Arrangement";
-var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
 
+var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
+var titleSinglestring = "Single String Arrangement";
 
 
 $(document).ready(function () {
