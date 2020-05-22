@@ -1,0 +1,220 @@
+.active:hover {
+    opacity: 1 !important
+}
+
+.active .check {
+    opacity: 1
+}
+
+.active:hover {
+    opacity: 1 !important
+}
+
+.active .check {
+    opacity: 1
+}
+
+
+.sample {
+    width: 100px;
+    height: 130px;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 50px;
+    vertical-align: top;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.55);
+    cursor: pointer
+}
+
+.options .opt-r1 {
+    display: block !important
+}
+
+
+
+
+</style>
+
+
+  <style>
+  .alt .b1 { z-index:30;transform:rotate(-12deg) }
+.alt .b2 { z-index:1;top:-10px; }
+.alt .b3 { z-index:30;transform:rotate(12deg) }
+
+
+/* CLASSIC ARRANGEMENT (START)*/
+
+.balloons.cascadingarrangement .r1, .balloons.cascadingarrangement .r2, .balloons.cascadingarrangement .r3 {
+    display: block !important;
+}
+
+.balloons.cascadingarrangement .ctop {
+    display: none !important;
+}
+
+.balloons.cascadingarrangement .r4, .balloons.cascadingarrangement .r5, .balloons.cascadingarrangement .r6, .balloons.cascadingarrangement .r7, .balloons.cascadingarrangement .r8, .balloons.cascadingarrangement .r9, .balloons.cascadingarrangement .r10, .balloons.cascadingarrangement .r11, .balloons.cascadingarrangement .r12, .balloons.cascadingarrangement .r13, .balloons.cascadingarrangement .r14, .balloons.cascadingarrangement .r15, .balloons.cascadingarrangement .r16, .balloons.cascadingarrangement .r17, .balloons.cascadingarrangement .r18, .balloons.cascadingarrangement .r19, .balloons.cascadingarrangement .r20, .ctop {
+    display: none;
+}
+
+.balloons.cascadingarrangement .b1 {
+    transform: rotate(-8deg);
+    margin-left: -55px;
+}
+
+.balloons.cascadingarrangement .alt .b1 {
+    transform: rotate(8deg);
+    margin-left: 55px;
+}
+
+.balloons.cascadingarrangement .b2, .balloons.cascadingarrangement .b3, .balloons.cascadingarrangement .b4, .balloons.cascadingarrangement .b5 {
+    display: none !important;
+}
+
+/* SINGLE STRING ARRANGEMENT (START)*/
+
+.balloons.singlestring .r1, .singlestring .r2, .singlestring .r3 {
+    display: block !important;
+}
+
+.balloons.singlestring .ctop {
+    display: none !important;
+}
+
+.balloons.singlestring .r4, .balloons.singlestring .r5, .balloons.singlestring .r6, .balloons.singlestring .r7, .balloons.singlestring .r8, .balloons.singlestring .r9, .balloons.singlestring .r10, .balloons.singlestring .r11, .balloons.singlestring .r12, .balloons.singlestring .r13, .balloons.singlestring .r14, .balloons.singlestring .r15, .balloons.singlestring .r16, .balloons.singlestring .r17, .balloons.singlestring .r18, .balloons.singlestring .r19, .balloons.singlestring .r20, .ctop {
+    display: none;
+}
+
+.balloons.singlestring .b1 {
+    transform: rotate(-16deg);
+    margin-left: -50px;
+}
+
+.balloons.singlestring .alt .b1 {
+    transform: rotate(16deg);
+    margin-left: 50px;
+}
+
+.balloons.singlestring .b2, .balloons.singlestring .b3, .balloons.singlestring .b4, .balloons.singlestring .b5 {
+    display: none !important;
+}
+
+/* DUO STRING ARRANGEMENT (START)*/
+
+.balloons.duostring .r1, .duostring .r2, .duostring .ctop {
+    display: block !important;
+}
+
+.duostring .r3 {
+    display: block;
+}
+
+
+.balloons.duostring .r4, .balloons.duostring .r5, .balloons.duostring .r6, .balloons.duostring .r7, .balloons.duostring .r8, .balloons.duostring .r9, .balloons.duostring .r10, .balloons.duostring .r11, .balloons.duostring .r12, .balloons.duostring .r13, .balloons.duostring .r14, .balloons.duostring .r15, .balloons.duostring .r16, .balloons.duostring .r17, .balloons.duostring .r18, .balloons.duostring .r19, .balloons.duostring .r20, .ctop {
+    display: none;
+}
+
+.balloons.duostring .b1 {
+    transform: rotate(-20deg);
+    margin-right: 10px;
+}
+
+.balloons.duostring .b2 {
+    transform: rotate(20deg);
+}
+
+.balloons.duostring .b3, .balloons.duostring .b4, .balloons.duostring .b5 {
+    display: none !important;
+}
+
+/* CLASSIC ARRANGEMENT (START)*/
+.balloons.classicarrangement .r1, .classicarrangement .r2, .classicarrangement .ctop {
+    display: block !important;
+}
+
+.classicarrangement .r3 {
+    display: block;
+}
+
+.balloons.classicarrangement .r4, .balloons.classicarrangement .r5, .balloons.classicarrangement .r6, .balloons.classicarrangement .r7, .balloons.classicarrangement .r8, .balloons.classicarrangement .r9, .balloons.classicarrangement .r10, .balloons.classicarrangement .r11, .balloons.classicarrangement .r12, .balloons.classicarrangement .r13, .balloons.classicarrangement .r14, .balloons.classicarrangement .r15, .balloons.classicarrangement .r16, .balloons.classicarrangement .r17, .balloons.classicarrangement .r18, .balloons.classicarrangement .r19, .balloons.classicarrangement .r20, .ctop {
+    display: none;
+}
+
+.balloons.classicarrangement .b4, .balloons.classicarrangement .b5 {
+    display: none !important;
+}
+
+/* SINGLES ARRANGEMENT (START)*/
+
+.singles .r1, .singles .r2, .singles .r3, .singles .r4, .singles .r5 { height:40px }
+.singles .b1, .singles .b2, .singles .b3, .singles .b4, .singles .b5 { transform:rotate(0deg);width:90px;top:0 }
+.singles .r1 { display:block !important }
+.singles .r2 { height:30px;display:block !important }
+.singles .r3 { height:2px;display:block !important }
+.singles .r4 { height:25px;display:none }
+.singles .r5 { height:2px;display:none }
+.singles .b1 { transform:rotate(-15deg) }
+.singles .b2 { transform:rotate(-10deg) }
+.singles .b3 { transform:rotate(5deg);margin-left:-35px  }
+.singles .b4 { transform:rotate(5deg)  }
+.singles .b5 { transform:rotate(15deg) }
+.singles .r1 .b2 { margin-left:-35px }
+.singles .r1 .b5 { margin-left:-35px }
+
+.singles .r1 .b1 { z-index: 530 }
+.singles .r1 .b2 { z-index: 535 }
+.singles .r1 .b3 { z-index: 550 }
+.singles .r1 .b4 { z-index: 525 }
+.singles .r1 .b5 { z-index: 539 }
+
+.singles .r2 .b1 { z-index: 430 }
+.singles .r2 .b2 { z-index: 435 }
+.singles .r2 .b3 { z-index: 450 }
+.singles .r2 .b4 { z-index: 425 }
+.singles .r2 .b5 { z-index: 439 }
+
+.singles .r3 .b1 { z-index: 330 }
+.singles .r3 .b2 { z-index: 335 }
+.singles .r3 .b3 { z-index: 350 }
+.singles .r3 .b4 { z-index: 325 }
+.singles .r3 .b5 { z-index: 339 }
+
+.singles .r4 .b1 { z-index: 230 }
+.singles .r4 .b2 { z-index: 235 }
+.singles .r4 .b3 { z-index: 250 }
+.singles .r4 .b4 { z-index: 225 }
+.singles .r4 .b5 { z-index: 239 }
+
+.singles .r5 .b1 { z-index: 130 }
+.singles .r5 .b2 { z-index: 135 }
+.singles .r5 .b3 { z-index: 150 }
+.singles .r5 .b4 { z-index: 125 }
+.singles .r5 .b5 { z-index: 139 }
+
+.singles div .b2 { top:-20px }
+.singles div .b3 { top:-25px }
+.singles div .b4 { top:-20px;margin-left:-90px; }
+
+.singles .r2 .b3 { top:-30px;margin-left:-35px }
+
+.singles .r3 .b3 { top:-50px;transform:none }
+.singles .r3 .b1 { display:none !important }
+.singles .r3 .b5 { display:none !important }
+
+.singles .r4 .b1 { top:60px;transform:translateX(-50px) rotate(-18deg) }
+.singles .r4 .b2 { top:0;margin-left:50px }
+.singles .r4 .b3 { display:none !important }
+.singles .r4 .b4 { top:60px;transform:translateX(50px) rotate(18deg) }
+.singles .r4 .b5 { display:none !important }
+
+.singles .r5 .b1 { top:20px;transform:translateX(-35px) rotate(-20deg) }
+.singles .r5 .b2 { top:-15px;transform:translate(-25px) }
+.singles .r5 .b3 { top:15px }
+.singles .r5 .b4 { top:20px;transform:translateX(35px) rotate(20deg) }
+.singles .r5 .b5 { display:none !important }
+
+.singles .r6, .singles .r7, .singles .r8, .singles .r9, .singles .r10, .singles .r11, .singles .r12, .singles .r13, .singles .r14, .singles .r15, .singles .r16, .singles .r17, .singles .r18, .singles .r19, .singles .r20 { display:none !important }
+
+.balloons.singles { padding-top:50px }
