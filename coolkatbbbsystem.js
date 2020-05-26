@@ -200,7 +200,6 @@ $(document).ready(function() {
         $('.templates-holder').hide();
         $('.content, .cost').show();
 	$('#builder-step2').addClass("select");
-	$('#builder-step1').removeClass("select");
   
 	});
   
