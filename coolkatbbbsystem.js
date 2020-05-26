@@ -171,7 +171,9 @@ $('#opt-add').click(function () {
 
 
 
-
+var customizeclasses = "cascadingarrangement singlestring duostring classicarrangement singles supershapeduo supershapeclassic megaloonstring";
+var titleSelect = "Welcome toCool Kat Balloon Bouquet Builder";
+var listSelect = "Using our selection of over 800 balloons , you can create and order almost any bouquet! First, select a starting arrangement below.";
 var titleCascading = "Cascading Arrangement";
 var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
 var titleSingleString = "Single String Arrangement";
@@ -334,5 +336,25 @@ $(document).ready(function() {
        
 	}); 
   
+	
+	$('#gobacktemplates').click(function() {
+		$('.templates-holder').show();
+		$('.content, .cost').hide();
+		$('.balloons, .customize, .balloons-container').removeClass(customizeclasses);
+       		$('.ribbon').removeClass('wide');
+		$('.arrangement-title').html(titleSelect);
+		$('.arrangement-text').html(listSelect);
+        
+        	$('.step-link').removeClassExcept("step-link");
+       		$('#builder-step1').addClass("select");
+        
+		$('.content').hide();
+		$('.options').removeClassExcept("options");
+		$('.build-extra').removeClassExcept("build-extra");
+		$('.desc_template, .desc_row-1, #orderID, .desc_acc').html(' ');
+       
+	})
+	
+	
 });
 
