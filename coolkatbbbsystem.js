@@ -202,7 +202,7 @@ $(document).ready(function() {
         $('.templates-holder').hide();
         $('.content, .cost').show();
 	$('.info1').css('display', 'none');
-	$('.info2').css('display', 'block')
+	$('.info2').css('display', 'flex')
   
 	});
   
