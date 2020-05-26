@@ -199,7 +199,6 @@ $(document).ready(function() {
         $(this).addClass('selected');
         $('.templates-holder').hide();
         $('.content, .cost').show();
-	$('#builder-step2').addClass("select");
   
 	});
   
@@ -214,6 +213,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listCascading);
         $('.desc_template').html('Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
+	$('#builder-step2').addClass("select");
+    
         
 
 	});
@@ -229,7 +230,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listSingleString);
         $('.desc_template').html('Single String Arrangement');
         $('.step-link').removeClassExcept("step-link");
-        
+        $('#builder-step2').addClass("select");
+
 
 	});
 	
@@ -244,7 +246,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listDuoString);
         $('.desc_template').html('Duo String Arrangement');
         $('.step-link').removeClassExcept("step-link");
-        
+        $('#builder-step2').addClass("select");
+
 
 	});
   
@@ -259,7 +262,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listClassicArrangement);
         $('.desc_template').html('Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
-        
+        $('#builder-step2').addClass("select");
+
 
 	});
   
@@ -275,6 +279,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listSingles);
         $('.desc_template').html('Singles Arrangement');
         $('.step-link').removeClassExcept("step-link");
+	$('#builder-step2').addClass("select");
+
 
 	});  
   
@@ -289,6 +295,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listSupershapeDuo);
         $('.desc_template').html('Supershape Duo Arrangement');
         $('.step-link').removeClassExcept("step-link");
+	$('#builder-step2').addClass("select");
+
 
 	}); 
     
@@ -303,6 +311,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listSupershapeClassic);
         $('.desc_template').html('Supershape Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
+	$('#builder-step2').addClass("select");
+
 
 	}); 
     
@@ -318,6 +328,8 @@ $(document).ready(function() {
 		    $('.arrangement-text').html(listMegaloonString);
         $('.desc_template').html('Megaloon on String');
         $('.step-link').removeClassExcept("step-link");
+	$('#builder-step2').addClass("select");
+
         
        
 	}); 
