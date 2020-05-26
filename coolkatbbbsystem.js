@@ -201,6 +201,8 @@ $(document).ready(function() {
         $(this).addClass('selected');
         $('.templates-holder').hide();
         $('.content, .cost').show();
+	$('.info1').css('display', 'none');
+	$('.info2').css('display', 'block')
   
 	});
   
@@ -210,9 +212,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('cascadingarrangement');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e35a7c4a3d85b8cdc17df65_string-simpleribbon.png";
-        $('.arrangement-title').html(titleCascading);
-		    $('.arrangement-text').html(listCascading);
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e35a7c4a3d85b8cdc17df65_string-simpleribbon.png";
+        $('.info2 .arrangement-title').html(titleCascading);
+	$('.info2 .arrangement-text').html(listCascading);
         $('.desc_template').html('Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
@@ -227,9 +229,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('singlestring');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
         $('.arrangement-title').html(titleSingleString);
-		    $('.arrangement-text').html(listSingleString);
+	$('.arrangement-text').html(listSingleString);
         $('.desc_template').html('Single String Arrangement');
         $('.step-link').removeClassExcept("step-link");
         $('#builder-step2').addClass("select");
