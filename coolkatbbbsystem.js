@@ -172,8 +172,7 @@ $('#opt-add').click(function () {
 
 
 var customizeclasses = "cascadingarrangement singlestring duostring classicarrangement singles supershapeduo supershapeclassic megaloonstring";
-var titleSelect = "Welcome to </br> Cool Kat Balloon Bouquet Builder";
-var listSelect = "Using our selection of over 800 balloons , you can create and order almost any bouquet! First, select a starting arrangement below.";
+
 var titleCascading = "Cascading Arrangement";
 var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
 var titleSingleString = "Single String Arrangement";
@@ -230,8 +229,8 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('singlestring');
 	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.arrangement-title').html(titleSingleString);
-	$('.arrangement-text').html(listSingleString);
+        $('.info2 .arrangement-title').html(titleSingleString);
+	$('.info2 .arrangement-text').html(listSingleString);
         $('.desc_template').html('Single String Arrangement');
         $('.step-link').removeClassExcept("step-link");
         $('#builder-step2').addClass("select");
@@ -245,9 +244,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('duostring');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.arrangement-title').html(titleDuoString);
-		    $('.arrangement-text').html(listDuoString);
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
+        $('.info2 .arrangement-title').html(titleDuoString);
+	$('.info2 .arrangement-text').html(listDuoString);
         $('.desc_template').html('Duo String Arrangement');
         $('.step-link').removeClassExcept("step-link");
         $('#builder-step2').addClass("select");
@@ -261,9 +260,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('classicarrangement');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8e11ed7bc08b5a67d3ac80_string-cluster.png";
-        $('.arrangement-title').html(titleClassicArrangement);
-		    $('.arrangement-text').html(listClassicArrangement);
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8e11ed7bc08b5a67d3ac80_string-cluster.png";
+        $('.info2 .arrangement-title').html(titleClassicArrangement);
+	$('.info2 .arrangement-text').html(listClassicArrangement);
         $('.desc_template').html('Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
         $('#builder-step2').addClass("select");
@@ -277,10 +276,10 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('singles');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8ef5815d89c2c8c2d524d6_string-umbrella2.png";
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8ef5815d89c2c8c2d524d6_string-umbrella2.png";
         $('.ribbon').addClass('wide');
-        $('.arrangement-title').html(titleSingles);
-		    $('.arrangement-text').html(listSingles);
+        $('.info2 .arrangement-title').html(titleSingles);
+	$('.info2 .arrangement-text').html(listSingles);
         $('.desc_template').html('Singles Arrangement');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
@@ -294,9 +293,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('supershapeduo');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.arrangement-title').html(titleSupershapeDuo);
-		    $('.arrangement-text').html(listSupershapeDuo);
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
+        $('.info2 .arrangement-title').html(titleSupershapeDuo);
+	$('.info2 .arrangement-text').html(listSupershapeDuo);
         $('.desc_template').html('Supershape Duo Arrangement');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
@@ -310,9 +309,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('supershapeclassic');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8e11ed7bc08b5a67d3ac80_string-cluster.png";
-        $('.arrangement-title').html(titleSupershapeClassic);
-		    $('.arrangement-text').html(listSupershapeClassic);
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8e11ed7bc08b5a67d3ac80_string-cluster.png";
+        $('.info2 .arrangement-title').html(titleSupershapeClassic);
+	$('.info2 .arrangement-text').html(listSupershapeClassic);
         $('.desc_template').html('Supershape Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
@@ -327,9 +326,9 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5').addClass("qualatex-dark-blue-latex-107283");
         $('.top, .ctop').addClass("supershape");
         $('.balloons, .customize').addClass('megaloonstring');
-		    document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.arrangement-title').html(titleMegaloonString);
-		    $('.arrangement-text').html(listMegaloonString);
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
+        $('.info2 .arrangement-title').html(titleMegaloonString);
+	$('.info2 .arrangement-text').html(listMegaloonString);
         $('.desc_template').html('Megaloon on String');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
@@ -344,8 +343,8 @@ $(document).ready(function() {
 		$('.content, .cost').hide();
 		$('.balloons, .customize, .balloons-container').removeClass(customizeclasses);
        		$('.ribbon').removeClass('wide');
-		$('.arrangement-title').html(titleSelect);
-		$('.arrangement-text').html(listSelect);
+		$('.info1').css('display', 'flex');
+		$('.info2').css('display', 'none')
         
         	$('.step-link').removeClassExcept("step-link");
        		$('#builder-step1').addClass("select");
