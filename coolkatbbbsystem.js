@@ -203,7 +203,7 @@ $(document).ready(function() {
 	$('.info1').css('display', 'none');
 	$('.info2').css('display', 'flex');
   
-	});
+    });
   
     /*Cascading Arrangement*/
   
@@ -355,6 +355,47 @@ $(document).ready(function() {
 		$('.desc_template, .desc_row-1, #orderID, .desc_acc').html(' ');
        
 	})
+	
+	
+	$('#proceed').click(function() {
+	
+      
+			$('.baloons-options').hide();		  
+			$('.expanded').removeClass('expanded');
+			$('.b1, .b2, .b3, .b4, .b5, .top').removeClass('active')	
+			$('#information').show();
+      
+      $('#select-btn-holder').css('display', 'none'); 
+			$('#order-btn-holder').css('display', 'flex');
+      
+			$('.info2').css('display', 'none');
+	    $('.info3').css('display', 'flex');
+      
+      $('.step-link').removeClassExcept("step-link");
+			$('#builder-step3').addClass("select");
+  
+	});
+  
+  
+  $('#goback').click(function() {
+  
+			$('.desc_row-1').html('');
+			$('.desc_top').html('');
+      $('.desc_acc').html('');
+			$('.select').show();
+      $('.baloons-options').show();
+      $('#information').hide();
+      
+      $('.info3').css('display', 'none');
+	    $('.info2').css('display', 'flex');
+		
+			$('#select-btn-holder').css('display', 'flex'); 
+			$('#order-btn-holder').css('display', 'none');
+      
+			$('.step-link').removeClassExcept("step-link");
+			$('#builder-step2').addClass("select");
+			   
+	});
 	
 	
 });
