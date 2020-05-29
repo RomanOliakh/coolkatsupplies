@@ -35,7 +35,7 @@
             }
             $('.finaltitle').show();
             $('#orderID').html(orderID);
-	    $('#orderFIELD').html(orderID);
+	    $('#orderFIELD').text(#orderID);
         });
 
         $('#inputquantity').change(function () {
