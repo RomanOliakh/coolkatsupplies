@@ -48,7 +48,7 @@
 /* CLASSIC ARRANGEMENT (START)*/
 
 .balloons.cascadingarrangement .r1, .balloons.cascadingarrangement .r2, .balloons.cascadingarrangement .r3 {
-    display: block !important;
+    display: flex !important;
 }
 
 .balloons.cascadingarrangement .ctop {
@@ -76,7 +76,7 @@
 /* SINGLE STRING ARRANGEMENT (START)*/
 
 .balloons.singlestring .r1, .singlestring .r2, .singlestring .r3 {
-    display: block !important;
+    display: flex !important;
 }
 
 .balloons.singlestring .ctop {
@@ -104,11 +104,11 @@
 /* DUO STRING ARRANGEMENT (START)*/
 
 .balloons.duostring .r1, .duostring .r2, .duostring .ctop {
-    display: block !important;
+    display: flex !important;
 }
 
 .duostring .r3 {
-    display: block;
+    display: flex;
 }
 
 
@@ -131,11 +131,11 @@
 
 /* CLASSIC ARRANGEMENT (START)*/
 .balloons.classicarrangement .r1, .classicarrangement .r2, .classicarrangement .ctop {
-    display: block !important;
+    display: flex !important;
 }
 
 .classicarrangement .r3 {
-    display: block;
+    display: flex;
 }
 
 .balloons.classicarrangement .r4, .balloons.classicarrangement .r5, .balloons.classicarrangement .r6, .balloons.classicarrangement .r7, .balloons.classicarrangement .r8, .balloons.classicarrangement .r9, .balloons.classicarrangement .r10, .balloons.classicarrangement .r11, .balloons.classicarrangement .r12, .balloons.classicarrangement .r13, .balloons.classicarrangement .r14, .balloons.classicarrangement .r15, .balloons.classicarrangement .r16, .balloons.classicarrangement .r17, .balloons.classicarrangement .r18, .balloons.classicarrangement .r19, .balloons.classicarrangement .r20, .ctop {
@@ -223,11 +223,11 @@
 /* SUPERSHAPE DUO ARRANGEMENT (START)*/
 
 .balloons.supershapeduo .r1, .supershapeduo .r2, .supershapeduo .ctop {
-    display: block !important;
+    display: flex !important;
 }
 
  .supershapeduo .r3 {
-    display: block;
+    display: flex;
 }
 
 
@@ -251,11 +251,11 @@
 
 /* SUPERSHAPE CLASSIC ARRANGEMENT (START)*/
 .balloons.supershapeclassic .r1, .supershapeclassic .r2, .supershapeclassic .ctop {
-    display: block !important;
+    display: flex !important;
 }
 
 .supershapeclassic .r3 {
-    display: block;
+    display: flex;
 }
 
 .balloons.supershapeclassic .r4, .balloons.supershapeclassic .r5, .balloons.supershapeclassic .r6, .balloons.supershapeclassic .r7, .balloons.supershapeclassic .r8, .balloons.supershapeclassic .r9, .balloons.supershapeclassic .r10, .balloons.supershapeclassic .r11, .balloons.supershapeclassic .r12, .balloons.supershapeclassic .r13, .balloons.supershapeclassic .r14, .balloons.supershapeclassic .r15, .balloons.supershapeclassic .r16, .balloons.supershapeclassic .r17, .balloons.supershapeclassic .r18, .balloons.supershapeclassic .r19, .balloons.supershapeclassic .r20, .ctop {
@@ -269,7 +269,7 @@
 /* MEGALOON ON STRING (START)*/
 
 .balloons.supershapeduo .ctop {
-    display: block !important;
+    display: flex !important;
 }
 
 .balloons.megaloonstring .r1, .balloons.megaloonstring .r2, .balloons.megaloonstring .r3, .balloons.megaloonstring .r4, .balloons.megaloonstring .r5, .balloons.megaloonstring .r6, .balloons.megaloonstring .r7, .balloons.megaloonstring .r8, .balloons.megaloonstring .r9, .balloons.megaloonstring .r10, .balloons.megaloonstring .r11, .balloons.megaloonstring .r12, .balloons.megaloonstring .r13, .balloons.megaloonstring .r14, .balloons.megaloonstring .r15, .balloons.megaloonstring .r16, .balloons.megaloonstring .r17, .balloons.megaloonstring .r18, .balloons.megaloonstring .r19, .balloons.megaloonstring .r20 {
