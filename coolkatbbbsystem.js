@@ -161,7 +161,7 @@ $('#opt-sub').click(function () {
 });
 
 $('#opt-add').click(function () {
-    $(".balloons > [class*='r']:hidden:last").show();
+    $(".balloons > [class*='r']:hidden:last").css('display', 'flex'); 
     $(".select > [class*='opt-r']:hidden:last").show(100);
 
 });
@@ -358,42 +358,39 @@ $(document).ready(function() {
 	
 	
 	$('#proceed').click(function() {
-	
+		$('.baloons-options').hide();		  
+		$('.expanded').removeClass('expanded');
+		$('.b1, .b2, .b3, .b4, .b5, .top').removeClass('active')	
+		$('#information').show();
       
-			$('.baloons-options').hide();		  
-			$('.expanded').removeClass('expanded');
-			$('.b1, .b2, .b3, .b4, .b5, .top').removeClass('active')	
-			$('#information').show();
+      		$('#select-btn-holder').css('display', 'none'); 
+		$('#order-btn-holder').css('display', 'flex');
       
-      $('#select-btn-holder').css('display', 'none'); 
-			$('#order-btn-holder').css('display', 'flex');
+		$('.info2').css('display', 'none');
+	    	$('.info3').css('display', 'flex');
       
-			$('.info2').css('display', 'none');
-	    $('.info3').css('display', 'flex');
-      
-      $('.step-link').removeClassExcept("step-link");
-			$('#builder-step3').addClass("select");
+      		$('.step-link').removeClassExcept("step-link");
+		$('#builder-step3').addClass("select");
   
 	});
   
   
-  $('#goback').click(function() {
-  
-			$('.desc_row-1').html('');
-			$('.desc_top').html('');
-      $('.desc_acc').html('');
-			$('.select').show();
-      $('.baloons-options').show();
-      $('#information').hide();
+  	$('#goback').click(function() {
+		$('.desc_row-1').html('');
+		$('.desc_top').html('');
+		$('.desc_acc').html('');
+		$('.select').show();
+      		$('.baloons-options').show();
+      		$('#information').hide();
       
-      $('.info3').css('display', 'none');
-	    $('.info2').css('display', 'flex');
+      		$('.info3').css('display', 'none');
+	    	$('.info2').css('display', 'flex');
 		
-			$('#select-btn-holder').css('display', 'flex'); 
-			$('#order-btn-holder').css('display', 'none');
+		$('#select-btn-holder').css('display', 'flex'); 
+		$('#order-btn-holder').css('display', 'none');
       
-			$('.step-link').removeClassExcept("step-link");
-			$('#builder-step2').addClass("select");
+		$('.step-link').removeClassExcept("step-link");
+		$('#builder-step2').addClass("select");
 			   
 	});
 	
