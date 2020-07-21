@@ -34,7 +34,7 @@
 
             }
             $('.finaltitle').show();
-            $('.orderID').html(orderID);
+            $('#orderID').html(orderID);
         });
 
         $('#inputquantity').change(function () {
@@ -49,7 +49,7 @@
             var data =
                 {
                     name: $("#name").val(),
-                    orderID: $(".orderID").text(),
+                    orderID: $("#orderID").text(),
                     quantity: $("#inputquantity").val(),
                     cost: $("#totalvalue").text(),
                     costCalc: $(".finalCost").text(),
