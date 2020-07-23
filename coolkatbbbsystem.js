@@ -183,10 +183,6 @@ var titleClassicArrangement = "Classic Arrangement";
 var listClassicArrangement = "A big and beautiful bouquet. Rows of 3 balloons tied to a single weighted line with a standard topper. Great for centerpieces and focal points.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 4 - 18 balloons";
 var titleSingles = "Singles (No Arrangement)";
 var listSingles = "Make your own bunch of balloons. This style has NO structure or staggering.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 13 - 20 balloons<br />• Select colour and quantity";
-var titleSupershapeDuo = "Supershape Duo Arrangement";
-var listSupershapeDuo = "This arrangement staggers pairs of balloons on a single weighted line with a specialty topper. Customize for any occasion!<br /><br />Arrangement details:<br />• 11\" and 16\" balloons for bouquet body<br />• Choice of Megaloon top balloon<br />• 3 - 15 balloons";
-var titleSupershapeClassic = "Supershape Classic Arrangement";
-var listSupershapeClassic = "The original bouquet with an eye-catching Megaloon top. Rows of 3 balloons tied to a single weighted line. Great for centerpieces and focal points.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons for bouquet body<br />• Choice of Megaloon top balloon<br />• 4 - 18 balloons";
 
 
 
@@ -287,37 +283,6 @@ $(document).ready(function() {
 
 	});  
   
-        /*Supershape Duo Arrangement*/
-  
-    $('.template-supershapeduo').click(function() {
-        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
-        $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
-        $('.balloons, .customize').addClass('supershapeduo');
-	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.info2 .arrangement-title').html(titleSupershapeDuo);
-	$('.info2 .arrangement-text').html(listSupershapeDuo);
-        $('.desc_template').html('Supershape Duo Arrangement');
-        $('.step-link').removeClassExcept("step-link");
-	$('#builder-step2').addClass("select");
-
-
-	}); 
-    
-        /*Supershape Classic Arrangement*/
-  
-    $('.template-supershapeclassic').click(function() {
-        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
-        $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
-        $('.balloons, .customize').addClass('supershapeclassic');
-	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8e11ed7bc08b5a67d3ac80_string-cluster.png";
-        $('.info2 .arrangement-title').html(titleSupershapeClassic);
-	$('.info2 .arrangement-text').html(listSupershapeClassic);
-        $('.desc_template').html('Supershape Classic Arrangement');
-        $('.step-link').removeClassExcept("step-link");
-	$('#builder-step2').addClass("select");
-
-
-	}); 
     
         /*Megaloon on String Arrangement*/
   
