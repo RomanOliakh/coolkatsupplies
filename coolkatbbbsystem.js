@@ -183,6 +183,8 @@ var titleClassicArrangement = "Classic Arrangement";
 var listClassicArrangement = "A big and beautiful bouquet. Rows of 3 balloons tied to a single weighted line with a standard topper. Great for centerpieces and focal points.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 4 - 18 balloons";
 var titleSingles = "Singles (No Arrangement)";
 var listSingles = "Make your own bunch of balloons. This style has NO structure or staggering.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 13 - 20 balloons<br />• Select colour and quantity";
+var titlecolumnclassic = "Column Classic";
+var listcolumnclassic = "Perfect for entryways, the eye-catching column is mounted on a centre frame and weighted base.<br /><br />Arrangement details:<br />• Balloon sizes cannot be changed<br />• Select up to 4 colours<br />• Call and ask about a full archway!";
 
 
 
@@ -297,11 +299,29 @@ $(document).ready(function() {
         $('.desc_template').html('Megaloon on String');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
-
-        
-       
-	}); 
+	    
+    }); 
   
+	   /*Column Classic Arrangement*/
+    $('.template-columnclassic').click(function() {
+        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
+        $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
+	$('.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .b1, .b2, .b3, .b4').show();
+	$('.b5, .r9, .r10').hide();
+        $('.top, .ctop').addClass("columnclassic");
+        $('.balloons, .customize').addClass('columnclassic');
+	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
+        $('.info2 .arrangement-title').html(titlecolumnclassic);
+	$('.info2 .arrangement-text').html(listcolumnclassic);
+        $('.desc_template').html('Megaloon on String');
+        $('.step-link').removeClassExcept("step-link");
+	$('#builder-step2').addClass("select");
+	    
+    }); 
+	
+	
+	
+	
 	
 	$('#gobacktemplates').click(function() {
 		$('.templates-holder').show();
