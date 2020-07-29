@@ -161,7 +161,7 @@ $('#opt-sub').click(function () {
 });
 
 $('#opt-add').click(function () {
-    $(".balloons > [class*='r']:hidden:last").css('display', 'block'); 
+    $(".balloons > [class*='r']:hidden:last").show();
     $(".select > [class*='opt-r']:hidden:last").show(100);
 
 });
