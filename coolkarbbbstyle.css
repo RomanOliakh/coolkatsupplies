@@ -153,8 +153,8 @@
 .singles .r1 { display:block !important }
 .singles .r2 { height:30px;display:block !important }
 .singles .r3 { height:2px;display:block !important }
-.singles .r4 { height:25px;display:none !important }
-.singles .r5 { height:2px;display:none !important }
+.singles .r4 { height:25px;display:none }
+.singles .r5 { height:2px;display:none }
 .singles .b1 { transform:rotate(-15deg) }
 .singles .b2 { transform:rotate(-10deg) }
 .singles .b3 { transform:rotate(5deg);margin-left:-35px  }
