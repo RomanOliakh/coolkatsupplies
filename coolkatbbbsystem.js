@@ -175,17 +175,10 @@ var customizeclasses = "cascadingarrangement singlestring duostring classicarran
 
 var titleCascading = "Cascading Arrangement";
 var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
-var titleSingleString = "Single String Arrangement";
-var listSingleString = "Clean, compact, balloons! This arrangement staggers each balloon on a single weighted line.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 1 - 16 balloons";
-var titleDuoString = "Duo String Arrangement";
-var listDuoString = "Perfect for colour harmonies. This arrangement staggers pairs of balloons on a single weighted line with a standard topper. Great for centerpieces and scattered decor.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 3 - 15 balloons";
 var titleClassicArrangement = "Classic Arrangement";
 var listClassicArrangement = "A big and beautiful bouquet. Rows of 3 balloons tied to a single weighted line with a standard topper. Great for centerpieces and focal points.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 4 - 18 balloons";
 var titleSingles = "Singles (No Arrangement)";
 var listSingles = "Make your own bunch of balloons. This style has NO structure or staggering.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 13 - 20 balloons<br />• Select colour and quantity";
-var titlecolumnclassic = "Column Classic";
-var listcolumnclassic = "Perfect for entryways, the eye-catching column is mounted on a centre frame and weighted base.<br /><br />Arrangement details:<br />• Balloon sizes cannot be changed<br />• Select up to 4 colours<br />• Call and ask about a full archway!";
-
 
 
 $(document).ready(function() {
@@ -219,38 +212,7 @@ $(document).ready(function() {
         
 
 	});
-	
-      /*Single String Arrangement*/
-  
-    $('.template-singlestring').click(function() {
-        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
-        $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
-        $('.balloons, .customize').addClass('singlestring');
-	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.info2 .arrangement-title').html(titleSingleString);
-	$('.info2 .arrangement-text').html(listSingleString);
-        $('.desc_template').html('Single String Arrangement');
-        $('.step-link').removeClassExcept("step-link");
-        $('#builder-step2').addClass("select");
 
-
-	});
-	
-      /*Duo Arrangement*/
-  
-    $('.template-duostring').click(function() {
-        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
-        $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
-        $('.balloons, .customize').addClass('duostring');
-	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.info2 .arrangement-title').html(titleDuoString);
-	$('.info2 .arrangement-text').html(listDuoString);
-        $('.desc_template').html('Duo String Arrangement');
-        $('.step-link').removeClassExcept("step-link");
-        $('#builder-step2').addClass("select");
-
-
-	});
   
         /*Classic Arrangement*/
   
@@ -284,45 +246,8 @@ $(document).ready(function() {
 
 
 	});  
-  
-    
-        /*Megaloon on String Arrangement*/
-  
-    $('.template-megaloonstring').click(function() {
-        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
-        $('.b1, .b2, .b3, .b4, .b5').addClass("qualatex-dark-blue-latex-107283");
-        $('.top, .ctop').addClass("supershape");
-        $('.balloons, .customize').addClass('megaloonstring');
-	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.info2 .arrangement-title').html(titleMegaloonString);
-	$('.info2 .arrangement-text').html(listMegaloonString);
-        $('.desc_template').html('Megaloon on String');
-        $('.step-link').removeClassExcept("step-link");
-	$('#builder-step2').addClass("select");
-	    
-    }); 
-  
-	   /*Column Classic Arrangement*/
-    $('.template-columnclassic').click(function() {
-        $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
-        $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
-	$('.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .b1, .b2, .b3, .b4').show();
-	$('.b5, .r9, .r10').hide();
-        $('.top, .ctop').addClass("columnclassic");
-        $('.balloons, .customize').addClass('columnclassic');
-	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8df7561ce826117f199bf3_string.png";
-        $('.info2 .arrangement-title').html(titlecolumnclassic);
-	$('.info2 .arrangement-text').html(listcolumnclassic);
-        $('.desc_template').html('Megaloon on String');
-        $('.step-link').removeClassExcept("step-link");
-	$('#builder-step2').addClass("select");
-	    
-    }); 
 	
-	
-	
-	
-	
+		
 	$('#gobacktemplates').click(function() {
 		$('.templates-holder').show();
 		$('.content, .cost').hide();
