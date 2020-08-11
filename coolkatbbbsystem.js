@@ -171,7 +171,7 @@ $('#opt-add').click(function () {
 
 
 
-var customizeclasses = "cascadingarrangement singlestring duostring classicarrangement singles supershapeduo supershapeclassic megaloonstring";
+var customizeclasses = "cascadingarrangement classicarrangement singles";
 
 var titleCascading = "Cascading Arrangement";
 var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
