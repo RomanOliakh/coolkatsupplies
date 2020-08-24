@@ -187,7 +187,6 @@ $(document).ready(function() {
 
     $('.templates-holder div').click(function() {
         $('.balloons, .customize').removeClass(customizeclasses);
-	$('.balloons').addClass('expanded');
         $('.templates div').removeClass('selected');
         $(this).addClass('selected');
         $('.templates-holder').hide();
