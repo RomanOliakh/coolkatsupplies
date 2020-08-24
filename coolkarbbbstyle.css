@@ -220,14 +220,83 @@
 .balloons.singles { padding-top:50px }
 
 
-/* MEGALOON ON STRING (START)*/
+/* SINGLES ARRANGEMENT EXPANDED(START)*/
 
-.balloons.megaloonstring .ctop {
-    display: flex !important;
-}
+.singles .expanded .r1, .singles .expanded .r2, .singles .expanded .r3, .singles .expanded .r4, .singles .expanded .r5 { height:130px }
+.singles .b1, .singles .b2, .singles .b3, .singles .b4, .singles .b5 { transform:rotate(0deg);width:90px;top:0 }
+.singles .expanded .r1 { display:block !important }
+.singles .expanded .r2 { height:130px;display:block !important }
+.singles .expanded .r3 { height:130px;display:block !important }
+.singles .expanded .r4 { height:130px;display:none }
+.singles .expanded .r5 { height:130px;display:none }
+.singles .expanded .b1 { transform:rotate(0deg) }
+.singles .expanded .b2 { transform:rotate(0deg) }
+.singles .expanded .b3 { transform:rotate(0deg);margin-left:0px  }
+.singles .expanded .b4 { transform:rotate(0deg)  }
+.singles .expanded .b5 { transform:rotate(0deg) }
+.singles .expanded .r1 .b2 { margin-left:0px }
+.singles .expanded .r1 .b5 { margin-left:0px }
 
-.balloons.megaloonstring .r1, .balloons.megaloonstring .r2, .balloons.megaloonstring .r3, .balloons.megaloonstring .r4, .balloons.megaloonstring .r5, .balloons.megaloonstring .r6, .balloons.megaloonstring .r7, .balloons.megaloonstring .r8, .balloons.megaloonstring .r9, .balloons.megaloonstring .r10, .balloons.megaloonstring .r11, .balloons.megaloonstring .r12, .balloons.megaloonstring .r13, .balloons.megaloonstring .r14, .balloons.megaloonstring .r15, .balloons.megaloonstring .r16, .balloons.megaloonstring .r17, .balloons.megaloonstring .r18, .balloons.megaloonstring .r19, .balloons.megaloonstring .r20 {
-    display: none !important;
-}
+.singles .r1 .b1 { z-index: 530 }
+.singles .r1 .b2 { z-index: 535 }
+.singles .r1 .b3 { z-index: 550 }
+.singles .r1 .b4 { z-index: 525 }
+.singles .r1 .b5 { z-index: 539 }
+
+.singles .r2 .b1 { z-index: 430 }
+.singles .r2 .b2 { z-index: 435 }
+.singles .r2 .b3 { z-index: 450 }
+.singles .r2 .b4 { z-index: 425 }
+.singles .r2 .b5 { z-index: 439 }
+
+.singles .r3 .b1 { z-index: 330 }
+.singles .r3 .b2 { z-index: 335 }
+.singles .r3 .b3 { z-index: 350 }
+.singles .r3 .b4 { z-index: 325 }
+.singles .r3 .b5 { z-index: 339 }
+
+.singles .r4 .b1 { z-index: 230 }
+.singles .r4 .b2 { z-index: 235 }
+.singles .r4 .b3 { z-index: 250 }
+.singles .r4 .b4 { z-index: 225 }
+.singles .r4 .b5 { z-index: 239 }
+
+.singles .r5 .b1 { z-index: 130 }
+.singles .r5 .b2 { z-index: 135 }
+.singles .r5 .b3 { z-index: 150 }
+.singles .r5 .b4 { z-index: 125 }
+.singles .r5 .b5 { z-index: 139 }
+
+.singles .expanded div .b2 { top:0px }
+.singles .expanded div .b3 { top:0px }
+.singles .expanded div .b4 { top:0px;margin-left:0px; }
+
+.singles .expanded .r2 .b3 { top:0px;margin-left:0px }
+
+.singles .expanded .r3 .b3 { top:0px;transform:none }
+.singles .expanded .r3 .b1 { display:none !important }
+.singles .expanded .r3 .b5 { display:none !important }
+
+.singles .expanded .r4 .b1 { top:0px;transform:translateX(0px) rotate(0deg) }
+.singles .expanded .r4 .b2 { top:0;margin-left:0px }
+.singles .expanded .r4 .b3 { display:none !important }
+.singles .expanded .r4 .b4 { top:0px;transform:translateX(0px) rotate(0deg) }
+.singles .expanded .r4 .b5 { display:none !important }
+
+.singles .expanded .r5 .b1 { top:0px;transform:translateX(0px) rotate(0deg) }
+.singles .expanded .r5 .b2 { top:0px;transform:translate(0px) }
+.singles .expanded .r5 .b3 { top:0px }
+.singles .expanded .r5 .b4 { top:0px;transform:translateX(0px) rotate(0deg) }
+.singles .expanded .r5 .b5 { display:none !important }
+
+.singles .r6, .singles .r7, .singles .r8, .singles .r9, .singles .r10, .singles .r11, .singles .r12, .singles .r13, .singles .r14, .singles .r15, .singles .r16, .singles .r17, .singles .r18, .singles .r19, .singles .r20 { display:none !important }
+
+.balloons.singles { padding-top:50px }
+
+
+
+
+
+
 
 
