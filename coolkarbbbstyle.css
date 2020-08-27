@@ -244,8 +244,11 @@
     top:0
 }
 
-.singles .expanded .r1 .b5 { margin-left: 0px }
-
+.balloons.singles.expanded .b1, .balloons.umbrella.expanded .b2, .balloons.umbrella.expanded .b3, .balloons.umbrella.expanded .b4, .balloons.umbrella.expanded .b5 {
+    margin: 0 0 0 0px;
+    top: 0;
+    transform: none
+}
 
 
 
