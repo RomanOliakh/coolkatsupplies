@@ -221,5 +221,59 @@
 .balloons.singles { padding-top:50px }
 
 
+  
+  #opt-expand #expand2 {
+    display: none
+	}
+  
+  .expanded .r1,  .expanded .r2, .expanded .r3, .expanded .r4, .expanded .r5, .expanded .r6, .expanded .r7, .expanded .r8, .expanded .r9, .expanded .r10, .expanded .r11, .expanded .r12, .expanded .r13, .expanded .r14, .expanded .r15, .expanded .r16, .expanded .r17, .expanded .r18, .expanded .r19, .expanded .r20, .expanded .ctop  {
+    top: 0px;
+    margin: 0px 0px;
+    height: 130px;
+
+	}
+
+	.expanded .b1, .expanded .r1 .b1 {
+		transform: translate(0px) rotate(0deg);
+    margin: 0px 5px;
+    width: 90px;
+    top: 0px;
+	}
+  
+  .expanded .b2, .expanded .r1 .b2 {
+		transform: translate(0px) rotate(0deg);
+    margin: 0px 5px;
+    width: 90px;
+    top: 0px;
+	}
+  
+  .expanded .b3 {
+		transform: translate(0px) rotate(0deg);
+    margin: 0px 5px;
+    width: 90px;
+    top: 0px;
+
+	}
+  
+  .expanded .b4 {
+		transform: translate(0px) rotate(0deg);
+    margin: 0px 5px;
+    width: 90px;
+    top: 0px;
+	}
+  
+  .expanded .b5 {
+		transform: translate(0px) rotate(0deg);
+    margin: 0px 5px;
+    width: 90px;
+    top: 0px;
+	}
+  
+  .expanded .top {
+		transform: translate(0px) rotate(0deg);
+    margin: 0px 5px;
+    width: 90px;
+    top: 0px;
+	}
 
 
