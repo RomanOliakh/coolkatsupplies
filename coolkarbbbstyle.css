@@ -156,9 +156,9 @@
 .singles .r4 { height:25px;display:none }
 .singles .r5 { height:2px;display:none }
 .singles .b1 { transform:rotate(-15deg) }
-.singles .b2 { transform:rotate(-10deg) }
-.singles .b3 { transform:rotate(5deg);margin-left:-35px  }
-.singles .b4 { transform:rotate(5deg)  }
+.singles .b2 { transform:rotate(-10deg); top:-20px }
+.singles .b3 { transform:rotate(5deg); margin-left:-35px; top:-25px }
+.singles .b4 { transform:rotate(5deg);  top:-20px;margin-left:-90px;}
 .singles .b5 { transform:rotate(15deg) }
 .singles .r1 .b2 { margin-left:-35px }
 .singles .r1 .b5 { margin-left:-35px }
@@ -194,9 +194,7 @@
 .singles .r5 .b5 { z-index: 139 }
 
 
-.singles div .b2 { top:-20px }
-.singles div .b3 { top:-25px }
-.singles div .b4 { top:-20px;margin-left:-90px; }
+
 
 .singles .r2 .b3 { top:-30px;margin-left:-35px }
 
