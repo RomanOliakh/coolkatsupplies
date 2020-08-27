@@ -210,16 +210,19 @@
 }
  .expanded .b1,.expanded .r1 .b1{
     transform:translate(0px) rotate(0deg);
+    margin-left: 0px;
     width:90px;
     top:0
 }
  .expanded .b2,.expanded .r1 .b2{
     transform:translate(0px) rotate(0deg);
+    margin-left: 0px;
     width:90px;
     top:0
 }
  .expanded .b3{
     transform:translate(0px) rotate(0deg);
+    margin-left: 0px;
     width:90px;
     top:0
 }
@@ -230,13 +233,17 @@
 }
  .expanded .b5{
     transform:translate(0px) rotate(0deg);
+    margin-left: 0px;
     width:90px;
     top:0
 }
  .expanded .top{
     transform:translate(0px) rotate(0deg);
+    margin-left: 0px;
     width:90px;
     top:0
 }
+
+
 
 
