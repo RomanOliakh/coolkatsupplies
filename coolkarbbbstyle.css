@@ -244,7 +244,7 @@
     top:0
 }
 
-.balloons.singles.expanded .b1, .balloons.umbrella.expanded .b2, .balloons.umbrella.expanded .b3, .balloons.umbrella.expanded .b4, .balloons.umbrella.expanded .b5 {
+.balloons.singles.expanded .b1, .balloons.singles.expanded .b2, .balloons.singles.expanded .b3, .balloons.singles.expanded .b4, .balloons.singles.expanded .b5 {
     margin: 0 0 0 0px;
     top: 0;
     transform: none
