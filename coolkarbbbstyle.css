@@ -194,15 +194,31 @@
 .singles .r5 .b5 { z-index: 139 }
 
 
+.singles div .b2 { top:-20px }
+.singles div .b3 { top:-25px }
+.singles div .b4 { top:-20px;margin-left:-90px; }
 
+.singles .r2 .b3 { top:-30px;margin-left:-35px }
 
+.singles .r3 .b3 { top:-50px;transform:none }
+.singles .r3 .b1 { display:none !important }
+.singles .r3 .b5 { display:none !important }
 
+.singles .r4 .b1 { top:60px;transform:translateX(-50px) rotate(-18deg) }
+.singles .r4 .b2 { top:0;margin-left:50px }
+.singles .r4 .b3 { display:none !important }
+.singles .r4 .b4 { top:60px;transform:translateX(50px) rotate(18deg) }
+.singles .r4 .b5 { display:none !important }
 
+.singles .r5 .b1 { top:20px;transform:translateX(-35px) rotate(-20deg) }
+.singles .r5 .b2 { top:-15px;transform:translate(-25px) }
+.singles .r5 .b3 { top:15px }
+.singles .r5 .b4 { top:20px;transform:translateX(35px) rotate(20deg) }
+.singles .r5 .b5 { display:none !important }
 
 .singles .r6, .singles .r7, .singles .r8, .singles .r9, .singles .r10, .singles .r11, .singles .r12, .singles .r13, .singles .r14, .singles .r15, .singles .r16, .singles .r17, .singles .r18, .singles .r19, .singles .r20 { display:none !important }
 
 .balloons.singles { padding-top:50px }
-
 
 
 
