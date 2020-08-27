@@ -261,24 +261,4 @@
     top:0
 }
 
-.expanded div .b2 { top:0px }
-.expanded div .b3 { top:0px }
-.expanded div .b4 { top:0px;margin-left:0px; }
 
-.expanded .r2 .b3 { top:0px;margin-left:0px }
-
-.expanded .r3 .b3 { top:0px;transform:none }
-.expanded .r3 .b1 { display:none !important }
-.expanded .r3 .b5 { display:none !important }
-
-.expanded .r4 .b1 { top:0px;transform:translateX(0px) rotate(0deg) }
-.expanded .r4 .b2 { top:0;margin-left:0px }
-.expanded .r4 .b3 { display:none !important }
-.expanded .r4 .b4 { top:0px;transform:translateX(0px) rotate(0deg) }
-.expanded .r4 .b5 { display:none !important }
-
-.expanded .r5 .b1 { top:0px;transform:translateX(0px) rotate(0deg) }
-.expanded .r5 .b2 { top:0px;transform:translate(0px) }
-.expanded .r5 .b3 { top:0px }
-.expanded .r5 .b4 { top:0px;transform:translateX(0px) rotate(0deg) }
-.expanded .r5 .b5 { display:none !important }
