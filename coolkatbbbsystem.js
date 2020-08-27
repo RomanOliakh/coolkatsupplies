@@ -294,6 +294,8 @@ $(document).ready(function() {
 		$('.select').show();
       		$('.baloons-options').show();
       		$('#information').hide();
+		$('.balloons').addClass('expanded');
+
       
       		$('.info3').css('display', 'none');
 	    	$('.info2').css('display', 'flex');
