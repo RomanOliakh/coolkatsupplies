@@ -202,6 +202,7 @@ $(document).ready(function() {
         $('.b1, .b2, .b3, .b4, .b5, .top').removeClassExcept("b1 b2 b3 b4 b5 top ");
         $('.b1, .b2, .b3, .b4, .b5, .top').addClass("qualatex-dark-blue-latex-107283");
         $('.balloons, .customize').addClass('cascadingarrangement');
+	$('.balloons').addClass('expanded');
 	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e35a7c4a3d85b8cdc17df65_string-simpleribbon.png";
         $('.info2 .arrangement-title').html(titleCascading);
 	$('.info2 .arrangement-text').html(listCascading);
