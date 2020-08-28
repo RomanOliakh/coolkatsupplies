@@ -210,12 +210,14 @@
  .expanded .b1, .expanded .b2, .expanded .b3, .expanded .b4, .expanded .b5,  .expanded .top{
     transform: none;
     width:90px;
+    margin-left: 0px;
+
 }
  
 .balloons.singles.expanded .b1, .balloons.singles.expanded .b2, .balloons.singles.expanded .b3, .balloons.singles.expanded .b4, .balloons.singles.expanded .b5 {
     margin: 0 0 0 0px;
     top: 0;
-    transform: none
+    transform: none;
 }
 
 
