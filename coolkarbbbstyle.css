@@ -131,7 +131,7 @@
 
 /* CLASSIC ARRANGEMENT (START)*/
 .balloons.classicarrangement .r1, .classicarrangement .r2, .classicarrangement .ctop {
-    display: flex !important;
+    display: block !important;
 }
 
 .classicarrangement .r3 {
@@ -211,7 +211,7 @@
     transform: none;
     width:90px;
     margin-left: 0px;
-
+    top: 0px;
 }
  
 .balloons.singles.expanded .b1, .balloons.singles.expanded .b2, .balloons.singles.expanded .b3, .balloons.singles.expanded .b4, .balloons.singles.expanded .b5 {
