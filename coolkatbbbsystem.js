@@ -310,5 +310,12 @@ $(document).ready(function() {
 	});
 	
 	
+	$('#opt-expand').click(function() {
+		$('.balloons').toggleClass('expanded');
+		$('#expand1').toggle();
+		$('#expand2').toggle();
+	});
+	
+	
 });
 
