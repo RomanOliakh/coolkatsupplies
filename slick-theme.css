@@ -47,9 +47,7 @@
     opacity: 50%;
 }
 .slick-prev:hover:before,
-.slick-prev:focus:before,
 .slick-next:hover:before,
-.slick-next:focus:before
 {
     opacity: 1;
 }
