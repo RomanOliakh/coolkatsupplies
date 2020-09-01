@@ -42,9 +42,7 @@
     background: transparent;
 }
 .slick-prev:hover,
-.slick-prev:focus,
 .slick-next:hover,
-.slick-next:focus
 {
     opacity: 50%;
 }
