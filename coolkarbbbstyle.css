@@ -16,8 +16,8 @@
 
 
 .sample {
-    width: 100px;
-    height: 130px;
+    width: 90px !important;
+    height: 130px !important;
     display: inline-block;
     margin: 0 10px 10px 0;
     background-size: contain;
