@@ -204,6 +204,9 @@ $(document).ready(function() {
         $('.balloons, .customize').addClass('cascadingarrangement');
 	$('.balloons').addClass('expanded');
 	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e35a7c4a3d85b8cdc17df65_string-simpleribbon.png";
+	    
+	$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+	    
         $('.info2 .arrangement-title').html(titleCascading);
 	$('.info2 .arrangement-text').html(listCascading);
         $('.desc_template').html('Classic Arrangement');
@@ -223,6 +226,9 @@ $(document).ready(function() {
         $('.balloons, .customize').addClass('classicarrangement');
 	$('.balloons').addClass('expanded');
 	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8e11ed7bc08b5a67d3ac80_string-cluster.png";
+	    
+	$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+
         $('.info2 .arrangement-title').html(titleClassicArrangement);
 	$('.info2 .arrangement-text').html(listClassicArrangement);
         $('.desc_template').html('Classic Arrangement');
@@ -240,6 +246,9 @@ $(document).ready(function() {
         $('.balloons, .customize').addClass('singles');
 	$('.balloons').addClass('expanded');
 	document.getElementById("ribbonchange").src="https://uploads-ssl.webflow.com/5d53e5f001f72ae5acff44a9/5e8ef5815d89c2c8c2d524d6_string-umbrella2.png";
+	    
+	$('.b1, .b2, .b3, .b4, .b5, .top').addClass('11in');
+
         $('.ribbon').addClass('wide');
         $('.info2 .arrangement-title').html(titleSingles);
 	$('.info2 .arrangement-text').html(listSingles);
