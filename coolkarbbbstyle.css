@@ -220,5 +220,21 @@
     transform: none;
 }
 
+ .latex-size, .expanded .latex-size {
+    height:130px;
+    width:90px;
 
+}
+
+ .foil-size, .expanded .foil-size {
+    height:130px;
+    width:130px;
+
+}
+
+ .supershape-size, .expanded .supershape-size {
+    height:150px;
+    width:150px;
+
+}
 
