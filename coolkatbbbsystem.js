@@ -328,3 +328,176 @@ $(document).ready(function() {
 	
 });
 
+
+(function() {
+	// create a new Library instance and store it in a variable called "projectsGrid"
+	var insertTags = new FsLibrary('.filtering-list-baby')
+  // run nest on our instance
+	insertTags.nest({
+    textList: '.text-of-categories-list',    // plaintext comma separated list
+    nestSource: '.nest-multi-reference', // CMS list we are taking real tags from
+    nestTarget: '.multi-ref-target' // where we paste the items from nestSource
+})
+	// run combine on our instance
+	insertTags.combine()
+  
+  
+	// define our filter group(s)
+	var myFilters = [
+	{
+		filterWrapper: ".filters-wrapper-baby",
+    filterType: "exclusive"
+
+	}
+]
+ // run filter on our instance
+	insertTags.filter({
+		filterArray: myFilters, // the filter group name we defined
+    activeClass: 'fltr-active', // the active class we give to our buttons
+		animation: {
+			enable: true,
+			duration: 200,
+			easing: 'ease-out',
+			effects: 'fade translate(0px,20px)'
+			}
+  })
+})();
+
+
+(function() {
+	// create a new Library instance and store it in a variable called "projectsGrid"
+	var insertTags = new FsLibrary('.filtering-list-birthday')
+  // run nest on our instance
+	insertTags.nest({
+    textList: '.text-of-categories-list',    // plaintext comma separated list
+    nestSource: '.nest-multi-reference', // CMS list we are taking real tags from
+    nestTarget: '.multi-ref-target' // where we paste the items from nestSource
+})
+	// run combine on our instance
+	insertTags.combine()
+  
+  
+	// define our filter group(s)
+	var myFilters = [
+	{
+		filterWrapper: ".filters-wrapper-birthday",
+    filterType: "exclusive"
+
+	}
+]
+ // run filter on our instance
+	insertTags.filter({
+		filterArray: myFilters, // the filter group name we defined
+    activeClass: 'fltr-active', // the active class we give to our buttons
+		animation: {
+			enable: true,
+			duration: 200,
+			easing: 'ease-out',
+			effects: 'fade translate(0px,20px)'
+			}
+  })
+})();
+
+(function() {
+	// create a new Library instance and store it in a variable called "projectsGrid"
+	var insertTags = new FsLibrary('.filtering-list-seasonal')
+  // run nest on our instance
+	insertTags.nest({
+    textList: '.text-of-categories-list',    // plaintext comma separated list
+    nestSource: '.nest-multi-reference', // CMS list we are taking real tags from
+    nestTarget: '.multi-ref-target' // where we paste the items from nestSource
+})
+	// run combine on our instance
+	insertTags.combine()
+  
+  
+	// define our filter group(s)
+	var myFilters = [
+	{
+		filterWrapper: ".filters-wrapper-seasonal",
+    filterType: "exclusive"
+
+	}
+]
+ // run filter on our instance
+	insertTags.filter({
+		filterArray: myFilters, // the filter group name we defined
+    activeClass: 'fltr-active', // the active class we give to our buttons
+		animation: {
+			enable: true,
+			duration: 200,
+			easing: 'ease-out',
+			effects: 'fade translate(0px,20px)'
+			}
+  })
+})();
+
+
+(function() {
+	// create a new Library instance and store it in a variable called "projectsGrid"
+	var insertTags = new FsLibrary('.filtering-list-shapes')
+  // run nest on our instance
+	insertTags.nest({
+    textList: '.text-of-categories-list',    // plaintext comma separated list
+    nestSource: '.nest-multi-reference', // CMS list we are taking real tags from
+    nestTarget: '.multi-ref-target' // where we paste the items from nestSource
+})
+	// run combine on our instance
+	insertTags.combine()
+  
+  
+	// define our filter group(s)
+	var myFilters = [
+	{
+		filterWrapper: ".filters-wrapper-shapes",
+    filterType: "exclusive"
+
+	}
+]
+ // run filter on our instance
+	insertTags.filter({
+		filterArray: myFilters, // the filter group name we defined
+    activeClass: 'fltr-active', // the active class we give to our buttons
+		animation: {
+			enable: true,
+			duration: 200,
+			easing: 'ease-out',
+			effects: 'fade translate(0px,20px)'
+			}
+  })
+})();
+
+
+(function() {
+	// create a new Library instance and store it in a variable called "projectsGrid"
+	var insertTags = new FsLibrary('.filtering-list-theme')
+  // run nest on our instance
+	insertTags.nest({
+    textList: '.text-of-categories-list',    // plaintext comma separated list
+    nestSource: '.nest-multi-reference', // CMS list we are taking real tags from
+    nestTarget: '.multi-ref-target' // where we paste the items from nestSource
+})
+	// run combine on our instance
+	insertTags.combine()
+  
+  
+	// define our filter group(s)
+	var myFilters = [
+	{
+		filterWrapper: ".filters-wrapper-theme",
+    filterType: "exclusive"
+
+	}
+]
+ // run filter on our instance
+	insertTags.filter({
+		filterArray: myFilters, // the filter group name we defined
+    activeClass: 'fltr-active', // the active class we give to our buttons
+		animation: {
+			enable: true,
+			duration: 200,
+			easing: 'ease-out',
+			effects: 'fade translate(0px,20px)'
+			}
+  })
+})();
