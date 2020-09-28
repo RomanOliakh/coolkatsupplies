@@ -122,18 +122,11 @@ $(document).ready(function() {
 
 /*Click to (toggle) Active Balloon START*/
 
-$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').click(function() {
+$('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .top').click(function() {
     $(this).toggleClass('active');
-    if ($('.top').hasClass('active')) {
-        $('.top').removeClass('active');
-        $('.folder').hide();
     }
 });
-$('.top').click(function() {
-    $(this).toggleClass('active');
-    $('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20').removeClass('active');
-    $('.folder').hide();
-});
+
 
 /*Click to (toggle) Active Balloon END*/
 
