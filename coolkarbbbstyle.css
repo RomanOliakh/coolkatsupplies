@@ -48,7 +48,7 @@
 /* CLASSIC ARRANGEMENT (START)*/
 
 .balloons.cascadingarrangement .r1, .balloons.cascadingarrangement .r2, .balloons.cascadingarrangement .r3 {
-    display: flex !important;
+    display: block !important;
 }
 
 .balloons.cascadingarrangement .ctop {
@@ -76,7 +76,7 @@
 /* SINGLE STRING ARRANGEMENT (START)*/
 
 .balloons.singlestring .r1, .singlestring .r2, .singlestring .r3 {
-    display: flex !important;
+    display: block !important;
 }
 
 .balloons.singlestring .ctop {
@@ -104,7 +104,7 @@
 /* DUO STRING ARRANGEMENT (START)*/
 
 .balloons.duostring .r1, .duostring .r2, .duostring .ctop {
-    display: flex !important;
+    display: block !important;
 }
 
 .duostring .r3 {
