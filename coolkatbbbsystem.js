@@ -124,11 +124,24 @@ $(document).ready(function() {
 
 $('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .top').click(function() {
     $(this).toggleClass('active');
-    }
+    
 });
 
+/*Click to (toggle ALL) Active Balloon START*/
 
-/*Click to (toggle) Active Balloon END*/
+document.addEventListener('DOMContentLoaded', ()=>{
+ document.querySelectorAll('.toggle-select').forEach(trigger => {
+  trigger.addEventListener('click', function(){ 
+    this.x = ((this.x || 0) + 1)%2; 
+    if(this.x){ 
+      document.querySelectorAll('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .top').forEach(target => target.classList.add('active'));
+    }
+    else{ 
+      document.querySelectorAll('.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9, .b10, .b11, .b12, .b13, .b14, .b15, .b16, .b17, .b18, .b19, .b20, .top').forEach(target => target.classList.remove('active'));
+    } 
+  });
+ });
+});
 
 
 
