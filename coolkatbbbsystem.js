@@ -161,12 +161,36 @@ $('#opt-deselect').click(function () {
 
 /* Click to ADD-REMOVE balloon START*/
 
-$('#opt-sub').click(function () {
+$('#opt-remove-cascading').click(function () {
     $(".balloons > [class*='r']:visible:first").hide();
     $(".select > [class*='opt-r']:visible:first").hide(100);
 });
 
-$('#opt-add').click(function () {
+$('#opt-add-cascading').click(function () {
+    $(".balloons > [class*='r']:hidden:last").css('display', 'block');
+    $(".select > [class*='opt-r']:hidden:last").show(100);
+
+});
+
+
+$('#opt-remove-classic').click(function () {
+    $(".balloons > [class*='r']:visible:first").hide();
+    $(".select > [class*='opt-r']:visible:first").hide(100);
+});
+
+$('#opt-add-classic').click(function () {
+    $(".balloons > [class*='r']:hidden:last").css('display', 'block');
+    $(".select > [class*='opt-r']:hidden:last").show(100);
+
+});
+
+
+$('#opt-remove-singles').click(function () {
+    $(".balloons > [class*='r']:visible:first").hide();
+    $(".select > [class*='opt-r']:visible:first").hide(100);
+});
+
+$('#opt-add-singles').click(function () {
     $(".balloons > [class*='r']:hidden:last").css('display', 'block');
     $(".select > [class*='opt-r']:hidden:last").show(100);
 
