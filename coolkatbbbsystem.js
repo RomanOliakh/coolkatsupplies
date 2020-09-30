@@ -162,38 +162,29 @@ $('#opt-deselect').click(function () {
 /* Click to ADD-REMOVE balloon START*/
 
 $('#opt-remove-cascading').click(function () {
-    $(".balloons > [class*='r']:visible:first").hide();
-    $(".select > [class*='opt-r']:visible:first").hide(100);
+    $(".balloons.cascadingarrangement > [class*='r']:visible:first").hide();
 });
 
 $('#opt-add-cascading').click(function () {
-    $(".balloons > [class*='r']:hidden:last").css('display', 'block');
-    $(".select > [class*='opt-r']:hidden:last").show(100);
-
+    $(".balloons.cascadingarrangement > [class*='r']:hidden:last").css('display', 'block');
 });
 
 
 $('#opt-remove-classic').click(function () {
-    $(".balloons > [class*='r']:visible:first").hide();
-    $(".select > [class*='opt-r']:visible:first").hide(100);
+    $(".balloons.classicarrangement > [class*='r']:visible:first").hide();
 });
 
 $('#opt-add-classic').click(function () {
-    $(".balloons > [class*='r']:hidden:last").css('display', 'block');
-    $(".select > [class*='opt-r']:hidden:last").show(100);
-
+    $(".balloons.classicarrangement > [class*='r']:hidden:last").css('display', 'block');
 });
 
 
 $('#opt-remove-singles').click(function () {
-    $(".balloons > [class*='r']:visible:first").hide();
-    $(".select > [class*='opt-r']:visible:first").hide(100);
+    $(".balloons.singles > [class*='r']:visible:first").hide();
 });
 
 $('#opt-add-singles').click(function () {
-    $(".balloons > [class*='r']:hidden:last").css('display', 'block');
-    $(".select > [class*='opt-r']:hidden:last").show(100);
-
+    $(".balloons.singles > [class*='r']:hidden:last").css('display', 'block');  
 });
 
 /* Click to ADD-REMOVE balloon END*/
