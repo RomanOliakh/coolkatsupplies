@@ -373,6 +373,45 @@ $( function() {
   } );
   
 	/*Draggable Balloon holder END*/
+
+/*Plus Minus Counter START*/
+$('#opt-add-cascading').click(function () {
+		if ($(this).prev().text() < 20) {
+    	$(this).prev().text(+$(this).prev().text() + 1);
+		}
+});
+$('#opt-remove-cascading').click(function () {
+		if ($(this).next().text() > 3) {
+    	if ($(this).next().text() > 3) $(this).next().text(+$(this).next().text() - 1);
+		}
+});
+
+$('#opt-add-classic').click(function () {
+		if ($(this).prev().text() < 61) {
+    	$(this).prev().text(+$(this).prev().text() + 3);
+		}
+});
+$('#opt-remove-classic').click(function () {
+		if ($(this).next().text() > 7) {
+    	if ($(this).next().text() > 7) $(this).next().text(+$(this).next().text() - 3);
+		}
+});
+
+$('#opt-add-singles').click(function () {
+		if ($(this).prev().text() < 19) {
+    	$(this).prev().text(+$(this).prev().text() + 3);
+		}
+});
+$('#opt-remove-singles').click(function () {
+		if ($(this).next().text() > 13) {
+    	if ($(this).next().text() > 13) $(this).next().text(+$(this).next().text() - 3);
+		}
+});
+
+/*Plus Minus Counter END*/
+
+	
+	
 	
 });
 
