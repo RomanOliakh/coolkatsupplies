@@ -1,5 +1,4 @@
-
-    /*Order Information START*/
+/*Order Information START*/
 
     $(document).ready(function () {
         var orderID = function () {
@@ -342,20 +341,19 @@ $( function() {
     	handle: ".balloon-box-header", 
       containment: "#builder-section",
       });
-  
-   }); 
+   
+    
     $( "#foil-holder" ).draggable({ 
     	handle: ".balloon-box-header", 
       containment: "#builder-section",
       });
-  
-    });
+    
    
    $( "#supershape-holder" ).draggable({ 
     	handle: ".balloon-box-header", 
       containment: "#builder-section",
       });
-   
+    
   } );
   
 	/*Draggable Balloon holder END*/
@@ -448,7 +446,3 @@ document.addEventListener('DOMContentLoaded', ()=>{
  });
 });
 	
-
-
-
-
