@@ -214,6 +214,8 @@ $(document).ready(function() {
         $('.content, .cost').show();
 	$('.info1').css('display', 'none');
 	$('.info2').css('display', 'flex');
+	$('.btn-holder').css('display', 'none');
+        $('#btn-holder-cascading').css('display', 'flex');
   
     });
   
