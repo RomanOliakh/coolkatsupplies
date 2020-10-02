@@ -293,6 +293,7 @@ $(document).ready(function() {
 		$('.templates-holder').show();
 		$('.content, .cost').hide();
 		$('.balloons, .customize, .balloons-container').removeClass(customizeclasses);
+		$('.balloons, .customize, .balloons-container').addClass("gobacktemplates");
        		$('.ribbon').removeClass('wide');
 		$('.info1').css('display', 'flex');
 		$('.info2').css('display', 'none')
