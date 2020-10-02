@@ -192,7 +192,7 @@ $('#opt-add-singles').click(function () {
 
 
 
-var customizeclasses = "cascadingarrangement classicarrangement singles expanded";
+var customizeclasses = "cascadingarrangement classicarrangement singles expanded gobacktemplates";
 
 var titleCascading = "Cascading Arrangement";
 var listCascading = "A multi-purpose classic. Each balloon is anchored to the weight with even vertical spacing.<br /><br />Arrangement details:<br />• 11\" and 16\" balloons only<br />• 2 - 7 balloons total";
