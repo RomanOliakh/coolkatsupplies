@@ -410,7 +410,7 @@ $('#opt-remove-singles').click(function () {
 
 /*Plus Minus Counter END*/
 
-	
+});	
 	
 document.addEventListener('DOMContentLoaded', ()=>{
  document.querySelectorAll('#latex-btn').forEach(trigger => {
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
  });
 });
 	
-});
+
 
 
 
