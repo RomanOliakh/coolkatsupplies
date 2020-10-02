@@ -336,6 +336,44 @@ $(document).ready(function() {
 	});
 	
 	
+/*Draggable Balloon holder START*/
+$( function() {
+    $( "#latex-holder" ).draggable({ 
+    	handle: ".balloon-box-header", 
+      containment: "#builder-section",
+      });
+    $( "#latex-holder" ).resizable({
+      maxHeight: 935,
+      maxWidth: 450,
+      minHeight: 280,
+      minWidth: 450
+    });
+    
+    $( "#foil-holder" ).draggable({ 
+    	handle: ".balloon-box-header", 
+      containment: "#builder-section",
+      });
+    $( "#foil-holder" ).resizable({
+      maxHeight: 935,
+      maxWidth: 450,
+      minHeight: 280,
+      minWidth: 450
+    });
+   
+   $( "#supershape-holder" ).draggable({ 
+    	handle: ".balloon-box-header", 
+      containment: "#builder-section",
+      });
+    $( "#supershape-holder" ).resizable({
+      maxHeight: 935,
+      maxWidth: 450,
+      minHeight: 280,
+      minWidth: 450
+    });
+  } );
+  
+	/*Draggable Balloon holder END*/
+	
 });
 
 
