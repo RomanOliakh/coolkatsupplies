@@ -73,62 +73,6 @@
     display: none !important;
 }
 
-/* SINGLE STRING ARRANGEMENT (START)*/
-
-.balloons.singlestring .r1, .singlestring .r2, .singlestring .r3 {
-    display: block !important;
-}
-
-.balloons.singlestring .ctop {
-    display: none !important;
-}
-
-.balloons.singlestring .r4, .balloons.singlestring .r5, .balloons.singlestring .r6, .balloons.singlestring .r7, .balloons.singlestring .r8, .balloons.singlestring .r9, .balloons.singlestring .r10, .balloons.singlestring .r11, .balloons.singlestring .r12, .balloons.singlestring .r13, .balloons.singlestring .r14, .balloons.singlestring .r15, .balloons.singlestring .r16, .balloons.singlestring .r17, .balloons.singlestring .r18, .balloons.singlestring .r19, .balloons.singlestring .r20, .ctop {
-    display: none;
-}
-
-.balloons.singlestring .b1 {
-    transform: rotate(-16deg);
-    margin-left: -50px;
-}
-
-.balloons.singlestring .alt .b1 {
-    transform: rotate(16deg);
-    margin-left: 50px;
-}
-
-.balloons.singlestring .b2, .balloons.singlestring .b3, .balloons.singlestring .b4, .balloons.singlestring .b5 {
-    display: none !important;
-}
-
-/* DUO STRING ARRANGEMENT (START)*/
-
-.balloons.duostring .r1, .duostring .r2, .duostring .ctop {
-    display: block !important;
-}
-
-.duostring .r3 {
-    display: flex;
-}
-
-
-.balloons.duostring .r4, .balloons.duostring .r5, .balloons.duostring .r6, .balloons.duostring .r7, .balloons.duostring .r8, .balloons.duostring .r9, .balloons.duostring .r10, .balloons.duostring .r11, .balloons.duostring .r12, .balloons.duostring .r13, .balloons.duostring .r14, .balloons.duostring .r15, .balloons.duostring .r16, .balloons.duostring .r17, .balloons.duostring .r18, .balloons.duostring .r19, .balloons.duostring .r20, .ctop {
-    display: none;
-}
-
-.balloons.duostring .b1 {
-    transform: rotate(-20deg);
-    margin-right: 10px;
-}
-
-.balloons.duostring .b2 {
-    transform: rotate(20deg);
-}
-
-.balloons.duostring .b3, .balloons.duostring .b4, .balloons.duostring .b5 {
-    display: none !important;
-}
-
 /* CLASSIC ARRANGEMENT (START)*/
 .balloons.classicarrangement .r1, .classicarrangement .r2, .classicarrangement .ctop {
     display: block !important;
@@ -238,8 +182,4 @@
 
 }
 
-
-.balloons.gobacktemplates .r1, .balloons.gobacktemplates .r2, .balloons.gobacktemplates .r3, .balloons.gobacktemplates .r4, .balloons.gobacktemplates .r5, .balloons.gobacktemplates .r6, .balloons.gobacktemplates .r7, .balloons.gobacktemplates .r8, .balloons.gobacktemplates .r9, .balloons.gobacktemplates .r10, .balloons.gobacktemplates .r11, .balloons.gobacktemplates .r12, .balloons.gobacktemplates .r13, .balloons.gobacktemplates .r14, .balloons.gobacktemplates .r15, .balloons.gobacktemplates .r16, .balloons.gobacktemplates .r17, .balloons.gobacktemplates .r18, .balloons.gobacktemplates .r19, .balloons.gobacktemplates .r20, .balloons.gobacktemplates .ctop  {
-    display: none;
-}
 
