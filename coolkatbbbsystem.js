@@ -409,6 +409,10 @@ $('#opt-remove-singles').click(function () {
 });
 
 /*Plus Minus Counter END*/
+	
+	$('#gobacktemplates').click(function() {
+    location.reload();
+});
 
 });	
 	
@@ -425,6 +429,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
       document.querySelectorAll('#latex-holder').forEach(target => target.classList.remove('open'));
     } 
   });
+	 
+	 
  });
  
  document.querySelectorAll('#foil-btn').forEach(trigger => {
