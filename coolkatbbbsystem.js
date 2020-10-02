@@ -288,26 +288,6 @@ $(document).ready(function() {
 
 	});  
 	
-		
-	$('#gobacktemplates').click(function() {
-		$('.templates-holder').show();
-		$('.content, .cost').hide();
-		$('.balloons, .customize, .balloons-container').removeClass(customizeclasses);
-		$('.balloons, .customize, .balloons-container').addClass("gobacktemplates");
-       		$('.ribbon').removeClass('wide');
-		$('.info1').css('display', 'flex');
-		$('.info2').css('display', 'none')
-        
-        	$('.step-link').removeClassExcept("step-link");
-       		$('#builder-step1').addClass("select");
-        
-		$('.content').hide();
-		$('.options').removeClassExcept("options");
-		$('.build-extra').removeClassExcept("build-extra");
-		$('.desc_template, .desc_row-1, #orderID, .desc_acc').html(' ');
-       
-	})
-	
 	
 	$('#proceed').click(function() {
 		$('.baloons-options').hide();		  
