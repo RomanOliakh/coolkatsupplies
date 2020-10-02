@@ -214,10 +214,6 @@ $(document).ready(function() {
         $('.content, .cost').show();
 	$('.info1').css('display', 'none');
 	$('.info2').css('display', 'flex');
-	$('#btn-holder-classic').css('display', 'none');
-	$('#btn-holder-singles').css('display', 'none');
-        $('#btn-holder-cascading').css('display', 'flex');
-  
     });
   
     /*Cascading Arrangement*/
@@ -236,6 +232,9 @@ $(document).ready(function() {
         $('.desc_template').html('Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
+	$('#btn-holder-classic').css('display', 'none');
+	$('#btn-holder-singles').css('display', 'none');
+        $('#btn-holder-cascading').css('display', 'flex');
     
         
 
@@ -258,6 +257,9 @@ $(document).ready(function() {
         $('.desc_template').html('Classic Arrangement');
         $('.step-link').removeClassExcept("step-link");
         $('#builder-step2').addClass("select");
+	$('#btn-holder-cascading').css('display', 'none');
+	$('#btn-holder-singles').css('display', 'none');
+        $('#btn-holder-classic').css('display', 'flex');
 
 
 	});
@@ -279,6 +281,9 @@ $(document).ready(function() {
         $('.desc_template').html('Singles Arrangement');
         $('.step-link').removeClassExcept("step-link");
 	$('#builder-step2').addClass("select");
+	$('#btn-holder-classic').css('display', 'none');
+	$('#btn-holder-cascading').css('display', 'none');
+        $('#btn-holder-singles').css('display', 'flex');
 
 
 	});  
