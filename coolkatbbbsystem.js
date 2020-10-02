@@ -343,7 +343,7 @@ $( function() {
       containment: "#builder-section",
       });
   
-    
+   }); 
     $( "#foil-holder" ).draggable({ 
     	handle: ".balloon-box-header", 
       containment: "#builder-section",
