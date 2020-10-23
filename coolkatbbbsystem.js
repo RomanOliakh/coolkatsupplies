@@ -210,7 +210,8 @@ $(document).ready(function() {
         $('.templates div').removeClass('selected');
         $(this).addClass('selected');
         $('.templates-holder').hide();
-        $('.content, .cost').show();
+        $('#select-btn-holder').show();
+	$('.content').css('height', '100%');
 	$('.info1').css('display', 'none');
 	$('.info2').css('display', 'flex');
     });
@@ -399,50 +400,6 @@ $('#opt-remove-singles').click(function () {
 });
 
 });	
-	
-document.addEventListener('DOMContentLoaded', ()=>{
- document.querySelectorAll('#latex-btn').forEach(trigger => {
-  trigger.addEventListener('click', function(){ 
-    this.x = ((this.x || 0) + 1)%2; 
-    if(this.x){ 
-      document.querySelectorAll('#latex-btn').forEach(target => target.classList.add('btn-active'));
-      document.querySelectorAll('#latex-holder').forEach(target => target.classList.add('open'));
-    }
-    else{ 
-      document.querySelectorAll('#latex-btn').forEach(target => target.classList.remove('btn-active'));
-      document.querySelectorAll('#latex-holder').forEach(target => target.classList.remove('open'));
-    } 
-  });
-	 
-	 
- });
  
- document.querySelectorAll('#foil-btn').forEach(trigger => {
-  trigger.addEventListener('click', function(){ 
-    this.x = ((this.x || 0) + 1)%2; 
-    if(this.x){ 
-      document.querySelectorAll('#foil-btn').forEach(target => target.classList.add('btn-active'));
-      document.querySelectorAll('#foil-holder').forEach(target => target.classList.add('open'));
-    }
-    else{ 
-      document.querySelectorAll('#foil-btn').forEach(target => target.classList.remove('btn-active'));
-      document.querySelectorAll('#foil-holder').forEach(target => target.classList.remove('open'));
-    } 
-  });
- });
-
- document.querySelectorAll('#supershape-btn').forEach(trigger => {
-  trigger.addEventListener('click', function(){ 
-    this.x = ((this.x || 0) + 1)%2; 
-    if(this.x){ 
-      document.querySelectorAll('#supershape-btn').forEach(target => target.classList.add('btn-active'));
-      document.querySelectorAll('#supershape-holder').forEach(target => target.classList.add('open'));
-    }
-    else{ 
-      document.querySelectorAll('#supershape-btn').forEach(target => target.classList.remove('btn-active'));
-      document.querySelectorAll('#supershape-holder').forEach(target => target.classList.remove('open'));
-    } 
-  });
- });
 });
 	
