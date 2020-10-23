@@ -210,7 +210,7 @@ $(document).ready(function() {
         $('.templates div').removeClass('selected');
         $(this).addClass('selected');
         $('.templates-holder').hide();
-	$('.content').css('height', '100%');
+	$('.content').addClass('open');
 	$('.info1').css('display', 'none');
 	$('.info2').css('display', 'flex');
     });
