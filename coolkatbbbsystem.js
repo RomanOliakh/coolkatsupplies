@@ -400,5 +400,4 @@ $('#opt-remove-singles').click(function () {
 
 });	
  
-});
 	
