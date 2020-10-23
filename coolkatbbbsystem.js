@@ -210,7 +210,6 @@ $(document).ready(function() {
         $('.templates div').removeClass('selected');
         $(this).addClass('selected');
         $('.templates-holder').hide();
-        $('#select-btn-holder').show();
 	$('.content').css('height', '100%');
 	$('.info1').css('display', 'none');
 	$('.info2').css('display', 'flex');
