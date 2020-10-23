@@ -65,12 +65,6 @@ body {
 }
 
 
-
-
-</style>
-
-
-  <style>
 .alt .b1 { z-index:30;transform:rotate(-12deg) }
 .alt .b2 { z-index:1;top:-10px; }
 .alt .b3 { z-index:30;transform:rotate(12deg) }
@@ -213,4 +207,14 @@ body {
 
 }
 
+.balloon-btn.filtering.fltr-active {
+  background-color: #e9faff;
+  box-shadow: none/* 0 2px 20px 0 rgba(178, 207, 217, 0.28) */
+  ;
+}
+
+.content.open {
+  overflow: visible;
+  height: 100%;
+}
 
